@@ -17,6 +17,13 @@
 		C9D8B93E28F2C9810039D7CC /* step2.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D8B93B28F2C9810039D7CC /* step2.png */; };
 		C9D8B93F28F2C9810039D7CC /* step3.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D8B93C28F2C9810039D7CC /* step3.png */; };
 		C9D8B94028F2C9810039D7CC /* step1.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D8B93D28F2C9810039D7CC /* step1.png */; };
+		C9ED7A4828F2D5840052B653 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED7A4628F2D5840052B653 /* TableViewController.swift */; };
+		C9ED7A4928F2D5840052B653 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED7A4728F2D5840052B653 /* DetailViewController.swift */; };
+		C9ED7A4D28F2D58A0052B653 /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ED7A4A28F2D58A0052B653 /* pencil.png */; };
+		C9ED7A4E28F2D58A0052B653 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ED7A4B28F2D58A0052B653 /* clock.png */; };
+		C9ED7A4F28F2D58A0052B653 /* cart.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ED7A4C28F2D58A0052B653 /* cart.png */; };
+		C9ED7A5128F2D6340052B653 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED7A5028F2D6340052B653 /* AddViewController.swift */; };
+		C9ED7A5328F304480052B653 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED7A5228F304480052B653 /* TimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +39,13 @@
 		C9D8B93B28F2C9810039D7CC /* step2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step2.png; sourceTree = "<group>"; };
 		C9D8B93C28F2C9810039D7CC /* step3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step3.png; sourceTree = "<group>"; };
 		C9D8B93D28F2C9810039D7CC /* step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step1.png; sourceTree = "<group>"; };
+		C9ED7A4628F2D5840052B653 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C9ED7A4728F2D5840052B653 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C9ED7A4A28F2D58A0052B653 /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
+		C9ED7A4B28F2D58A0052B653 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		C9ED7A4C28F2D58A0052B653 /* cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart.png; sourceTree = "<group>"; };
+		C9ED7A5028F2D6340052B653 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		C9ED7A5228F304480052B653 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +83,13 @@
 				C9D8B93928F2C1090039D7CC /* logo.png */,
 				C9D8B92928F2C0430039D7CC /* ViewController.swift */,
 				C9D8B93D28F2C9810039D7CC /* step1.png */,
+				C9ED7A4C28F2D58A0052B653 /* cart.png */,
+				C9ED7A4B28F2D58A0052B653 /* clock.png */,
+				C9ED7A4A28F2D58A0052B653 /* pencil.png */,
+				C9ED7A5228F304480052B653 /* TimerViewController.swift */,
+				C9ED7A5028F2D6340052B653 /* AddViewController.swift */,
+				C9ED7A4728F2D5840052B653 /* DetailViewController.swift */,
+				C9ED7A4628F2D5840052B653 /* TableViewController.swift */,
 				C9D8B93B28F2C9810039D7CC /* step2.png */,
 				C9D8B93C28F2C9810039D7CC /* step3.png */,
 				C9D8B92B28F2C0430039D7CC /* Main.storyboard */,
@@ -137,6 +158,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9ED7A4E28F2D58A0052B653 /* clock.png in Resources */,
+				C9ED7A4F28F2D58A0052B653 /* cart.png in Resources */,
+				C9ED7A4D28F2D58A0052B653 /* pencil.png in Resources */,
 				C9D8B93A28F2C1090039D7CC /* logo.png in Resources */,
 				C9D8B93E28F2C9810039D7CC /* step2.png in Resources */,
 				C9D8B93228F2C0450039D7CC /* LaunchScreen.storyboard in Resources */,
@@ -156,7 +180,11 @@
 			files = (
 				C9D8B92A28F2C0430039D7CC /* ViewController.swift in Sources */,
 				C9D8B92628F2C0430039D7CC /* AppDelegate.swift in Sources */,
+				C9ED7A5128F2D6340052B653 /* AddViewController.swift in Sources */,
+				C9ED7A5328F304480052B653 /* TimerViewController.swift in Sources */,
+				C9ED7A4928F2D5840052B653 /* DetailViewController.swift in Sources */,
 				C9D8B92828F2C0430039D7CC /* SceneDelegate.swift in Sources */,
+				C9ED7A4828F2D5840052B653 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

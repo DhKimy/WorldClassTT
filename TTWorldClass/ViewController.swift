@@ -14,18 +14,27 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let i = UserDefaults.standard.string(forKey: "Tutorial")
+//        if i == "Done" {
+//            stepsImages.isHidden = true
+//            dots.isHidden = true
+//        }
     }
-
     @IBAction func swipeAction(_ sender: Any) {
         number += 1
         if number == 4{
             stepsImages.isHidden = true
             dots.isHidden = true
+            UserDefaults.standard.set("Done", forKey: "Tutorial")
         } else{
             stepsImages.image = UIImage(named: "step\(String(number))")
             dots.currentPage = number - 1
         }
     }
     
+    
+    @IBAction func moveToMain(_ sender: UIButton) {
+    }
 }
 
