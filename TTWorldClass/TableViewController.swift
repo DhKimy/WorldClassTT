@@ -8,9 +8,9 @@
 import UIKit
 
 // 앱 시작 시 기본적으로 나타낼 목록
-var items = ["책 구매", "철수와 약속", "스터디 준비하기"]
+var items = ["1번", "2번", "3번"]
 var itemsImageFile = ["cart", "clock", "pencil"]
-var itemsTime: [Int] = [10, 20, 30]
+var itemsTime: [Int] = [1, 2, 3]
 
 class TableViewController: UITableViewController {
     
