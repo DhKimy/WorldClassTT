@@ -23,13 +23,15 @@ class AddViewController: UIViewController, SendDelegate {
     // 새 목록 추가하기
     @IBAction func btnAddItem(_ sender: UIButton) {
         
-        if tfAddItem == "" || tfAddTime == 0 || tfAddTime == nil {
-            let alert = UIAlertController(title : "생성 불가", message: "제목 또는 시간을 입력하지 않았어요!")
+        if tfAddItem.text == "" || tfAddTime.text == "0" || tfAddTime == nil {
+            let alert = UIAlertController(title : "생성 불가", message: "제목 또는 시간을 입력하지 않았어요!", preferredStyle: UIAlertController.Style.alert)
             let okAction = UIAlertAction(title: "다시 만들기", style: .default) {
                 (action) in
             }
             alert.addAction(okAction)
+            present(alert, animated: false, completion: nil)
             
+            return
         }
         
         
