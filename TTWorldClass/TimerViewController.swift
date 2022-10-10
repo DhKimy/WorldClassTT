@@ -10,17 +10,23 @@ import UIKit
 class TimerViewController: UIViewController {
     
     
+    @IBOutlet weak var lblTaskName: UILabel!
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
+    var setChapter = 0
     var timer = Timer()
     var isTimerStarted = false
-    var time = 1500
+    var timerTime = 0
+    var timerTaskName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        timerTime = itemsTime[setChapter] * 60
+        timerTaskName = items[setChapter]
+        lblTaskName.text = timerTaskName
+        lblTime.text = formatTime()
         // Do any additional setup after loading the view.
     }
     
@@ -49,14 +55,18 @@ class TimerViewController: UIViewController {
     }
     
     @objc func updateTimer(){
-        time -= 1
+        timerTime -= 1
         lblTime.text = formatTime()
+        if timerTime == 0 {
+            timer.invalidate()
+            setChapter += 1
+        }
     }
     
     func formatTime() -> String{
-        let hour = Int(time / 3600)
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
+        let hour = Int(timerTime / 3600)
+        let minutes = Int(timerTime) / 60 % 60
+        let seconds = Int(timerTime) % 60
         return String(format: "%02i:%02i:%02i", hour, minutes, seconds)
         
     }
@@ -65,9 +75,9 @@ class TimerViewController: UIViewController {
         resetButton.isEnabled = false
         resetButton.alpha = 0.5
         timer.invalidate()
-        time = 1500
+        timerTime = itemsTime[setChapter] * 60
         isTimerStarted = false
-        lblTime.text = "00:25:00"
+        lblTime.text = formatTime()
         startButton.setTitle("시작", for: .normal)
         startButton.setTitleColor(UIColor.blue, for: .normal)
     }
