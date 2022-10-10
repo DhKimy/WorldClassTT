@@ -11,7 +11,11 @@ class TimerViewController: UIViewController {
     
     
     @IBOutlet weak var lblTaskName: UILabel!
+    @IBOutlet weak var lblRemainTaskCount: UILabel!
+    
+    @IBOutlet weak var lblRemainEntireTime: UILabel!
     @IBOutlet weak var lblTime: UILabel!
+    
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
@@ -20,14 +24,26 @@ class TimerViewController: UIViewController {
     var isTimerStarted = false
     var timerTime = 0
     var timerTaskName = ""
+    var remainTaskCount = 0
+    var remainEntireTimersTime = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timerTime = itemsTime[setChapter] * 60
         timerTaskName = items[setChapter]
+        remainTaskCount = items.count - setChapter
+        remainEntireTimersTime = sum(numbers: itemsTime) * 60
+        
         lblTaskName.text = timerTaskName
+        lblRemainTaskCount.text = String(remainTaskCount) + "개"
+        lblRemainEntireTime.text = formatTimeForEntireTime()
         lblTime.text = formatTime()
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func sum(numbers: [Int]) -> Int {
+        return numbers.reduce(0, +)
     }
     
     @IBAction func btnPlayTapped(_ sender: Any) {
@@ -61,6 +77,14 @@ class TimerViewController: UIViewController {
             timer.invalidate()
             setChapter += 1
         }
+    }
+    
+    func formatTimeForEntireTime() -> String {
+        let hour = Int(remainEntireTimersTime / 3600)
+        let minutes = Int(remainEntireTimersTime) / 60 % 60
+        let seconds = Int(remainEntireTimersTime) % 60
+        return String(format: "%02i:%02i:%02i", hour, minutes, seconds)
+        
     }
     
     func formatTime() -> String{
