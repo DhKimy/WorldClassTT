@@ -74,14 +74,14 @@
         <!--할 일 목록-->
         <scene sceneID="WTg-mZ-h3C">
             <objects>
-                <tableViewController id="Iuy-Zc-O9T" customClass="TableViewController" customModule="Table" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Iuy-Zc-O9T" customClass="TableViewController" customModule="TTWorldClass" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="D0D-vt-ZLR">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <viewLayoutGuide key="contentLayoutGuide" id="4Xg-SJ-mXS"/>
                         <viewLayoutGuide key="frameLayoutGuide" id="FEI-H4-U5Q" propertyAccessControl="none"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bd-9w-ZxN">
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bd-9w-ZxN">
                             <rect key="frame" x="0.0" y="128.33333015441895" width="428" height="48"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
@@ -151,7 +151,7 @@
         <!--할 일 목록 보기-->
         <scene sceneID="lVC-cm-2T7">
             <objects>
-                <viewController id="afQ-Cg-7GE" customClass="DetailViewController" customModule="Table" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="afQ-Cg-7GE" customClass="DetailViewController" customModule="TTWorldClass" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3gr-KW-c1E">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,6 +184,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leO-Hk-ur3">
+                                <rect key="frame" x="108" y="240" width="304" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="svv-ec-X18"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -194,10 +201,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="할 일 목록 보기" id="CBI-nM-TXU"/>
+                    <connections>
+                        <outlet property="lblItem" destination="leO-Hk-ur3" id="zuT-Vx-15v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zgh-2e-RMB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750" y="1035"/>
+            <point key="canvasLocation" x="1749.5327102803737" y="1034.7732181425486"/>
         </scene>
         <!--Timer View Controller-->
         <scene sceneID="7CA-Qb-27I">
@@ -218,7 +228,7 @@
         <!--할 일 추가하기-->
         <scene sceneID="X5i-R4-Evk">
             <objects>
-                <viewController id="6Bj-hL-7kt" customClass="AddViewController" customModule="Table" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Bj-hL-7kt" customClass="AddViewController" customModule="TTWorldClass" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HWl-44-2de">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,8 +253,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWG-eS-YVX">
-                                <rect key="frame" x="118" y="298" width="290" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="분" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SRJ-nk-iBm">
+                                <rect key="frame" x="196" y="299" width="37" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -266,15 +276,114 @@
                                     <action selector="btnAddItem:" destination="6Bj-hL-7kt" eventType="touchUpInside" id="24h-Uv-naV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpm-i4-EED">
+                                <rect key="frame" x="286" y="298" width="88" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="시간 설정"/>
+                                <connections>
+                                    <segue destination="xAe-tg-KKg" kind="show" id="fyc-VM-Nen"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWG-eS-YVX">
+                                <rect key="frame" x="118" y="299" width="77" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yhh-hZ-wXg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="할 일 추가하기" id="D6T-jn-f1c"/>
+                    <connections>
+                        <outlet property="tfAddItem" destination="52B-gJ-wma" id="RXk-t4-jWt"/>
+                        <outlet property="tfAddTime" destination="mWG-eS-YVX" id="hKQ-mZ-onX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eic-sb-Yt4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2869.6261682242989" y="497.62419006479485"/>
+            <point key="canvasLocation" x="2643.9252336448599" y="546.86825053995688"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="DeW-jj-hzP">
+            <objects>
+                <viewController id="xAe-tg-KKg" customClass="DatePickerViewController" customModule="TTWorldClass" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HU1-Hg-cTT">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLH-2k-DaJ">
+                                <rect key="frame" x="54" y="355" width="320" height="216"/>
+                                <locale key="locale" localeIdentifier="ko_KR"/>
+                                <connections>
+                                    <action selector="changeDatePicker:" destination="xAe-tg-KKg" eventType="valueChanged" id="CzS-El-vYM"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEK-cb-C9s">
+                                <rect key="frame" x="161.66666666666666" y="232" width="104.99999999999997" height="33"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="설정 시간">
+                                        <attributes>
+                                            <font key="NSFont" size="28" name="NotoSansKR-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3P-zn-VNQ">
+                                <rect key="frame" x="144" y="274" width="140" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="0분">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="NotoSansKR-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yr2-X6-UdT">
+                                <rect key="frame" x="155.66666666666666" y="631" width="116.99999999999997" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="시간 설정하기"/>
+                                <connections>
+                                    <action selector="btnTimeSet:" destination="xAe-tg-KKg" eventType="touchUpInside" id="ISC-sB-3MJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100분 이상은 설정할 수 없어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24V-5a-por">
+                                <rect key="frame" x="107.66666666666669" y="638" width="213" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.1025861391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="F9U-Af-yk4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PLH-2k-DaJ" firstAttribute="top" secondItem="a3P-zn-VNQ" secondAttribute="bottom" constant="24" id="4V3-k4-mPJ"/>
+                            <constraint firstItem="PLH-2k-DaJ" firstAttribute="centerY" secondItem="HU1-Hg-cTT" secondAttribute="centerY" id="K8I-Ww-aRz"/>
+                            <constraint firstItem="wEK-cb-C9s" firstAttribute="centerX" secondItem="HU1-Hg-cTT" secondAttribute="centerX" id="Ke7-Sg-uoN"/>
+                            <constraint firstItem="a3P-zn-VNQ" firstAttribute="top" secondItem="wEK-cb-C9s" secondAttribute="bottom" constant="40" id="ZNg-mg-ZCw"/>
+                            <constraint firstItem="yr2-X6-UdT" firstAttribute="top" secondItem="PLH-2k-DaJ" secondAttribute="bottom" constant="60" id="aWY-is-7ce"/>
+                            <constraint firstItem="24V-5a-por" firstAttribute="top" secondItem="PLH-2k-DaJ" secondAttribute="bottom" constant="67" id="ayu-uQ-hNU"/>
+                            <constraint firstItem="24V-5a-por" firstAttribute="centerX" secondItem="HU1-Hg-cTT" secondAttribute="centerX" id="nlg-8E-j0a"/>
+                            <constraint firstItem="a3P-zn-VNQ" firstAttribute="centerX" secondItem="HU1-Hg-cTT" secondAttribute="centerX" id="o3s-9l-WLC"/>
+                            <constraint firstItem="yr2-X6-UdT" firstAttribute="centerX" secondItem="HU1-Hg-cTT" secondAttribute="centerX" id="rI3-jx-xeq"/>
+                            <constraint firstItem="PLH-2k-DaJ" firstAttribute="centerX" secondItem="HU1-Hg-cTT" secondAttribute="centerX" id="uyV-8W-I03"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cdE-Q4-Eqx"/>
+                    <connections>
+                        <outlet property="btnTimeSet" destination="yr2-X6-UdT" id="VEw-X4-3aJ"/>
+                        <outlet property="lblTimeOverMessage" destination="24V-5a-por" id="xvL-qL-48h"/>
+                        <outlet property="lblTimeSet" destination="a3P-zn-VNQ" id="W0c-Q8-Uk9"/>
+                        <outlet property="timePicker" destination="PLH-2k-DaJ" id="3mP-MT-SYW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="40P-N7-Tbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3663" y="792"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uWr-pD-KTs">

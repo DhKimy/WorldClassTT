@@ -10,6 +10,7 @@ import UIKit
 // 앱 시작 시 기본적으로 나타낼 목록
 var items = ["책 구매", "철수와 약속", "스터디 준비하기"]
 var itemsImageFile = ["cart", "clock", "pencil"]
+var itemsTime: [Int] = [10, 20, 30]
 
 class TableViewController: UITableViewController {
     
@@ -52,8 +53,7 @@ class TableViewController: UITableViewController {
         
         return cell
     }
-    
-    
+
     
     // Override to support editing the table view.
     // 목록 삭제 함수
@@ -63,6 +63,7 @@ class TableViewController: UITableViewController {
             // items와 itemsImageFile에서 해당 리스트를 삭제한다.
             items.remove(at: (indexPath as NSIndexPath).row)
             itemsImageFile.remove(at: (indexPath as NSIndexPath).row)
+            itemsTime.remove(at: (indexPath as NSIndexPath).row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -80,10 +81,13 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         let itemToMove = items[(fromIndexPath as NSIndexPath).row]
         let itemImageToMove = itemsImageFile[(fromIndexPath as NSIndexPath).row]
+        let itemTimeToMove = itemsTime[(fromIndexPath as NSIndexPath).row]
         items.remove(at: (fromIndexPath as NSIndexPath).row)
         itemsImageFile.remove(at: (fromIndexPath as NSIndexPath).row)
+        itemsTime.remove(at: (fromIndexPath as NSIndexPath).row)
         items.insert(itemToMove, at: (to as NSIndexPath).row)
         itemsImageFile.insert(itemImageToMove, at: (to as NSIndexPath).row)
+        itemsTime.insert(itemTimeToMove, at: (to as NSIndexPath).row)
         
     }
     
@@ -104,7 +108,6 @@ class TableViewController: UITableViewController {
     
 
     
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -112,10 +115,6 @@ class TableViewController: UITableViewController {
         return true
     }
     */
-
-
-
-   
 
     /*
     // Override to support conditional rearranging of the table view.
