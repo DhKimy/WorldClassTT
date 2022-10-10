@@ -315,6 +315,8 @@
                     <navigationItem key="navigationItem" id="8sU-vM-vgN"/>
                     <connections>
                         <outlet property="lblTime" destination="qPh-7k-Urz" id="Y4w-UD-GWv"/>
+                        <outlet property="resetButton" destination="xoF-Ev-khN" id="8Vd-dO-tA7"/>
+                        <outlet property="startButton" destination="UnY-e0-Upk" id="yTe-Fq-Frq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWu-Kh-7yR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

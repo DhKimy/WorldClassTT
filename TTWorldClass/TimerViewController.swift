@@ -11,6 +11,8 @@ class TimerViewController: UIViewController {
     
     
     @IBOutlet weak var lblTime: UILabel!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     
     var timer = Timer()
     var isTimerStarted = false
@@ -23,13 +25,20 @@ class TimerViewController: UIViewController {
     }
     
     @IBAction func btnPlayTapped(_ sender: Any) {
+        resetButton.isEnabled = true
+        resetButton.alpha = 1.0
+        
         if !isTimerStarted{
             startTimer()
             isTimerStarted = true
+            startButton.setTitle("일시정지", for: .normal)
+            startButton.setTitleColor(UIColor.orange, for: .normal)
             
         }else{
             timer.invalidate()
             isTimerStarted = false
+            startButton.setTitle("계속하기", for: .normal)
+            startButton.setTitleColor(UIColor.green, for: .normal)
             
         }
                
@@ -53,10 +62,14 @@ class TimerViewController: UIViewController {
     }
 
     @IBAction func btnReset(_ sender: Any) {
+        resetButton.isEnabled = false
+        resetButton.alpha = 0.5
         timer.invalidate()
         time = 1500
         isTimerStarted = false
         lblTime.text = "00:25:00"
+        startButton.setTitle("시작", for: .normal)
+        startButton.setTitleColor(UIColor.blue, for: .normal)
     }
 
     
