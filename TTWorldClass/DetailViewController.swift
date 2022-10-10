@@ -10,19 +10,22 @@ import UIKit
 class DetailViewController: UIViewController {
 
     var receiveItem = ""
+    var receiveItemsTime = ""
     
-    @IBOutlet var lblTextMessage: UILabel!
     @IBOutlet var lblItem: UILabel!
+    @IBOutlet var lblItemTime: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         lblItem.text = receiveItem
+        lblItemTime.text = receiveItemsTime
     }
     
-    func receiveItem(_ item: String){
+    func receiveItem(_ item: String, itemTime: Int){
         receiveItem = item
+        receiveItemsTime = String(itemTime) + "분"
     }
 
     
