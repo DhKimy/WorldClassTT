@@ -224,14 +224,102 @@
                     <view key="view" contentMode="scaleToFill" id="N5Z-jP-JIL">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPh-7k-Urz">
+                                <rect key="frame" x="116.66666666666667" y="434" width="194.66666666666663" height="58.333333333333314"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="00:00:00">
+                                        <attributes>
+                                            <font key="NSFont" size="50" name="NotoSansKR-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTd-Br-Hrt">
+                                <rect key="frame" x="183.66666666666666" y="131" width="60.666666666666657" height="41"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="빨래">
+                                        <attributes>
+                                            <font key="NSFont" size="35" name="NotoSansKR-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="182" translatesAutoresizingMaskIntoConstraints="NO" id="NrI-cf-Vrr">
+                                <rect key="frame" x="59" y="772" width="310" height="41"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoF-Ev-khN">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="41"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="리셋">
+                                                    <attributes>
+                                                        <font key="NSFont" size="23" name="NotoSansKR-Medium"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnReset:" destination="Bdu-eT-Tt9" eventType="touchUpInside" id="K0X-86-rRE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnY-e0-Upk">
+                                        <rect key="frame" x="246" y="0.0" width="64" height="41"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="시작">
+                                                    <attributes>
+                                                        <font key="NSFont" size="23" name="NotoSansKR-Medium"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnPlayTapped:" destination="Bdu-eT-Tt9" eventType="touchUpInside" id="14O-7t-1Tr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmm-1E-pkc">
+                                <rect key="frame" x="77.333333333333343" y="349.33333333333331" width="273.33333333333326" height="39.666666666666686"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="이번 할 일 남은 시간">
+                                        <attributes>
+                                            <font key="NSFont" size="34" name="NotoSansKR-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1g9-TW-ZHf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.69490329368732873" green="0.78439609148204703" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OTd-Br-Hrt" firstAttribute="top" secondItem="1g9-TW-ZHf" secondAttribute="top" constant="40" id="6YS-8I-dms"/>
+                            <constraint firstItem="qPh-7k-Urz" firstAttribute="centerY" secondItem="N5Z-jP-JIL" secondAttribute="centerY" id="7LD-zK-bla"/>
+                            <constraint firstItem="qPh-7k-Urz" firstAttribute="top" secondItem="dmm-1E-pkc" secondAttribute="bottom" constant="45" id="dQ6-LJ-lmG"/>
+                            <constraint firstItem="NrI-cf-Vrr" firstAttribute="centerX" secondItem="N5Z-jP-JIL" secondAttribute="centerX" id="pHp-U7-aVS"/>
+                            <constraint firstItem="1g9-TW-ZHf" firstAttribute="bottom" secondItem="NrI-cf-Vrr" secondAttribute="bottom" constant="30" id="pZ2-ph-JEW"/>
+                            <constraint firstItem="dmm-1E-pkc" firstAttribute="centerX" secondItem="N5Z-jP-JIL" secondAttribute="centerX" id="vhP-zs-vAR"/>
+                            <constraint firstItem="qPh-7k-Urz" firstAttribute="centerX" secondItem="N5Z-jP-JIL" secondAttribute="centerX" id="xyh-zF-BlP"/>
+                            <constraint firstItem="OTd-Br-Hrt" firstAttribute="centerX" secondItem="N5Z-jP-JIL" secondAttribute="centerX" id="y9C-h9-fSn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8sU-vM-vgN"/>
+                    <connections>
+                        <outlet property="lblTime" destination="qPh-7k-Urz" id="Y4w-UD-GWv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWu-Kh-7yR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3664" y="82"/>
+            <point key="canvasLocation" x="3663.0841121495323" y="81.641468682505405"/>
         </scene>
         <!--할 일 추가하기-->
         <scene sceneID="X5i-R4-Evk">
