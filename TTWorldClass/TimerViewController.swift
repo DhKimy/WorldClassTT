@@ -105,6 +105,22 @@ class TimerViewController: UIViewController {
     @objc func updateTimer(){
         timerTime -= 1
         lblTime.text = formatTime()
+        remainEntireTimersTime -= 1
+        lblRemainEntireTime.text = formatTimeForEntireTime()
+        
+        if remainEntireTimersTime != 0 && timerTime == 0 {
+            timer.invalidate()
+            entireTimer.invalidate()
+            print("소리 나야 됨")
+            setChapter += 1
+            
+            isTimerStarted = false
+            startButton.setTitle("시작", for: .normal)
+            startButton.setTitleColor(UIColor.blue, for: .normal)
+            viewDidLoad()
+            
+        }
+        
         if remainEntireTimersTime == 0 {
             print("완전 종료")
             resetButton.isEnabled = false
@@ -125,28 +141,13 @@ class TimerViewController: UIViewController {
             viewDidLoad()
             
         }
-        
-        if remainEntireTimersTime != 0 && timerTime == 0 {
-            timer.invalidate()
-            entireTimer.invalidate()
-            print("소리 나야 됨")
-            setChapter += 1
-            startButton.setTitle("시작", for: .normal)
-            startButton.setTitleColor(UIColor.blue, for: .normal)
-            viewDidLoad()
-            
-        }
     }
     
     @objc func updateTimerForEntireTimer(){
-        remainEntireTimersTime -= 1
-        lblRemainEntireTime.text = formatTimeForEntireTime()
-        if remainEntireTimersTime == 0 {
-            entireTimer.invalidate()
-            startButton.isHidden = true
-            resetButton.isHidden = true
-            print("완료!")
-        }
+        
+        
+        
+        
     }
     
     
@@ -186,6 +187,7 @@ class TimerViewController: UIViewController {
         setChapter -= 1
         timer.invalidate()
         entireTimer.invalidate()
+        isTimerStarted = false
         startButton.setTitle("시작", for: .normal)
         startButton.setTitleColor(UIColor.blue, for: .normal)
         viewDidLoad()
@@ -195,6 +197,7 @@ class TimerViewController: UIViewController {
         setChapter += 1
         timer.invalidate()
         entireTimer.invalidate()
+        isTimerStarted = false
         startButton.setTitle("시작", for: .normal)
         startButton.setTitleColor(UIColor.blue, for: .normal)
         viewDidLoad()
