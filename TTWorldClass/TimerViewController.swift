@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TimerViewController: UIViewController {
     
@@ -34,6 +35,8 @@ class TimerViewController: UIViewController {
     
     var remainEntireTimersTime = 0
     var timerTime = 0
+    
+    var player: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +114,7 @@ class TimerViewController: UIViewController {
         if remainEntireTimersTime != 0 && timerTime == 0 {
             timer.invalidate()
             entireTimer.invalidate()
-            print("소리 나야 됨")
+            self.playSound(title: "alarm_sound")
             setChapter += 1
             
             isTimerStarted = false
@@ -139,15 +142,14 @@ class TimerViewController: UIViewController {
             startButton.setTitle("시작", for: .normal)
             startButton.setTitleColor(UIColor.blue, for: .normal)
             viewDidLoad()
+            self.playSound(title: "alarm_sound")
+            
             
         }
     }
     
     @objc func updateTimerForEntireTimer(){
-        
-        
-        
-        
+                
     }
     
     
@@ -202,6 +204,16 @@ class TimerViewController: UIViewController {
         startButton.setTitleColor(UIColor.blue, for: .normal)
         viewDidLoad()
         
+    }
+    
+    func playSound(title: String?){
+        let url = Bundle.main.url(forResource: "Balynt - Memory", withExtension: "mp3")
+        player = try!AVAudioPlayer(contentsOf: url!)
+        player.play()
+    }
+    
+    func stopSound(){
+        player.stop()
     }
     /*
     // MARK: - Navigation
