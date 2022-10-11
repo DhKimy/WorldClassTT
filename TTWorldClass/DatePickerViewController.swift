@@ -21,7 +21,7 @@ class DatePickerViewController: UIViewController {
     @IBOutlet weak var lblTimeOverMessage: UILabel!
     @IBOutlet weak var btnTimeSet: UIButton!
     
-    var timeInt : Int = Int()
+    var timeInt : Int = 1
     var delegate : SendDelegate?
     
     override func viewDidLoad() {

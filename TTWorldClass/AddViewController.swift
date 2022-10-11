@@ -12,8 +12,8 @@ class AddViewController: UIViewController, SendDelegate {
     
 
     @IBOutlet var tfAddItem: UITextField!
-    @IBOutlet var tfAddTime: UITextField!
     
+    @IBOutlet weak var tfAddTime: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,10 +33,7 @@ class AddViewController: UIViewController, SendDelegate {
             
             return
         }
-        
-        
-        
-        
+                
         items.append(tfAddItem.text!)
         itemsImageFile.append("clock")
         itemsTime.append(Int(tfAddTime.text!)!)
