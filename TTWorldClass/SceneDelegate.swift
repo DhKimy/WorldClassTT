@@ -11,7 +11,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -39,12 +38,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        print("func sceneWillEnterForeground 내부")
+        
+        guard let start = UserDefaults.standard.object(forKey: "sceneDidEnterBackground") as? Date else {return}
+        let interval = Int(Date().timeIntervalSince(start))
+        NotificationCenter.default.post(name: NSNotification.Name("sceneWillEnterForeground"), object: nil, userInfo: ["time" : interval])
+        print(interval)
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        print("func sceneDidEnterBackground 내부")
+        NotificationCenter.default.post(name: NSNotification.Name("sceneDidEnterBackground"), object: nil)
+        UserDefaults.standard.setValue(Date(), forKey: "sceneDidEnterBackground")
     }
 
 

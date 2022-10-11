@@ -26,6 +26,7 @@ class TimerViewController: UIViewController {
         
     var timer = Timer()
     var entireTimer = Timer()
+    
     var isTimerStarted = false
     
     var setChapter = 0
@@ -38,6 +39,36 @@ class TimerViewController: UIViewController {
     
     var player: AVAudioPlayer!
     
+    func setNotifications() {
+        //백그라운드에서 포어그라운드로 돌아올때
+        NotificationCenter.default.addObserver(self, selector: #selector(addbackGroundTime(_:)), name: NSNotification.Name("sceneWillEnterForeground"), object: nil)
+        //포어그라운드에서 백그라운드로 갈때
+        NotificationCenter.default.addObserver(self, selector: #selector(stopTimer), name: NSNotification.Name("sceneDidEnterBackground"), object: nil)
+    }
+
+    @objc func addbackGroundTime(_ notification:Notification) {
+        
+        //노티피케이션센터를 통해 값을 받아옴
+        let time = notification.userInfo?["time"] as? Int ?? 0
+        print(time)
+        //받아온 시간을 60으로 나눈 몫은 분
+        timerTime -= time
+        remainEntireTimersTime -= time
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+        entireTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimerForEntireTimer)), userInfo: nil, repeats: true)
+        
+//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+//        entireTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerForEntireTimer), userInfo: nil, repeats: true)
+        
+    }
+    
+    @objc func stopTimer() {
+        entireTimer.invalidate()
+        timer.invalidate()
+    }
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         timerTime = itemsTime[setChapter] * 60
@@ -49,6 +80,8 @@ class TimerViewController: UIViewController {
         lblRemainTaskCount.text = String(remainTaskCount) + "개"
         lblRemainEntireTime.text = formatTimeForEntireTime()
         lblTime.text = formatTime()
+        
+        setNotifications()
         
         if setChapter == 0 && items.count != 1 {
             previousButton.isEnabled = false
@@ -99,6 +132,9 @@ class TimerViewController: UIViewController {
         }
                
     }
+    
+    
+    
     
     func startTimer(){
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
