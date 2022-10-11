@@ -47,11 +47,16 @@ class TimerViewController: UIViewController {
         lblRemainEntireTime.text = formatTimeForEntireTime()
         lblTime.text = formatTime()
         
-        if setChapter == 0{
+        if setChapter == 0 && items.count != 1 {
             previousButton.isEnabled = false
             previousButton.alpha = 0.5
             nextButton.isEnabled = true
             nextButton.alpha = 1.0
+        }else if items.count == 1 {
+            previousButton.isEnabled = false
+            previousButton.alpha = 0.5
+            nextButton.isEnabled = false
+            nextButton.alpha = 0.5
         }else if setChapter > 0 && setChapter < (items.count - 1) {
             previousButton.isEnabled = true
             previousButton.alpha = 1.0
@@ -100,12 +105,34 @@ class TimerViewController: UIViewController {
     @objc func updateTimer(){
         timerTime -= 1
         lblTime.text = formatTime()
-        if timerTime == 0 {
+        if remainEntireTimersTime == 0 {
+            print("완전 종료")
+            resetButton.isEnabled = false
+            resetButton.alpha = 0.5
+            timer.invalidate()
+            entireTimer.invalidate()
+            
+            setChapter = 0
+            timerTaskName = items[0]
+            remainTaskCount = 0
+    
+            timerTime = itemsTime[setChapter] * 60
+            remainEntireTimersTime = sum(numbers: itemsTime) * 60
+            
+            isTimerStarted = false
+            startButton.setTitle("시작", for: .normal)
+            startButton.setTitleColor(UIColor.blue, for: .normal)
+            viewDidLoad()
+            
+        }
+        
+        if remainEntireTimersTime != 0 && timerTime == 0 {
             timer.invalidate()
             entireTimer.invalidate()
             print("소리 나야 됨")
             setChapter += 1
-            startButton.setTitle("다음 할 일로", for: .normal)
+            startButton.setTitle("시작", for: .normal)
+            startButton.setTitleColor(UIColor.blue, for: .normal)
             viewDidLoad()
             
         }
