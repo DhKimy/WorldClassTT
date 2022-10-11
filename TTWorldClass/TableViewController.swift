@@ -25,6 +25,13 @@ class TableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
 
+    
+
+    
+    func sum(numbers: [Int]) -> Int {
+        return numbers.reduce(0, +)
+    }
+    
     // 뷰가 노출될 때마다 리스트의 데이터를 다시 불러오는 함수
     override func viewWillAppear(_ animated: Bool) {
         tvListView.reloadData()
