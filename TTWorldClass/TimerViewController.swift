@@ -121,11 +121,10 @@ class TimerViewController: UIViewController {
             startButton.setTitle("시작", for: .normal)
             startButton.setTitleColor(UIColor.blue, for: .normal)
             viewDidLoad()
-            
+            self.endingAlert()
         }
         
         if remainEntireTimersTime == 0 {
-            print("완전 종료")
             resetButton.isEnabled = false
             resetButton.alpha = 0.5
             timer.invalidate()
@@ -143,7 +142,7 @@ class TimerViewController: UIViewController {
             startButton.setTitleColor(UIColor.blue, for: .normal)
             viewDidLoad()
             self.playSound(title: "alarm_sound")
-            
+            self.finalEndingAlert()
             
         }
     }
@@ -214,6 +213,32 @@ class TimerViewController: UIViewController {
     
     func stopSound(){
         player.stop()
+    }
+    
+    func endingAlert(){
+        
+        let alert = UIAlertController(title : "완료!", message:"축하합니다. 이번 할 일을 모두 끝냈습니다.", preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "알람 소리 끄기", style: .default) {
+            (action) in
+            self.stopSound()
+        }
+        alert.addAction(okAction)
+        present(alert, animated: false, completion: nil)
+        
+        return
+    }
+    
+    func finalEndingAlert() {
+        let alert = UIAlertController(title : "완료!", message:"축하합니다. 모든 할 일을 모두 끝냈습니다.", preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "알람 소리 끄기", style: .default) {
+            (action) in
+            self.stopSound()
+        }
+        alert.addAction(okAction)
+        present(alert, animated: false, completion: nil)
+        
+        return
+        
     }
     /*
     // MARK: - Navigation

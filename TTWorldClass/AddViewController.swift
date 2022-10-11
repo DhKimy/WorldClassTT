@@ -33,8 +33,8 @@ class AddViewController: UIViewController, SendDelegate {
             
             return
         }else if sum(numbers: itemsTime) + Int(tfAddTime.text!)! > 100  {
-            var nowSum = sum(numbers: itemsTime)
-            var availSetTime = 100 - sum(numbers: itemsTime)
+            let nowSum = sum(numbers: itemsTime)
+            let availSetTime = 100 - sum(numbers: itemsTime)
             
             let alert = UIAlertController(title : "생성 불가", message:"이 할 일을 추가하면 총 시간이 100분이 넘습니다. 더 이상 생성할 수 없어요!\n" + "현재 생성한 시간 : \(nowSum)분\n" + "생성 가능한 시간 : \(availSetTime)분", preferredStyle: UIAlertController.Style.alert)
             let okAction = UIAlertAction(title: "돌아가기", style: .default) {
