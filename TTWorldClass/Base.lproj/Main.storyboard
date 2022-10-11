@@ -381,6 +381,27 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="148" translatesAutoresizingMaskIntoConstraints="NO" id="d5q-Ie-y0v">
+                                <rect key="frame" x="20" y="713.66666666666663" width="390" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzO-hh-Dde">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="이전 할 일으로"/>
+                                        <connections>
+                                            <action selector="btnPreviousWork:" destination="Bdu-eT-Tt9" eventType="touchUpInside" id="OA0-w6-fK3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujX-7p-Fep">
+                                        <rect key="frame" x="269" y="0.0" width="121" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="다음 할 일으로"/>
+                                        <connections>
+                                            <action selector="btnNextWork:" destination="Bdu-eT-Tt9" eventType="touchUpInside" id="tnJ-CZ-Ygc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1g9-TW-ZHf"/>
                         <color key="backgroundColor" red="0.69490329368732873" green="0.78439609148204703" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -388,7 +409,9 @@
                             <constraint firstItem="qPh-7k-Urz" firstAttribute="centerY" secondItem="N5Z-jP-JIL" secondAttribute="centerY" id="7LD-zK-bla"/>
                             <constraint firstItem="OJg-8P-IMb" firstAttribute="centerX" secondItem="N5Z-jP-JIL" secondAttribute="centerX" id="FRX-LY-YGW"/>
                             <constraint firstItem="Kfq-FP-iCi" firstAttribute="top" secondItem="1g9-TW-ZHf" secondAttribute="top" constant="30" id="Hbc-9E-e4h"/>
+                            <constraint firstItem="d5q-Ie-y0v" firstAttribute="centerX" secondItem="N5Z-jP-JIL" secondAttribute="centerX" id="Kjh-63-FhS"/>
                             <constraint firstItem="OJg-8P-IMb" firstAttribute="centerX" secondItem="N5Z-jP-JIL" secondAttribute="centerX" id="Km2-7R-clZ"/>
+                            <constraint firstItem="NrI-cf-Vrr" firstAttribute="top" secondItem="d5q-Ie-y0v" secondAttribute="bottom" constant="30" id="Lfz-D2-thp"/>
                             <constraint firstItem="nKn-Ng-pSM" firstAttribute="centerX" secondItem="N5Z-jP-JIL" secondAttribute="centerX" id="bVr-Hl-UrU"/>
                             <constraint firstItem="OJg-8P-IMb" firstAttribute="top" secondItem="nKn-Ng-pSM" secondAttribute="bottom" constant="20" id="cN0-EA-xw3"/>
                             <constraint firstItem="qPh-7k-Urz" firstAttribute="top" secondItem="dmm-1E-pkc" secondAttribute="bottom" constant="15" id="dQ6-LJ-lmG"/>
@@ -409,6 +432,8 @@
                         <outlet property="lblRemainTaskCount" destination="JCq-PA-UI0" id="v22-cf-CiI"/>
                         <outlet property="lblTaskName" destination="OTd-Br-Hrt" id="u8R-fd-FLw"/>
                         <outlet property="lblTime" destination="qPh-7k-Urz" id="Y4w-UD-GWv"/>
+                        <outlet property="nextButton" destination="ujX-7p-Fep" id="ZQb-eW-YCg"/>
+                        <outlet property="previousButton" destination="vzO-hh-Dde" id="Ddu-TW-GFH"/>
                         <outlet property="resetButton" destination="xoF-Ev-khN" id="8Vd-dO-tA7"/>
                         <outlet property="startButton" destination="UnY-e0-Upk" id="yTe-Fq-Frq"/>
                     </connections>

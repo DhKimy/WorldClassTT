@@ -16,9 +16,13 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var lblTime: UILabel!
     
     // 버튼 클릭 시 바뀌는 효과를 위한 아웃렛 처리
+    
+    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
+        
     var timer = Timer()
     var entireTimer = Timer()
     var isTimerStarted = false
@@ -42,6 +46,23 @@ class TimerViewController: UIViewController {
         lblRemainTaskCount.text = String(remainTaskCount) + "개"
         lblRemainEntireTime.text = formatTimeForEntireTime()
         lblTime.text = formatTime()
+        
+        if setChapter == 0{
+            previousButton.isEnabled = false
+            previousButton.alpha = 0.5
+            nextButton.isEnabled = true
+            nextButton.alpha = 1.0
+        }else if setChapter > 0 && setChapter < (items.count - 1) {
+            previousButton.isEnabled = true
+            previousButton.alpha = 1.0
+            nextButton.isEnabled = true
+            nextButton.alpha = 1.0
+        } else {
+            previousButton.isEnabled = true
+            previousButton.alpha = 1.0
+            nextButton.isEnabled = false
+            nextButton.alpha = 0.5
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -123,13 +144,35 @@ class TimerViewController: UIViewController {
         resetButton.alpha = 0.5
         timer.invalidate()
         timerTime = itemsTime[setChapter] * 60
+        entireTimer.invalidate()
+        remainEntireTimersTime = sum(numbers: itemsTime) * 60
+        setChapter = 0
+        timerTaskName = items[0]
+        remainTaskCount = 0
         isTimerStarted = false
-        lblTime.text = formatTime()
         startButton.setTitle("시작", for: .normal)
         startButton.setTitleColor(UIColor.blue, for: .normal)
+        viewDidLoad()
     }
 
+    @IBAction func btnPreviousWork(_ sender: Any) {
+        setChapter -= 1
+        timer.invalidate()
+        entireTimer.invalidate()
+        startButton.setTitle("시작", for: .normal)
+        startButton.setTitleColor(UIColor.blue, for: .normal)
+        viewDidLoad()
+    }
     
+    @IBAction func btnNextWork(_ sender: Any) {
+        setChapter += 1
+        timer.invalidate()
+        entireTimer.invalidate()
+        startButton.setTitle("시작", for: .normal)
+        startButton.setTitleColor(UIColor.blue, for: .normal)
+        viewDidLoad()
+        
+    }
     /*
     // MARK: - Navigation
 

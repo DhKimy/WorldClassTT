@@ -10,7 +10,7 @@ import UIKit
 // 앱 시작 시 기본적으로 나타낼 목록
 var items = ["1번", "2번", "3번"]
 var itemsImageFile = ["cart", "clock", "pencil"]
-var itemsTime: [Int] = [1, 2, 3]
+var itemsTime: [Int] = [1, 1, 1]
 
 class TableViewController: UITableViewController {
     
