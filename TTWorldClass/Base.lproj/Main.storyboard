@@ -723,40 +723,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLH-2k-DaJ">
-                                <rect key="frame" x="54" y="355" width="320" height="216"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="60" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLH-2k-DaJ">
+                                <rect key="frame" x="55" y="355" width="320" height="216"/>
+                                <color key="backgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <locale key="locale" localeIdentifier="ko_KR"/>
                                 <connections>
                                     <action selector="changeDatePicker:" destination="xAe-tg-KKg" eventType="valueChanged" id="CzS-El-vYM"/>
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEK-cb-C9s">
-                                <rect key="frame" x="161.66666666666666" y="237" width="104.99999999999997" height="33"/>
+                                <rect key="frame" x="90" y="210" width="250" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="06s-LE-Ncx"/>
+                                    <constraint firstAttribute="height" constant="60" id="B3S-Q0-bHy"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="설정 시간">
                                         <attributes>
+                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="28" name="NotoSansKR-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yr2-X6-UdT">
-                                <rect key="frame" x="150" y="631" width="128" height="37"/>
+                                <rect key="frame" x="159.33333333333334" y="631" width="111.66666666666666" height="32.666666666666629"/>
+                                <color key="backgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="시간 설정하기"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="시간 설정하기">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="NotoSansKR-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="btnTimeSet:" destination="xAe-tg-KKg" eventType="touchUpInside" id="ISC-sB-3MJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100분 이상은 설정할 수 없어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24V-5a-por">
-                                <rect key="frame" x="107.66666666666669" y="638" width="213" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.1025861391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24V-5a-por">
+                                <rect key="frame" x="108.66666666666669" y="638" width="213" height="20"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="100분 이상은 설정할 수 없어요!">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.0" blue="0.1025861391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="NotoSansKR-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3P-zn-VNQ">
-                                <rect key="frame" x="145" y="300" width="138" height="25"/>
+                                <rect key="frame" x="145" y="300" width="140" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="FrA-8n-nbD"/>
                                     <constraint firstAttribute="width" constant="140" id="HJU-5t-uqe"/>
@@ -764,6 +790,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="1분">
                                         <attributes>
+                                            <color key="NSColor" red="0.89411764705882346" green="0.090196078431372548" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="21" name="NotoSansKR-Medium"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -773,7 +800,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F9U-Af-yk4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="F9U-Af-yk4" firstAttribute="trailing" secondItem="a3P-zn-VNQ" secondAttribute="trailing" constant="145" id="1cQ-hR-Jog"/>
                             <constraint firstItem="a3P-zn-VNQ" firstAttribute="top" secondItem="wEK-cb-C9s" secondAttribute="bottom" constant="30" id="Bj8-vO-kWZ"/>
@@ -799,7 +826,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40P-N7-Tbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2399" y="1071"/>
+            <point key="canvasLocation" x="2398.5981308411215" y="1070.4103671706264"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uWr-pD-KTs">
