@@ -8,6 +8,8 @@
 import UIKit
 import AVFoundation
 
+var isTimerStarted = false
+
 class TimerViewController: UIViewController {
     
     // 본 화면 구성에서 바뀌는 변수 라벨
@@ -26,8 +28,6 @@ class TimerViewController: UIViewController {
         
     var timer = Timer()
     var entireTimer = Timer()
-    
-    var isTimerStarted = false
     
     var setChapter = 0
     
