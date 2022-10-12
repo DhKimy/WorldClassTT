@@ -26,8 +26,6 @@ class TableViewController: UITableViewController {
     }
 
     
-
-    
     func sum(numbers: [Int]) -> Int {
         return numbers.reduce(0, +)
     }
