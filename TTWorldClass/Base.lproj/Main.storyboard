@@ -17,18 +17,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="step1" translatesAutoresizingMaskIntoConstraints="NO" id="RVh-Y4-Gm3">
-                                <rect key="frame" x="0.0" y="103" width="430" height="347"/>
+                                <rect key="frame" x="0.0" y="103" width="430" height="395"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Lbw-iY-7KS" appends="YES" id="7b6-Y8-Sq8"/>
                                 </connections>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="qSM-ZZ-hrX">
-                                <rect key="frame" x="157" y="465" width="116" height="279"/>
+                                <rect key="frame" x="157" y="513" width="116" height="231"/>
                                 <color key="pageIndicatorTintColor" systemColor="separatorColor"/>
                                 <color key="currentPageIndicatorTintColor" systemColor="labelColor"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpD-59-cWd">
-                                <rect key="frame" x="173.66666666666663" y="779" width="82.999999999999972" height="35"/>
+                                <rect key="frame" x="173.66666666666666" y="779" width="82.999999999999972" height="35"/>
                                 <size key="titleShadowOffset" width="18" height="0.0"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="넘어가기">
@@ -313,7 +313,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="Kfq-FP-iCi">
-                                <rect key="frame" x="60.666666666666629" y="133" width="308.66666666666674" height="50"/>
+                                <rect key="frame" x="60.666666666666657" y="133" width="308.66666666666674" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3g-Aq-DOC">
                                         <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="50"/>
@@ -334,7 +334,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="nKn-Ng-pSM">
-                                <rect key="frame" x="60.333333333333371" y="198" width="309.66666666666663" height="50"/>
+                                <rect key="frame" x="60.333333333333343" y="198" width="309.66666666666663" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3I-zb-b81">
                                         <rect key="frame" x="0.0" y="0.0" width="123.66666666666667" height="50"/>
@@ -377,7 +377,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqW-NA-nrr">
-                                <rect key="frame" x="117.66666666666669" y="310" width="194.66666666666663" height="58.333333333333314"/>
+                                <rect key="frame" x="117.66666666666667" y="310" width="194.66666666666663" height="58.333333333333314"/>
                                 <attributedString key="attributedText">
                                     <fragment content="00:00:00">
                                         <attributes>
@@ -390,7 +390,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPh-7k-Urz">
-                                <rect key="frame" x="117.66666666666669" y="447.33333333333331" width="194.66666666666663" height="58.333333333333314"/>
+                                <rect key="frame" x="117.66666666666667" y="447.33333333333331" width="194.66666666666663" height="58.333333333333314"/>
                                 <attributedString key="attributedText">
                                     <fragment content="00:00:00">
                                         <attributes>
@@ -564,7 +564,7 @@
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEK-cb-C9s">
-                                <rect key="frame" x="162.66666666666663" y="240" width="104.99999999999997" height="33"/>
+                                <rect key="frame" x="162.66666666666666" y="240" width="104.99999999999997" height="33"/>
                                 <attributedString key="attributedText">
                                     <fragment content="설정 시간">
                                         <attributes>
@@ -575,7 +575,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yr2-X6-UdT">
-                                <rect key="frame" x="156.66666666666663" y="634" width="116.99999999999997" height="35"/>
+                                <rect key="frame" x="156.66666666666666" y="634" width="116.99999999999997" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="시간 설정하기"/>
                                 <connections>
@@ -655,7 +655,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="step1" width="532" height="347"/>
+        <image name="step1" width="720" height="395"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
