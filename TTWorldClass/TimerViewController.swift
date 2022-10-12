@@ -9,8 +9,6 @@ import UIKit
 import AVFoundation
 
 var isTimerStarted = false
-var remainEntireTimersTime = 0
-var timerTime = 0
 
 class TimerViewController: UIViewController {
     
@@ -36,7 +34,8 @@ class TimerViewController: UIViewController {
     var timerTaskName = ""
     var remainTaskCount = 0
     
-
+    var remainEntireTimersTime = 0
+    var timerTime = 0
     
     var player: AVAudioPlayer!
     
@@ -49,18 +48,15 @@ class TimerViewController: UIViewController {
 
     @objc func addbackGroundTime(_ notification:Notification) {
         
-        //노티피케이션센터를 통해 값을 받아옴
+        // notificationCenter에서 값을 받아옴
         let time = notification.userInfo?["time"] as? Int ?? 0
-        print(time)
-        //받아온 시간을 60으로 나눈 몫은 분
+        
+        // 받아온 시간 : 초단위로 받아옴. 그대로 빼준다.
         timerTime -= time
         remainEntireTimersTime -= time
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
         entireTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimerForEntireTimer)), userInfo: nil, repeats: true)
-        
-//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-//        entireTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimerForEntireTimer), userInfo: nil, repeats: true)
-        
+                
     }
     
     @objc func stopTimer() {
@@ -68,8 +64,6 @@ class TimerViewController: UIViewController {
         timer.invalidate()
     }
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         timerTime = itemsTime[setChapter] * 60
