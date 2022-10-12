@@ -57,6 +57,12 @@ class AddViewController: UIViewController, SendDelegate {
         _ = navigationController?.popViewController(animated: true)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        
+        self.view.endEditing(true)
+        
+    }
+    
     func labelRadius(){
         workTimeLabel.clipsToBounds = true
         workTitleLabel.clipsToBounds = true

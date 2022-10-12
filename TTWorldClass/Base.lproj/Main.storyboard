@@ -434,7 +434,15 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="170" id="ZYH-hl-Nlh"/>
                                         </constraints>
-                                        <attributedString key="attributedText"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="  ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.96078431372549022" green="0.34509803921568627" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="18" name="NotoSansKR-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -468,7 +476,15 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="170" id="IVY-YA-fYq"/>
                                         </constraints>
-                                        <attributedString key="attributedText"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="  ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.96078431372549022" green="0.34509803921568627" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="18" name="NotoSansKR-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
