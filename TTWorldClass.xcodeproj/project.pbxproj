@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94399FD28F63B500040C798 /* step1.png in Resources */ = {isa = PBXBuildFile; fileRef = C94399FC28F63B500040C798 /* step1.png */; };
+		C94399FF28F63B5D0040C798 /*  step2.png in Resources */ = {isa = PBXBuildFile; fileRef = C94399FE28F63B5D0040C798 /*  step2.png */; };
+		C9439A0128F63B680040C798 /* step3.png in Resources */ = {isa = PBXBuildFile; fileRef = C9439A0028F63B680040C798 /* step3.png */; };
+		C9439A0328F64B8D0040C798 /* Logo_black.png in Resources */ = {isa = PBXBuildFile; fileRef = C9439A0228F64B8D0040C798 /* Logo_black.png */; };
 		C95CB32428F5551000E2AE6A /* Balynt - Memory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C95CB32328F5551000E2AE6A /* Balynt - Memory.mp3 */; };
 		C9CA56E128F3E28A002241B3 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CA56E028F3E28A002241B3 /* DatePickerViewController.swift */; };
 		C9D8B92628F2C0430039D7CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D8B92528F2C0430039D7CC /* AppDelegate.swift */; };
@@ -15,10 +19,6 @@
 		C9D8B92D28F2C0430039D7CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9D8B92B28F2C0430039D7CC /* Main.storyboard */; };
 		C9D8B92F28F2C0450039D7CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9D8B92E28F2C0450039D7CC /* Assets.xcassets */; };
 		C9D8B93228F2C0450039D7CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9D8B93028F2C0450039D7CC /* LaunchScreen.storyboard */; };
-		C9D8B93A28F2C1090039D7CC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D8B93928F2C1090039D7CC /* logo.png */; };
-		C9D8B93E28F2C9810039D7CC /* step2.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D8B93B28F2C9810039D7CC /* step2.png */; };
-		C9D8B93F28F2C9810039D7CC /* step3.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D8B93C28F2C9810039D7CC /* step3.png */; };
-		C9D8B94028F2C9810039D7CC /* step1.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D8B93D28F2C9810039D7CC /* step1.png */; };
 		C9ED7A4828F2D5840052B653 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED7A4628F2D5840052B653 /* TableViewController.swift */; };
 		C9ED7A4928F2D5840052B653 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED7A4728F2D5840052B653 /* DetailViewController.swift */; };
 		C9ED7A4D28F2D58A0052B653 /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = C9ED7A4A28F2D58A0052B653 /* pencil.png */; };
@@ -29,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C94399FC28F63B500040C798 /* step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step1.png; sourceTree = "<group>"; };
+		C94399FE28F63B5D0040C798 /*  step2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = " step2.png"; sourceTree = "<group>"; };
+		C9439A0028F63B680040C798 /* step3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step3.png; sourceTree = "<group>"; };
+		C9439A0228F64B8D0040C798 /* Logo_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_black.png; sourceTree = "<group>"; };
 		C95CB32328F5551000E2AE6A /* Balynt - Memory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Balynt - Memory.mp3"; sourceTree = "<group>"; };
 		C9CA56E028F3E28A002241B3 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		C9D8B92228F2C0430039D7CC /* TTWorldClass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTWorldClass.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,10 +43,6 @@
 		C9D8B92E28F2C0450039D7CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9D8B93128F2C0450039D7CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9D8B93328F2C0450039D7CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9D8B93928F2C1090039D7CC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		C9D8B93B28F2C9810039D7CC /* step2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step2.png; sourceTree = "<group>"; };
-		C9D8B93C28F2C9810039D7CC /* step3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step3.png; sourceTree = "<group>"; };
-		C9D8B93D28F2C9810039D7CC /* step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step1.png; sourceTree = "<group>"; };
 		C9ED7A4628F2D5840052B653 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C9ED7A4728F2D5840052B653 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C9ED7A4A28F2D58A0052B653 /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
@@ -84,10 +84,9 @@
 			children = (
 				C9D8B92528F2C0430039D7CC /* AppDelegate.swift */,
 				C9D8B92728F2C0430039D7CC /* SceneDelegate.swift */,
-				C9D8B93928F2C1090039D7CC /* logo.png */,
 				C9D8B92928F2C0430039D7CC /* ViewController.swift */,
-				C9D8B93D28F2C9810039D7CC /* step1.png */,
 				C9ED7A4C28F2D58A0052B653 /* cart.png */,
+				C9439A0228F64B8D0040C798 /* Logo_black.png */,
 				C9ED7A4B28F2D58A0052B653 /* clock.png */,
 				C9ED7A4A28F2D58A0052B653 /* pencil.png */,
 				C95CB32328F5551000E2AE6A /* Balynt - Memory.mp3 */,
@@ -96,8 +95,9 @@
 				C9ED7A4728F2D5840052B653 /* DetailViewController.swift */,
 				C9ED7A4628F2D5840052B653 /* TableViewController.swift */,
 				C9CA56E028F3E28A002241B3 /* DatePickerViewController.swift */,
-				C9D8B93B28F2C9810039D7CC /* step2.png */,
-				C9D8B93C28F2C9810039D7CC /* step3.png */,
+				C94399FE28F63B5D0040C798 /*  step2.png */,
+				C9439A0028F63B680040C798 /* step3.png */,
+				C94399FC28F63B500040C798 /* step1.png */,
 				C9D8B92B28F2C0430039D7CC /* Main.storyboard */,
 				C9D8B92E28F2C0450039D7CC /* Assets.xcassets */,
 				C9D8B93028F2C0450039D7CC /* LaunchScreen.storyboard */,
@@ -164,17 +164,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94399FF28F63B5D0040C798 /*  step2.png in Resources */,
+				C9439A0328F64B8D0040C798 /* Logo_black.png in Resources */,
 				C9ED7A4E28F2D58A0052B653 /* clock.png in Resources */,
+				C9439A0128F63B680040C798 /* step3.png in Resources */,
 				C9ED7A4F28F2D58A0052B653 /* cart.png in Resources */,
 				C9ED7A4D28F2D58A0052B653 /* pencil.png in Resources */,
-				C9D8B93A28F2C1090039D7CC /* logo.png in Resources */,
-				C9D8B93E28F2C9810039D7CC /* step2.png in Resources */,
+				C94399FD28F63B500040C798 /* step1.png in Resources */,
 				C9D8B93228F2C0450039D7CC /* LaunchScreen.storyboard in Resources */,
 				C9D8B92F28F2C0450039D7CC /* Assets.xcassets in Resources */,
 				C95CB32428F5551000E2AE6A /* Balynt - Memory.mp3 in Resources */,
-				C9D8B93F28F2C9810039D7CC /* step3.png in Resources */,
 				C9D8B92D28F2C0430039D7CC /* Main.storyboard in Resources */,
-				C9D8B94028F2C9810039D7CC /* step1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
