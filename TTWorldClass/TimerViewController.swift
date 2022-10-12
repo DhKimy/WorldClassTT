@@ -66,6 +66,19 @@ class TimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setNotifications()
+        
+        labelContentSet()
+        
+        prevNextButtonColorSet()
+        
+        
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    func labelContentSet(){
         timerTime = itemsTime[setChapter] * 60
         timerTaskName = items[setChapter]
         remainTaskCount = items.count - (setChapter + 1)
@@ -75,9 +88,10 @@ class TimerViewController: UIViewController {
         lblRemainTaskCount.text = String(remainTaskCount) + "개"
         lblRemainEntireTime.text = formatTimeForEntireTime()
         lblTime.text = formatTime()
-        
-        setNotifications()
-        
+    }
+    
+    
+    func prevNextButtonColorSet() {
         if setChapter == 0 && items.count != 1 {
             previousButton.isEnabled = false
             previousButton.alpha = 0.5
@@ -99,9 +113,8 @@ class TimerViewController: UIViewController {
             nextButton.isEnabled = false
             nextButton.alpha = 0.5
         }
-        
-        // Do any additional setup after loading the view.
     }
+    
     
     func sum(numbers: [Int]) -> Int {
         return numbers.reduce(0, +)
