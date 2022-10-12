@@ -72,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="-14" y="-677"/>
         </scene>
-        <!--View Controller-->
+        <!--안녕하세요!-->
         <scene sceneID="aLE-lO-Npf">
             <objects>
                 <viewController id="ISo-7P-3Vg" sceneMemberID="viewController">
@@ -80,29 +80,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XS2-vT-T5e">
-                                <rect key="frame" x="130" y="579" width="170" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="할 일 설정하러 가기"/>
-                                <connections>
-                                    <segue destination="Iuy-Zc-O9T" kind="show" id="UXP-80-XgK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3W-ai-Ajf">
-                                <rect key="frame" x="151" y="300" width="128" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="튜토리얼 보기"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="aQt-zX-hh8"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도전 100분에 오신 것을 환영합니다!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvp-gO-XrJ">
+                                <rect key="frame" x="93.666666666666686" y="133" width="243" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="gUg-A3-7eN">
+                                <rect key="frame" x="130" y="414.66666666666669" width="170" height="103.00000000000006"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3W-ai-Ajf">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="8cX-gL-333"/>
+                                            <constraint firstAttribute="width" constant="170" id="e8L-6T-ZHU"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="튜토리얼 보기">
+                                            <color key="baseBackgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="aQt-zX-hh8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XS2-vT-T5e">
+                                        <rect key="frame" x="0.0" y="68" width="170" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="TW4-o7-dxc"/>
+                                            <constraint firstAttribute="width" constant="170" id="k8q-zw-g2l"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="할 일 설정하러 가기">
+                                            <color key="baseBackgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="Iuy-Zc-O9T" kind="show" id="UXP-80-XgK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qmx-az-tac"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.96078431372549022" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gUg-A3-7eN" firstAttribute="centerY" secondItem="bJ6-3L-num" secondAttribute="centerY" id="7Sb-Fh-8SO"/>
+                            <constraint firstItem="Qvp-gO-XrJ" firstAttribute="top" secondItem="qmx-az-tac" secondAttribute="top" constant="30" id="80X-j5-g1v"/>
+                            <constraint firstItem="gUg-A3-7eN" firstAttribute="centerX" secondItem="bJ6-3L-num" secondAttribute="centerX" id="Gt0-oL-M4B"/>
+                            <constraint firstItem="Qvp-gO-XrJ" firstAttribute="centerX" secondItem="bJ6-3L-num" secondAttribute="centerX" id="Ogg-sA-wHO"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="AKd-aT-ue6"/>
+                    <navigationItem key="navigationItem" title="안녕하세요!" id="AKd-aT-ue6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pac-Cb-5CB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,11 +145,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <viewLayoutGuide key="contentLayoutGuide" id="4Xg-SJ-mXS"/>
                         <viewLayoutGuide key="frameLayoutGuide" id="FEI-H4-U5Q" propertyAccessControl="none"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bd-9w-ZxN">
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bd-9w-ZxN">
                             <rect key="frame" x="0.0" y="134.33333015441895" width="430" height="48"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="tinted">
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Button">
                                 <attributedString key="attributedTitle">
                                     <fragment content="100분 시작하기">
                                         <attributes>
@@ -130,8 +157,18 @@
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <color key="baseForegroundColor" systemColor="systemPinkColor"/>
-                                <color key="baseBackgroundColor" red="1" green="0.0" blue="0.03742904276491732" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" red="0.99883990950000001" green="0.97259386130000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <buttonConfiguration key="configuration" style="filled">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="100분 시작하기">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="NotoSansKR-Black"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="baseForegroundColor" red="0.99883990950000001" green="0.97259386130000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="baseBackgroundColor" red="0.89411764709999997" green="0.090196078430000007" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </buttonConfiguration>
                             <connections>
                                 <segue destination="Bdu-eT-Tt9" kind="show" id="NrP-xY-4vv"/>
@@ -251,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zgh-2e-RMB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3188" y="874"/>
+            <point key="canvasLocation" x="3169" y="1071"/>
         </scene>
         <!--Timer View Controller-->
         <scene sceneID="7CA-Qb-27I">
@@ -452,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWu-Kh-7yR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3662.3188405797105" y="81.026785714285708"/>
+            <point key="canvasLocation" x="2849" y="138"/>
         </scene>
         <!--할 일 추가하기-->
         <scene sceneID="X5i-R4-Evk">
@@ -556,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eic-sb-Yt4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1372" y="1071"/>
+            <point key="canvasLocation" x="1707" y="1071"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="DeW-jj-hzP">
@@ -642,7 +679,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40P-N7-Tbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2105.5813953488373" y="1069.9570815450645"/>
+            <point key="canvasLocation" x="2399" y="1071"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uWr-pD-KTs">
@@ -683,9 +720,6 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
