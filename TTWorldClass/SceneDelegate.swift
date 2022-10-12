@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
+    var player: AVAudioPlayer!
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -56,15 +59,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("func sceneDidEnterBackground 내부")
             NotificationCenter.default.post(name: NSNotification.Name("sceneDidEnterBackground"), object: nil)
             UserDefaults.standard.setValue(Date(), forKey: "sceneDidEnterBackground")
-//            
-//            guard let start = UserDefaults.standard.object(forKey: "sceneDidEnterBackground") as? Date else {return}
-//            let interval = Int(Date().timeIntervalSince(start))
-//            
-//            if timerTime - interval == 0 {
-                
-            }
             
         }
+    }
+    
+    func playSound(title: String?){
+        let url = Bundle.main.url(forResource: "Balynt - Memory", withExtension: "mp3")
+        player = try!AVAudioPlayer(contentsOf: url!)
+        player.play()
     }
 
 

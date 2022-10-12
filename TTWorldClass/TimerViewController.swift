@@ -9,6 +9,8 @@ import UIKit
 import AVFoundation
 
 var isTimerStarted = false
+var remainEntireTimersTime = 0
+var timerTime = 0
 
 class TimerViewController: UIViewController {
     
@@ -34,8 +36,7 @@ class TimerViewController: UIViewController {
     var timerTaskName = ""
     var remainTaskCount = 0
     
-    var remainEntireTimersTime = 0
-    var timerTime = 0
+
     
     var player: AVAudioPlayer!
     
@@ -147,7 +148,7 @@ class TimerViewController: UIViewController {
         remainEntireTimersTime -= 1
         lblRemainEntireTime.text = formatTimeForEntireTime()
         
-        if remainEntireTimersTime != 0 && timerTime == 0 {
+        if remainEntireTimersTime != 0 && timerTime <= 0 {
             timer.invalidate()
             entireTimer.invalidate()
             self.playSound(title: "alarm_sound")
@@ -160,7 +161,7 @@ class TimerViewController: UIViewController {
             self.endingAlert()
         }
         
-        if remainEntireTimersTime == 0 {
+        if remainEntireTimersTime <= 0 {
             resetButton.isEnabled = false
             resetButton.alpha = 0.5
             timer.invalidate()
