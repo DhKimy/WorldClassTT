@@ -115,14 +115,12 @@ class TimerViewController: UIViewController {
             startTimer()
             isTimerStarted = true
             startButton.setTitle("일시정지", for: .normal)
-            startButton.setTitleColor(UIColor.orange, for: .normal)
             
         }else{
             timer.invalidate()
             entireTimer.invalidate()
             isTimerStarted = false
             startButton.setTitle("계속하기", for: .normal)
-            startButton.setTitleColor(UIColor.green, for: .normal)
             
         }
                
@@ -150,7 +148,6 @@ class TimerViewController: UIViewController {
             
             isTimerStarted = false
             startButton.setTitle("시작", for: .normal)
-            startButton.setTitleColor(UIColor.blue, for: .normal)
             viewDidLoad()
             self.endingAlert()
         }
@@ -170,7 +167,6 @@ class TimerViewController: UIViewController {
             
             isTimerStarted = false
             startButton.setTitle("시작", for: .normal)
-            startButton.setTitleColor(UIColor.blue, for: .normal)
             viewDidLoad()
             self.playSound(title: "alarm_sound")
             self.finalEndingAlert()
@@ -211,7 +207,6 @@ class TimerViewController: UIViewController {
         remainTaskCount = 0
         isTimerStarted = false
         startButton.setTitle("시작", for: .normal)
-        startButton.setTitleColor(UIColor.blue, for: .normal)
         viewDidLoad()
     }
 
@@ -221,7 +216,6 @@ class TimerViewController: UIViewController {
         entireTimer.invalidate()
         isTimerStarted = false
         startButton.setTitle("시작", for: .normal)
-        startButton.setTitleColor(UIColor.blue, for: .normal)
         viewDidLoad()
     }
     
@@ -231,7 +225,6 @@ class TimerViewController: UIViewController {
         entireTimer.invalidate()
         isTimerStarted = false
         startButton.setTitle("시작", for: .normal)
-        startButton.setTitleColor(UIColor.blue, for: .normal)
         viewDidLoad()
         
     }

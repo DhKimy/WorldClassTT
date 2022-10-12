@@ -17,11 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = false
 
         let appearance = UINavigationBarAppearance()
+//        let attrs = [
+//            NSAttributedString.Key.font: UIFont(name: "Noto Sans KR", size: 20)!
+//        ]
+        
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 255/255, green: 245/255, blue: 145/255, alpha: 1.0)
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        
+//        UINavigationBar.appearance().titleTextAttributes = attrs
         var navigationBarAppearace = UINavigationBar.appearance()
 
         navigationBarAppearace.tintColor = UIColor.black
