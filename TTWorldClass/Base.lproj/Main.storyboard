@@ -139,14 +139,14 @@
         <scene sceneID="WTg-mZ-h3C">
             <objects>
                 <tableViewController id="Iuy-Zc-O9T" customClass="TableViewController" customModule="TTWorldClass" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="D0D-vt-ZLR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="74" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="D0D-vt-ZLR">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="contentLayoutGuide" id="4Xg-SJ-mXS"/>
                         <viewLayoutGuide key="frameLayoutGuide" id="FEI-H4-U5Q" propertyAccessControl="none"/>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bd-9w-ZxN">
-                            <rect key="frame" x="0.0" y="134.33333015441895" width="430" height="48"/>
+                            <rect key="frame" x="0.0" y="153.33333015441895" width="430" height="48"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Button">
@@ -175,17 +175,32 @@
                             </connections>
                         </button>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="myCell" rowHeight="55" id="GUS-Fk-u9Y">
-                                <rect key="frame" x="20" y="61.333332061767578" width="390" height="55"/>
+                            <tableViewCell clipsSubviews="YES" alpha="0.40000000000000002" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" focusStyle="custom" textLabel="oNV-bN-drf" detailTextLabel="BUZ-ou-QxE" rowHeight="74" style="IBUITableViewCellStyleValue1" id="GUS-Fk-u9Y">
+                                <rect key="frame" x="20" y="61.333332061767578" width="390" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GUS-Fk-u9Y" id="cUW-8j-KPU">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="55"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oNV-bN-drf">
+                                            <rect key="frame" x="19.999999999999996" y="26" width="36.666666666666664" height="23"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BUZ-ou-QxE">
+                                            <rect key="frame" x="321.66666666666669" y="26" width="48.333333333333336" height="23"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <segue destination="afQ-Cg-7GE" kind="show" identifier="sgDetail" id="oe4-JD-VbI"/>
                                 </connections>
@@ -219,7 +234,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJf-hb-ufX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1749.5327102803737" y="138.66090712742982"/>
+            <point key="canvasLocation" x="1748.3720930232557" y="138.41201716738198"/>
         </scene>
         <!--할 일 목록 보기-->
         <scene sceneID="lVC-cm-2T7">

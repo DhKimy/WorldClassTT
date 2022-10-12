@@ -53,7 +53,25 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
 
+        cell.textLabel?.textColor = .white
+        cell.detailTextLabel?.textColor = .white
+        
         cell.textLabel?.text = items[(indexPath as NSIndexPath).row]
+        cell.detailTextLabel?.text = {
+            var tempTime = itemsTime[(indexPath as NSIndexPath).row]
+                    
+            if tempTime < 60 {
+                return "\(tempTime):00"
+            }else {
+                var hours = tempTime / 60
+                var minutes = tempTime % 60
+                if minutes < 10 {
+                    return "\(hours):0\(minutes):00"
+                }
+                return "\(hours):\(minutes):00"
+            }
+        }()
+        
         cell.imageView?.image = UIImage(named: itemsImageFile[(indexPath as NSIndexPath).row])
         
         return cell
