@@ -10,13 +10,15 @@ import UIKit
 class AddViewController: UIViewController, SendDelegate {
 
     
-
+    @IBOutlet weak var workTitleLabel: UILabel!
+    @IBOutlet weak var workTimeLabel: UILabel!
+    @IBOutlet weak var workEmoLabel: UILabel!
+    
     @IBOutlet var tfAddItem: UITextField!
     
     @IBOutlet weak var tfAddTime: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -51,8 +53,19 @@ class AddViewController: UIViewController, SendDelegate {
         itemsTime.append(Int(tfAddTime.text!)!)
         tfAddItem.text = ""
         tfAddTime.text = ""
+        labelRadius()
         _ = navigationController?.popViewController(animated: true)
     }
+    
+    func labelRadius(){
+        workTimeLabel.clipsToBounds = true
+        workTitleLabel.clipsToBounds = true
+        workEmoLabel.clipsToBounds = true
+        workTimeLabel.layer.cornerRadius = 60
+        workTitleLabel.layer.cornerRadius = 60
+        workEmoLabel.layer.cornerRadius = 60
+    }
+    
     
     func sum(numbers: [Int]) -> Int {
         return numbers.reduce(0, +)
