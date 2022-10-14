@@ -7,14 +7,12 @@
 
 import UIKit
 
-protocol SendDelegate {
-    func didMessageSendDone(_ controller: DatePickerViewController, message: String)
+protocol MyProtocol {
+    func protocolDate(dataSent: String)
 }
 
 class DatePickerViewController: UIViewController {
 
-    
-    
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var lblTimeSet: UILabel!
     
@@ -22,7 +20,8 @@ class DatePickerViewController: UIViewController {
     @IBOutlet weak var btnTimeSet: UIButton!
     
     var timeInt : Int = 1
-    var delegate : SendDelegate?
+   
+    var delegate : MyProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +47,17 @@ class DatePickerViewController: UIViewController {
     }
     
     
-    @IBAction func btnTimeSet(_ sender: UIButton) {
-        if delegate != nil{
-            delegate?.didMessageSendDone(self, message: String(timeInt))
-        }
-        _ = navigationController?.popViewController(animated: true)
+    @IBAction func btnTimeSet(_ sender: Any) {
+//        if delegate != nil{
+//            delegate?.didMessageSendDone(self, message: String(timeInt))
+//        }
+//        _ = navigationController?.popViewController(animated: true)
+        let stringTimeInt:String = String(timeInt)
+        delegate?.protocolDate(dataSent: stringTimeInt)
+        print("데이터 전달됨. 데이터 : \(stringTimeInt)")
+        self.dismiss(animated: true, completion: nil)
     }
+    
     
     
     /*

@@ -7,16 +7,22 @@
 
 import UIKit
 
-class AddViewController: UIViewController, SendDelegate {
-
+class AddViewController: UIViewController, MyProtocol{
+    func protocolDate(dataSent: String) {
+        self.tfAddTime.text = dataSent
+        print("데이터 세팅함. 데이터 : \(dataSent)")
+        
+    }
+        
     
     @IBOutlet weak var workTitleLabel: UILabel!
     @IBOutlet weak var workTimeLabel: UILabel!
     @IBOutlet weak var workEmoLabel: UILabel!
     
     @IBOutlet var tfAddItem: UITextField!
-    
     @IBOutlet weak var tfAddTime: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -77,14 +83,45 @@ class AddViewController: UIViewController, SendDelegate {
         return numbers.reduce(0, +)
     }
     
+    
     func didMessageSendDone(_ controller: DatePickerViewController, message: String) {
         tfAddTime.text = message
     }
     
-    override func prepare(for segue:UIStoryboardSegue, sender: Any?) {
-        let datePickerViewController = segue.destination as! DatePickerViewController
-        datePickerViewController.delegate = self
+    func didEmoticonSendDone(_ controller: EmoticonSelectViewController, message: String) {
+        print("메시지 전송")
     }
+    
+    @IBAction func fourth(_ sender: Any) {
+        guard let vc = storyboard?.instantiateViewController(identifier: "pickerViewController") as? DatePickerViewController else{
+            return
+        }
+        vc.delegate = self
+        
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
+    
+    override func prepare(for segue:UIStoryboardSegue, sender: Any?) {
+        print("prepare 메서드 내부")
+        if segue.identifier == "timeSet" {
+            guard let viewController: DatePickerViewController = segue.destination as? DatePickerViewController else {return}
+            viewController.delegate = self
+        }
+    }
+//
+//    func timePrepare(for segue:UIStoryboardSegue, sender: Any?) {
+//
+//        let datePickerViewController = segue.destination as! DatePickerViewController
+//        print("prepare 내부 : \(datePickerViewController) \n 끝")
+//        datePickerViewController.delegate = self
+//    }
+//
+//
+//    func emoticonPrepare(for segue:UIStoryboardSegue, sender: Any?) {
+//        let emoticonSelectViewController = segue.destination as! EmoticonSelectViewController
+//        emoticonSelectViewController.delegate = self
+//    }
     
     /*
     // MARK: - Navigation
