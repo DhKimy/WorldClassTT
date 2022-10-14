@@ -8,7 +8,8 @@
 import UIKit
 
 protocol MyProtocol {
-    func protocolDate(dataSent: String)
+    func timeSetDelegate(dataSent: String)
+    func emoSetDelegate(dataSent: String)
 }
 
 class DatePickerViewController: UIViewController {
@@ -48,12 +49,9 @@ class DatePickerViewController: UIViewController {
     
     
     @IBAction func btnTimeSet(_ sender: Any) {
-//        if delegate != nil{
-//            delegate?.didMessageSendDone(self, message: String(timeInt))
-//        }
-//        _ = navigationController?.popViewController(animated: true)
+
         let stringTimeInt:String = String(timeInt)
-        delegate?.protocolDate(dataSent: stringTimeInt)
+        delegate?.timeSetDelegate(dataSent: stringTimeInt)
         print("데이터 전달됨. 데이터 : \(stringTimeInt)")
         self.dismiss(animated: true, completion: nil)
     }

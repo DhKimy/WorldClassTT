@@ -8,10 +8,15 @@
 import UIKit
 
 class AddViewController: UIViewController, MyProtocol{
-    func protocolDate(dataSent: String) {
+   
+    func timeSetDelegate(dataSent: String) {
+        
         self.tfAddTime.text = dataSent
         print("데이터 세팅함. 데이터 : \(dataSent)")
         
+    }
+    func emoSetDelegate(dataSent: String){
+        self.tfTestAddEmo.text = dataSent
     }
         
     
@@ -22,6 +27,7 @@ class AddViewController: UIViewController, MyProtocol{
     @IBOutlet var tfAddItem: UITextField!
     @IBOutlet weak var tfAddTime: UILabel!
     
+    @IBOutlet weak var tfTestAddEmo: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,34 +84,17 @@ class AddViewController: UIViewController, MyProtocol{
         workEmoLabel.layer.cornerRadius = 60
     }
     
-    
     func sum(numbers: [Int]) -> Int {
         return numbers.reduce(0, +)
     }
-    
-    
-    func didMessageSendDone(_ controller: DatePickerViewController, message: String) {
-        tfAddTime.text = message
-    }
-    
-    func didEmoticonSendDone(_ controller: EmoticonSelectViewController, message: String) {
-        print("메시지 전송")
-    }
-    
-    @IBAction func fourth(_ sender: Any) {
-        guard let vc = storyboard?.instantiateViewController(identifier: "pickerViewController") as? DatePickerViewController else{
-            return
-        }
-        vc.delegate = self
-        
-        self.navigationController!.pushViewController(vc, animated: true)
-    }
-    
-    
+   
     override func prepare(for segue:UIStoryboardSegue, sender: Any?) {
         print("prepare 메서드 내부")
         if segue.identifier == "timeSet" {
             guard let viewController: DatePickerViewController = segue.destination as? DatePickerViewController else {return}
+            viewController.delegate = self
+        }else if segue.identifier == "emoticonSet" {
+            guard let viewController: EmoticonSelectViewController = segue.destination as? EmoticonSelectViewController else {return}
             viewController.delegate = self
         }
     }

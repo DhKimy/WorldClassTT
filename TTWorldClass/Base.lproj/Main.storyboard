@@ -704,7 +704,7 @@
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="xAe-tg-KKg" kind="presentation" identifier="timeSet" id="fyc-VM-Nen"/>
+                                                    <segue destination="xAe-tg-KKg" kind="modal" identifier="timeSet" id="fyc-VM-Nen"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -792,6 +792,20 @@
                                     <constraint firstItem="DqK-Rp-PkF" firstAttribute="top" secondItem="euz-gQ-daG" secondAttribute="bottom" constant="50" id="w6d-Pe-nxx"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEs-MX-OEC">
+                                <rect key="frame" x="169" y="637" width="92" height="32.666666666666664"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="1">
+                                        <attributes>
+                                            <color key="NSColor" red="0.89411764705882346" green="0.090196078431372548" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="16" name="NotoSansKR-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yhh-hZ-wXg"/>
                         <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -805,6 +819,7 @@
                     <connections>
                         <outlet property="tfAddItem" destination="52B-gJ-wma" id="RXk-t4-jWt"/>
                         <outlet property="tfAddTime" destination="VFb-fB-gud" id="gw7-6X-heA"/>
+                        <outlet property="tfTestAddEmo" destination="rEs-MX-OEC" id="3m0-sc-aOC"/>
                         <outlet property="workEmoLabel" destination="yu9-jL-xdd" id="h14-5y-eQQ"/>
                         <outlet property="workTimeLabel" destination="jaf-Sb-9w9" id="S54-om-QaU"/>
                         <outlet property="workTitleLabel" destination="CI0-ES-W2O" id="323-cH-aDb"/>
@@ -953,8 +968,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWF-Pe-br6">
-                                <rect key="frame" x="159" y="554" width="112" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWF-Pe-br6">
+                                <rect key="frame" x="159" y="561" width="112" height="33"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled">
                                     <attributedString key="attributedTitle">
@@ -971,18 +986,20 @@
                                     <action selector="btnEmoticonSet:" destination="Ylq-fa-SML" eventType="touchUpInside" id="1fy-SB-qG3"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IkV-8u-jKq">
-                                <rect key="frame" x="167" y="203" width="96" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IkV-8u-jKq">
+                                <rect key="frame" x="167" y="189" width="96" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="5hA-eH-fHh"/>
+                                    <constraint firstAttribute="height" constant="96" id="t8g-Pj-esF"/>
+                                </constraints>
                             </imageView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KPg-HC-WYF">
-                                <rect key="frame" x="80" y="350" width="271" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPg-HC-WYF">
+                                <rect key="frame" x="55" y="335" width="320" height="216"/>
                                 <connections>
                                     <outlet property="delegate" destination="Ylq-fa-SML" id="W4J-0V-ncS"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ag-Rq-Llb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ag-Rq-Llb">
                                 <rect key="frame" x="90" y="79" width="250" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1005,7 +1022,16 @@
                         <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="BWF-Pe-br6" firstAttribute="centerX" secondItem="xGt-nr-zQp" secondAttribute="centerX" id="5Q7-95-JEt"/>
+                            <constraint firstItem="5ag-Rq-Llb" firstAttribute="top" secondItem="n4l-SX-swH" secondAttribute="top" constant="20" id="9Ia-EM-cMe"/>
+                            <constraint firstItem="IkV-8u-jKq" firstAttribute="top" secondItem="5ag-Rq-Llb" secondAttribute="bottom" constant="50" id="F74-0t-0ue"/>
+                            <constraint firstItem="IkV-8u-jKq" firstAttribute="leading" secondItem="n4l-SX-swH" secondAttribute="leading" constant="167" id="Gd9-7g-3cP"/>
+                            <constraint firstItem="KPg-HC-WYF" firstAttribute="top" secondItem="IkV-8u-jKq" secondAttribute="bottom" constant="50" id="LgD-dW-7RX"/>
+                            <constraint firstItem="5ag-Rq-Llb" firstAttribute="leading" secondItem="n4l-SX-swH" secondAttribute="leading" constant="90" id="fEF-Ui-1tQ"/>
                             <constraint firstItem="5ag-Rq-Llb" firstAttribute="centerX" secondItem="xGt-nr-zQp" secondAttribute="centerX" id="hpe-LH-KIJ"/>
+                            <constraint firstItem="n4l-SX-swH" firstAttribute="trailing" secondItem="5ag-Rq-Llb" secondAttribute="trailing" constant="90" id="nQr-as-9u5"/>
+                            <constraint firstItem="KPg-HC-WYF" firstAttribute="centerX" secondItem="xGt-nr-zQp" secondAttribute="centerX" id="owh-lP-QMQ"/>
+                            <constraint firstItem="BWF-Pe-br6" firstAttribute="top" secondItem="KPg-HC-WYF" secondAttribute="bottom" constant="10" id="sc5-qc-EoA"/>
+                            <constraint firstItem="n4l-SX-swH" firstAttribute="trailing" secondItem="IkV-8u-jKq" secondAttribute="trailing" constant="167" id="tmu-r3-ywT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SAf-07-xLu"/>
