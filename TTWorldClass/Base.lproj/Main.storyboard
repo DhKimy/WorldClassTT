@@ -712,7 +712,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="euz-gQ-daG">
                                         <rect key="frame" x="10" y="171.66666666666663" width="338" height="35"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yu9-jL-xdd">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yu9-jL-xdd">
                                                 <rect key="frame" x="0.0" y="0.0" width="101" height="35"/>
                                                 <color key="backgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -729,7 +729,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8YL-Dm-lAF">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="건배" translatesAutoresizingMaskIntoConstraints="NO" id="8YL-Dm-lAF">
                                                 <rect key="frame" x="137" y="0.0" width="45" height="35"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYn-Ce-BiD">
@@ -792,20 +792,6 @@
                                     <constraint firstItem="DqK-Rp-PkF" firstAttribute="top" secondItem="euz-gQ-daG" secondAttribute="bottom" constant="50" id="w6d-Pe-nxx"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEs-MX-OEC">
-                                <rect key="frame" x="169" y="637" width="92" height="32.666666666666664"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="1">
-                                        <attributes>
-                                            <color key="NSColor" red="0.89411764705882346" green="0.090196078431372548" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="16" name="NotoSansKR-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yhh-hZ-wXg"/>
                         <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -817,9 +803,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="할 일 추가하기" id="D6T-jn-f1c"/>
                     <connections>
+                        <outlet property="tfAddEmo" destination="8YL-Dm-lAF" id="VNd-lF-k7v"/>
                         <outlet property="tfAddItem" destination="52B-gJ-wma" id="RXk-t4-jWt"/>
                         <outlet property="tfAddTime" destination="VFb-fB-gud" id="gw7-6X-heA"/>
-                        <outlet property="tfTestAddEmo" destination="rEs-MX-OEC" id="3m0-sc-aOC"/>
                         <outlet property="workEmoLabel" destination="yu9-jL-xdd" id="h14-5y-eQQ"/>
                         <outlet property="workTimeLabel" destination="jaf-Sb-9w9" id="S54-om-QaU"/>
                         <outlet property="workTitleLabel" destination="CI0-ES-W2O" id="323-cH-aDb"/>
@@ -1047,6 +1033,7 @@
     </scenes>
     <resources>
         <image name="step1" width="720" height="395"/>
+        <image name="건배" width="64" height="64"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

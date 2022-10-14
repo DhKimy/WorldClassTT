@@ -9,7 +9,7 @@ import UIKit
 
 protocol MyProtocol {
     func timeSetDelegate(dataSent: String)
-    func emoSetDelegate(dataSent: String)
+    func emoSetDelegate(emoImage: UIImage?, emoTitle: String)
 }
 
 class DatePickerViewController: UIViewController {

@@ -15,8 +15,10 @@ class AddViewController: UIViewController, MyProtocol{
         print("데이터 세팅함. 데이터 : \(dataSent)")
         
     }
-    func emoSetDelegate(dataSent: String){
-        self.tfTestAddEmo.text = dataSent
+    func emoSetDelegate(emoImage: UIImage?, emoTitle: String){
+        self.tfAddEmo.image = emoImage
+        self.emoTitle = emoTitle
+        
     }
         
     
@@ -26,8 +28,9 @@ class AddViewController: UIViewController, MyProtocol{
     
     @IBOutlet var tfAddItem: UITextField!
     @IBOutlet weak var tfAddTime: UILabel!
+    @IBOutlet weak var tfAddEmo: UIImageView!
     
-    @IBOutlet weak var tfTestAddEmo: UILabel!
+    var emoTitle = "건배"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +64,7 @@ class AddViewController: UIViewController, MyProtocol{
         }
                 
         items.append(tfAddItem.text!)
-        itemsImageFile.append("clock")
+        itemsImageFile.append(emoTitle)
         itemsTime.append(Int(tfAddTime.text!)!)
         tfAddItem.text = ""
         tfAddTime.text = ""

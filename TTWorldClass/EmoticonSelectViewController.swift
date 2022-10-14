@@ -11,6 +11,7 @@ class EmoticonSelectViewController: UIViewController, UIPickerViewDelegate, UIPi
 
     let MAX_ARRAY_NUM = 45
     let PICKER_VIEW_COLUMN = 1
+    var imageArr = [UIImage?]()
     var imageFileName = ["건배", "노트북", "덤벨", "라면", "러닝", "러닝2", "러닝머신", "맥주","모니터", "모래시계", "변기", "변기2", "생일케이크", "설거지", "세탁기", "쇼핑", "스마트폰", "시계", "쓰레기통", "악기", "알람시계", "양식", "원암덤벨컬", "유튜브", "음악재생", "자전거", "전화", "조이스틱", "진공청소기", "진공청소기2", "진공청소기3", "책", "청소도구", "청소도구2", "체크", "커피", "커피2", "코딩", "피자조각", "하트", "하트2", "휴지통", "cart", "clock", "pencil"]
     
     var delegate : MyProtocol?
@@ -22,10 +23,19 @@ class EmoticonSelectViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        showEmoticonImage()
+        
     }
     
+    func showEmoticonImage(){
+        for i in 0 ..< MAX_ARRAY_NUM {
+            let image = UIImage(named: imageFileName[i])
+            imageArr.append(image)
+        }
+        
+        imageView.image = imageArr[0]
+        // Do any additional setup after loading the view.
+    }
 
     /*
     // MARK: - Navigation
@@ -51,8 +61,13 @@ class EmoticonSelectViewController: UIViewController, UIPickerViewDelegate, UIPi
         return imageFileName[row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        imageView.image = imageArr[row]
+        imageName = imageFileName[row]
+    }
+    
     @IBAction func btnEmoticonSet(_ sender: UIButton) {
-        delegate?.emoSetDelegate(dataSent: imageName)
+        delegate?.emoSetDelegate(emoImage: imageView.image, emoTitle: imageName)
         self.dismiss(animated: true, completion: nil)
     }
 
