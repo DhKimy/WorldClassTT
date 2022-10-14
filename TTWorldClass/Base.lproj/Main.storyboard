@@ -167,6 +167,7 @@
                                 <color key="baseBackgroundColor" red="0.89411764709999997" green="0.090196078430000007" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </buttonConfiguration>
                             <connections>
+                                <action selector="btnTimerStart:" destination="Iuy-Zc-O9T" eventType="touchUpInside" id="oab-ca-VeZ"/>
                                 <segue destination="Bdu-eT-Tt9" kind="show" id="NrP-xY-4vv"/>
                             </connections>
                         </button>

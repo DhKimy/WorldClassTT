@@ -17,14 +17,21 @@ class TableViewController: UITableViewController {
     @IBOutlet var tvListView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
 
+    @IBAction func btnTimerStart(_ sender: Any) {
+        if items.count == 0 {
+            let alert = UIAlertController(title : "시작 불가", message: "할 일을 아무것도 추가하지 않았어요!", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "확인", style: .default) {
+                (action) in
+            }
+            alert.addAction(okAction)
+            present(alert, animated: false, completion: nil)
+            
+            return
+        }
+    }
     
     func sum(numbers: [Int]) -> Int {
         return numbers.reduce(0, +)
