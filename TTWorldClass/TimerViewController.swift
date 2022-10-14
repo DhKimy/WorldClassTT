@@ -41,6 +41,7 @@ class TimerViewController: UIViewController {
     
     func setNotifications() {
         //백그라운드에서 포어그라운드로 돌아올때
+        print("setNotifications() 실행")
         NotificationCenter.default.addObserver(self, selector: #selector(addbackGroundTime(_:)), name: NSNotification.Name("sceneWillEnterForeground"), object: nil)
         //포어그라운드에서 백그라운드로 갈때
         NotificationCenter.default.addObserver(self, selector: #selector(stopTimer), name: NSNotification.Name("sceneDidEnterBackground"), object: nil)
@@ -49,6 +50,8 @@ class TimerViewController: UIViewController {
     @objc func addbackGroundTime(_ notification:Notification) {
         
         // notificationCenter에서 값을 받아옴
+        print("addbackGroundTime() 실행")
+        
         let time = notification.userInfo?["time"] as? Int ?? 0
         
         // 받아온 시간 : 초단위로 받아옴. 그대로 빼준다.
@@ -56,15 +59,18 @@ class TimerViewController: UIViewController {
         remainEntireTimersTime -= time
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
         entireTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimerForEntireTimer)), userInfo: nil, repeats: true)
+        
                 
     }
     
     @objc func stopTimer() {
+        print("stopTimer() 실행")
         entireTimer.invalidate()
         timer.invalidate()
     }
 
     override func viewDidLoad() {
+        print("viewDidLoad() 실행")
         super.viewDidLoad()
         
         setNotifications()
@@ -77,6 +83,8 @@ class TimerViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+
+     
     
     func labelContentSet(){
         timerTime = itemsTime[setChapter] * 60
@@ -277,7 +285,7 @@ class TimerViewController: UIViewController {
         return
         
     }
-    
+
     
     /*
     // MARK: - Navigation
@@ -288,5 +296,7 @@ class TimerViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }
