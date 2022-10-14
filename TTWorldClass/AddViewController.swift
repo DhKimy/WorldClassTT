@@ -8,20 +8,7 @@
 import UIKit
 
 class AddViewController: UIViewController, MyProtocol{
-   
-    func timeSetDelegate(dataSent: String) {
         
-        self.tfAddTime.text = dataSent
-        print("데이터 세팅함. 데이터 : \(dataSent)")
-        
-    }
-    func emoSetDelegate(emoImage: UIImage?, emoTitle: String){
-        self.tfAddEmo.image = emoImage
-        self.emoTitle = emoTitle
-        
-    }
-        
-    
     @IBOutlet weak var workTitleLabel: UILabel!
     @IBOutlet weak var workTimeLabel: UILabel!
     @IBOutlet weak var workEmoLabel: UILabel!
@@ -90,6 +77,17 @@ class AddViewController: UIViewController, MyProtocol{
     func sum(numbers: [Int]) -> Int {
         return numbers.reduce(0, +)
     }
+    
+    
+    func timeSetDelegate(dataSent: String) {
+        self.tfAddTime.text = dataSent
+        print("데이터 세팅함. 데이터 : \(dataSent)")
+    }
+    
+    func emoSetDelegate(emoImage: UIImage?, emoTitle: String){
+        self.tfAddEmo.image = emoImage
+        self.emoTitle = emoTitle
+    }
    
     override func prepare(for segue:UIStoryboardSegue, sender: Any?) {
         print("prepare 메서드 내부")
@@ -101,19 +99,6 @@ class AddViewController: UIViewController, MyProtocol{
             viewController.delegate = self
         }
     }
-//
-//    func timePrepare(for segue:UIStoryboardSegue, sender: Any?) {
-//
-//        let datePickerViewController = segue.destination as! DatePickerViewController
-//        print("prepare 내부 : \(datePickerViewController) \n 끝")
-//        datePickerViewController.delegate = self
-//    }
-//
-//
-//    func emoticonPrepare(for segue:UIStoryboardSegue, sender: Any?) {
-//        let emoticonSelectViewController = segue.destination as! EmoticonSelectViewController
-//        emoticonSelectViewController.delegate = self
-//    }
     
     /*
     // MARK: - Navigation
