@@ -20,17 +20,14 @@ class EmoticonSelectViewController: UIViewController, UIPickerViewDelegate, UIPi
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var imageView: UIImageView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         showEmoticonImage()
-        
     }
     
     @IBAction func btnModalClose(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
     
     func showEmoticonImage(){
         for i in 0 ..< MAX_ARRAY_NUM {

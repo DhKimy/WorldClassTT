@@ -19,9 +19,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="step1" translatesAutoresizingMaskIntoConstraints="NO" id="RVh-Y4-Gm3">
                                 <rect key="frame" x="20" y="133" width="390" height="395"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Lbw-iY-7KS" appends="YES" id="7b6-Y8-Sq8"/>
-                                </connections>
+                                <gestureRecognizers/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="qSM-ZZ-hrX">
                                 <rect key="frame" x="155.33333333333334" y="558" width="119.66666666666666" height="27"/>
@@ -42,12 +40,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="튜토리얼" id="P0V-Yg-fCf"/>
                     <connections>
-                        <outlet property="dots" destination="qSM-ZZ-hrX" id="6Qr-lZ-B6f"/>
-                        <outlet property="stepsImages" destination="RVh-Y4-Gm3" id="FPn-xp-c22"/>
+                        <outlet property="imgView" destination="RVh-Y4-Gm3" id="Kw5-zu-UPM"/>
+                        <outlet property="pageControl" destination="qSM-ZZ-hrX" id="g77-g2-rHj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer delaysTouchesBegan="YES" direction="left" id="Lbw-iY-7KS">
+                <swipeGestureRecognizer direction="left" id="Lbw-iY-7KS">
                     <connections>
                         <action selector="swipeAction:" destination="BYZ-38-t0r" id="BZf-fu-r8M"/>
                     </connections>
