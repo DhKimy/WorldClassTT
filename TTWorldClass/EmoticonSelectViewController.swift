@@ -27,6 +27,11 @@ class EmoticonSelectViewController: UIViewController, UIPickerViewDelegate, UIPi
         
     }
     
+    @IBAction func btnModalClose(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     func showEmoticonImage(){
         for i in 0 ..< MAX_ARRAY_NUM {
             let image = UIImage(named: imageFileName[i])

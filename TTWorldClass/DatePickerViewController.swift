@@ -47,6 +47,9 @@ class DatePickerViewController: UIViewController {
 
     }
     
+    @IBAction func btnModalClose(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func btnTimeSet(_ sender: Any) {
 

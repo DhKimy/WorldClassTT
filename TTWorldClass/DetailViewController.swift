@@ -11,9 +11,11 @@ class DetailViewController: UIViewController {
 
     var receiveItem = ""
     var receiveItemsTime = ""
+    var receiveItemEmo = UIImage(named: "건배")
     
-    @IBOutlet var lblItem: UILabel!
-    @IBOutlet var lblItemTime: UILabel!
+    @IBOutlet weak var lblItem: UILabel!
+    @IBOutlet weak var lblItemTime: UILabel!
+    @IBOutlet weak var lblItemEmo: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +23,18 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         lblItem.text = receiveItem
         lblItemTime.text = receiveItemsTime
+        lblItemEmo.image = receiveItemEmo
     }
     
-    func receiveItem(_ item: String, itemTime: Int){
+    func receiveItem(_ item: String, itemTime: Int, itemImage: String){
         receiveItem = item
         receiveItemsTime = String(itemTime) + "분"
+        receiveItemEmo = UIImage(named: itemImage)
     }
 
+    @IBAction func btnModelClose(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation
