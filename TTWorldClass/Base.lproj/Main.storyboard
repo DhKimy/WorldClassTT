@@ -211,7 +211,11 @@
                         <centerItemGroups>
                             <barButtonItemGroup customizationDisposition="fixed" id="IbD-N4-Gng">
                                 <barButtonItems>
-                                    <barButtonItem title="How To" style="plain" id="Sqe-S5-I1O"/>
+                                    <barButtonItem title="How To" style="plain" id="Sqe-S5-I1O">
+                                        <connections>
+                                            <segue destination="7cP-VJ-8Tz" kind="show" id="oro-bb-spG"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </barButtonItems>
                             </barButtonItemGroup>
                         </centerItemGroups>
@@ -1086,6 +1090,52 @@
             </objects>
             <point key="canvasLocation" x="1008.8372093023256" y="1069.9570815450645"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="FpV-Dl-fD9">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xda-gA-gOh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="7cP-VJ-8Tz" customClass="SettingViewController" customModule="TTWorldClass" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QUJ-dV-ZwY">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QuX-6a-h4m">
+                                <rect key="frame" x="20" y="198" width="390" height="152"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="0.0" id="bRv-Uy-gca">
+                                        <rect key="frame" x="0.0" y="53" width="390" height="1.1920928955078125e-07"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bRv-Uy-gca" id="RSS-B0-V0k">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="1.1920928955078125e-07"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람 소리 설정(기능 구현 예정)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKR-UF-4T4">
+                                <rect key="frame" x="42" y="163" width="206" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="j01-iL-NMm"/>
+                        <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="contentStretch" x="0.0" y="0.59999999999999998" width="1" height="1"/>
+                        <constraints>
+                            <constraint firstItem="QuX-6a-h4m" firstAttribute="top" secondItem="TKR-UF-4T4" secondAttribute="bottom" constant="5" id="L1t-YM-n00"/>
+                            <constraint firstItem="QuX-6a-h4m" firstAttribute="centerX" secondItem="QUJ-dV-ZwY" secondAttribute="centerX" id="OK9-FK-ooW"/>
+                            <constraint firstItem="TKR-UF-4T4" firstAttribute="top" secondItem="j01-iL-NMm" secondAttribute="top" constant="60" id="d50-QP-f9l"/>
+                            <constraint firstItem="QuX-6a-h4m" firstAttribute="top" secondItem="TKR-UF-4T4" secondAttribute="bottom" constant="70" id="e4c-VV-NlX"/>
+                            <constraint firstItem="TKR-UF-4T4" firstAttribute="leading" secondItem="j01-iL-NMm" secondAttribute="leading" constant="42" id="xv6-o7-mDS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="Afa-Vk-eZi"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1703.7209302325582" y="-558.1545064377683"/>
+        </scene>
     </scenes>
     <resources>
         <image name="step1" width="720" height="395"/>
@@ -1094,16 +1144,19 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.37" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.49803921568627452" green="0.396078431372549" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.84705882352941175" green="0.84705882352941175" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.21176470588235294" green="0.20392156862745098" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
