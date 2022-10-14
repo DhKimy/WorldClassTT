@@ -254,14 +254,14 @@
                                 <color key="highlightedColor" systemColor="systemIndigoColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="7vM-bX-2fs">
-                                <rect key="frame" x="77" y="350" width="261.33333333333331" height="132"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="7vM-bX-2fs">
+                                <rect key="frame" x="77" y="350" width="276" height="132"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pn1-sj-4CU">
-                                        <rect key="frame" x="0.0" y="0.0" width="261.33333333333331" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="276" height="21"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D11-xz-WFU">
-                                                <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D11-xz-WFU">
+                                                <rect key="frame" x="0.0" y="0.0" width="102" height="21"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="할 일 제목 : ">
                                                         <attributes>
@@ -273,8 +273,8 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                                        " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leO-Hk-ur3">
-                                                <rect key="frame" x="87.333333333333314" y="0.0" width="174" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="                                        " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leO-Hk-ur3">
+                                                <rect key="frame" x="102" y="0.0" width="174" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -282,10 +282,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KqP-oh-BNG">
-                                        <rect key="frame" x="0.0" y="111" width="261.33333333333331" height="21"/>
+                                        <rect key="frame" x="0.0" y="111" width="276" height="21"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4H-vB-OUt">
-                                                <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4H-vB-OUt">
+                                                <rect key="frame" x="0.0" y="0.0" width="102" height="21"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="할 일 시간 : ">
                                                         <attributes>
@@ -297,8 +297,8 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                                        " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CD5-hJ-0zI">
-                                                <rect key="frame" x="87.333333333333314" y="0.0" width="174" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="                                        " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CD5-hJ-0zI">
+                                                <rect key="frame" x="102" y="0.0" width="174" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -319,9 +319,11 @@
                         <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ZtG-0g-lgi" firstAttribute="leading" secondItem="svv-ec-X18" secondAttribute="leading" constant="16" id="6Cp-Ud-jBw"/>
+                            <constraint firstItem="svv-ec-X18" firstAttribute="trailing" secondItem="7vM-bX-2fs" secondAttribute="trailing" constant="77" id="Qms-6R-QEp"/>
                             <constraint firstItem="d61-wY-U90" firstAttribute="centerX" secondItem="3gr-KW-c1E" secondAttribute="centerX" id="TTU-8O-BRa"/>
                             <constraint firstItem="svv-ec-X18" firstAttribute="trailing" secondItem="ZtG-0g-lgi" secondAttribute="trailing" constant="16" id="V0f-tG-JDQ"/>
                             <constraint firstItem="ZtG-0g-lgi" firstAttribute="top" secondItem="svv-ec-X18" secondAttribute="top" constant="20" id="aEZ-dR-MbK"/>
+                            <constraint firstItem="7vM-bX-2fs" firstAttribute="leading" secondItem="svv-ec-X18" secondAttribute="leading" constant="77" id="akN-8i-WDk"/>
                             <constraint firstItem="d61-wY-U90" firstAttribute="top" secondItem="ZtG-0g-lgi" secondAttribute="bottom" constant="70" id="hpk-Nh-A3P"/>
                             <constraint firstItem="7vM-bX-2fs" firstAttribute="top" secondItem="d61-wY-U90" secondAttribute="bottom" constant="40" id="sGo-8s-TAc"/>
                         </constraints>
@@ -747,6 +749,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="Ylq-fa-SML" kind="modal" id="rut-kN-NOB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -938,6 +943,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVD-qY-oqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1208" y="189"/>
+        </scene>
+        <!--Emoticon Select View Controller-->
+        <scene sceneID="11g-AC-ufn">
+            <objects>
+                <viewController id="Ylq-fa-SML" customClass="EmoticonSelectViewController" customModule="TTWorldClass" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xGt-nr-zQp">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ag-Rq-Llb">
+                                <rect key="frame" x="90" y="178.66666666666666" width="250" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="maY-jI-mex"/>
+                                    <constraint firstAttribute="height" constant="60" id="mkr-dp-Mzc"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="이모티콘 설정">
+                                        <attributes>
+                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="28" name="NotoSansKR-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWF-Pe-br6">
+                                <rect key="frame" x="159" y="599.66666666666663" width="112" height="33"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="이모티콘 설정">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="NotoSansKR-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseBackgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnTimeSet:" destination="Ylq-fa-SML" eventType="touchUpInside" id="85O-Sg-c9T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="n4l-SX-swH"/>
+                        <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BWF-Pe-br6" firstAttribute="centerX" secondItem="xGt-nr-zQp" secondAttribute="centerX" id="5Q7-95-JEt"/>
+                            <constraint firstItem="5ag-Rq-Llb" firstAttribute="centerX" secondItem="xGt-nr-zQp" secondAttribute="centerX" id="hpe-LH-KIJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SAf-07-xLu"/>
+                    <connections>
+                        <outlet property="btnTimeSet" destination="BWF-Pe-br6" id="YfK-1m-xei"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="raI-TE-V1I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="1070"/>
         </scene>
     </scenes>
     <resources>
