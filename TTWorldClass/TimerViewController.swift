@@ -318,45 +318,48 @@ class TimerViewController: UIViewController {
         viewDidLoad()
     }
     
-    
-    
-    // 시간 도과 시 울리는 알람에 필요한 메서드
-    func playSound(title: String?){
-            let url = Bundle.main.url(forResource: "Balynt - Memory", withExtension: "mp3")
-            player = try!AVAudioPlayer(contentsOf: url!)
-            player.play()
-        }
-         
-
-
-    func endingAlert(){
-        let alert = UIAlertController(title : "완료!", message:"축하합니다. 이번 할 일을 모두 끝냈습니다.", preferredStyle: UIAlertController.Style.alert)
-        let okAction = UIAlertAction(title: "알람 소리 끄기", style: .default) {
-            (action) in
-            self.player.stop()
-        }
-        alert.addAction(okAction)
-        present(alert, animated: false, completion: nil)
-        
-        return
-    }
-
-    func finalEndingAlert() {
-        self.playSound(title: "Alarm_sound")
-        let alert = UIAlertController(title : "완료!", message:"축하합니다. 모든 할 일을 모두 끝냈습니다.", preferredStyle: UIAlertController.Style.alert)
-        let okAction = UIAlertAction(title: "알람 소리 끄기", style: .default) {
-            (action) in
-            self.player.stop()
-        }
-        alert.addAction(okAction)
-        present(alert, animated: false, completion: nil)
-        
-        return
-        
-    }
 }
 
+/*
+// 내부 알림창으로 알람 종료 표현하기 위해 필요한 메서드
 
+// 시간 도과 시 울리는 알람에 필요한 메서드
+func playSound(title: String?){
+        let url = Bundle.main.url(forResource: "Balynt - Memory", withExtension: "mp3")
+        player = try!AVAudioPlayer(contentsOf: url!)
+        player.play()
+    }
+     
+
+
+func endingAlert(){
+    let alert = UIAlertController(title : "완료!", message:"축하합니다. 이번 할 일을 모두 끝냈습니다.", preferredStyle: UIAlertController.Style.alert)
+    let okAction = UIAlertAction(title: "알람 소리 끄기", style: .default) {
+        (action) in
+        self.player.stop()
+    }
+    alert.addAction(okAction)
+    present(alert, animated: false, completion: nil)
+    
+    return
+}
+
+func finalEndingAlert() {
+    self.playSound(title: "Alarm_sound")
+    let alert = UIAlertController(title : "완료!", message:"축하합니다. 모든 할 일을 모두 끝냈습니다.", preferredStyle: UIAlertController.Style.alert)
+    let okAction = UIAlertAction(title: "알람 소리 끄기", style: .default) {
+        (action) in
+        self.player.stop()
+    }
+    alert.addAction(okAction)
+    present(alert, animated: false, completion: nil)
+    
+    return
+    
+}
+ */
+     
+     
 /*
  
 // 추후 쓸 수도 있는 메서드 모음
