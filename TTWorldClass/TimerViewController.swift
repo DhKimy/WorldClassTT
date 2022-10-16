@@ -35,11 +35,28 @@ class TimerViewController: UIViewController {
     }
      */
     
+    // 하고 있는 일이 몇 번째인지 알려주는 인덱스 변수
+    var setChapter = 0
+    
+    
     // 전체 남은 시간 표시에 필요한 빌드
     var entireTimer: Timer? = nil
     var isTimerOnForEntire = false
     var timeWhenGoBackgroundForEntire: Date?
-    var timeEntireSecond = 60 {
+    
+    func calTimeEntireValue() {
+        if setChapter == 0{
+            timeEntireSecond = sum(numbers: itemsTime) * 60
+        }else {
+            timeEntireSecond = (sum(numbers: itemsTime) - sum(numbers:  Array(itemsTime.prefix(setChapter)))) * 60
+        }
+    }
+    
+    func calTimeCurrnetValue() {
+        timeCurrentSecond = itemsTime[setChapter] * 60
+    }
+    
+    var timeEntireSecond = 0 {
         willSet(newValue) {
             var hours = String(newValue / 3600)
             var minutes = String(newValue / 60)
@@ -50,6 +67,7 @@ class TimerViewController: UIViewController {
             entireTimerLabel.text = "\(hours):\(minutes):\(seconds)"
         }
     }
+    
     
     // 이번 할 일 남은 시간 표시에 필요한 빌드
     var currentTimer: Timer? = nil
@@ -72,7 +90,11 @@ class TimerViewController: UIViewController {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        calTimeEntireValue()
+        calTimeCurrnetValue()
+        
     }
+    
     
 //    // 전체 남은 시간용 appMovedToBackground() 메서드
 //    @objc func appMovedToBackground() {
@@ -111,17 +133,17 @@ class TimerViewController: UIViewController {
         if let backTime = timeWhenGoBackgroundForEntire {
             let elapsed = Date().timeIntervalSince(backTime)
             let duration = Int(elapsed)
-            if timeEntireSecond - duration <= 0 {
-                timeEntireSecond = 0
-                timeCurrentSecond = 0
-                timeWhenGoBackgroundForEntire = nil
-                isTimerOnForEntire = !isTimerOnForEntire
-            }else {
-                timeEntireSecond -= duration
-                timeCurrentSecond -= duration
-                timeWhenGoBackgroundForEntire = nil
-                isTimerOnForEntire = !isTimerOnForEntire
-            }
+//            if timeEntireSecond - duration <= 0 {
+//                timeEntireSecond = 0
+//                timeCurrentSecond = 0
+//                timeWhenGoBackgroundForEntire = nil
+//                isTimerOnForEntire = !isTimerOnForEntire
+//            }else {
+//                timeEntireSecond -= duration
+//                timeCurrentSecond -= duration
+//                timeWhenGoBackgroundForEntire = nil
+//                isTimerOnForEntire = !isTimerOnForEntire
+//            }
             print("DURATION: \(duration)")
         }
     }
@@ -147,11 +169,16 @@ class TimerViewController: UIViewController {
             
             self.entireTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {entireTimer in
                 self.timeEntireSecond -= 1
+                
                 if self.timeEntireSecond == 0 {
                     self.finalEndingAlert()
-                    self.timeCurrentSecond -= 1
                     self.currentTimer?.invalidate()
                     self.entireTimer?.invalidate()
+                    self.currentTimer = nil
+                    self.entireTimer = nil
+                    self.setChapter = 0
+                    self.calTimeCurrnetValue()
+                    self.calTimeEntireValue()
                     self.timeButton.setTitle("Start", for: .normal)
                     self.isTimerOnForEntire = !self.isTimerOnForEntire
                     
@@ -164,12 +191,14 @@ class TimerViewController: UIViewController {
             
             self.currentTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {currentTimer in
                 self.timeCurrentSecond -= 1
-                if self.timeCurrentSecond == 0 && self.timeEntireSecond != 0
+                
+                if self.timeCurrentSecond <= 0 && self.timeEntireSecond != 0
                 {
                     self.endingAlert()
-                    self.timeEntireSecond -= 1
                     self.currentTimer?.invalidate()
                     self.entireTimer?.invalidate()
+                    self.setChapter += 1
+                    self.calTimeCurrnetValue()
                     self.timeButton.setTitle("New Start", for: .normal)
                     self.isTimerOnForEntire = !self.isTimerOnForEntire
                 }
@@ -186,6 +215,15 @@ class TimerViewController: UIViewController {
         isTimerOnForCurrent = !isTimerOnForCurrent
         isTimerOnForEntire = !isTimerOnForEntire
     }
+    
+    // 전체 시간 계산에 필요한 sum 함수
+    func sum(numbers: [Int]) -> Int {
+        return numbers.reduce(0, +)
+    }
+    
+    
+    
+    
     
     
     var player:AVAudioPlayer!
