@@ -98,7 +98,7 @@ class TimerViewController: UIViewController {
         remainTaskCount.text = "\(itemsTime.count - setChapter - 1)개"
         //requestAuthNotification()
         
-//        // 백그라운드로 넘어갈 때 타이머 멈춘 후에 실행하기 위해 필요한 변수
+        // 백그라운드로 넘어갈 때 타이머 멈춘 후에 실행하기 위해 필요한 변수
 //        let notificationCenter = NotificationCenter.default
 //        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
 //        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
@@ -114,7 +114,7 @@ class TimerViewController: UIViewController {
         content.body = "이것은 로컬 알림이닷"
         content.sound = UNNotificationSound.init(named: UNNotificationSoundName(rawValue: "alarm.wav"))
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
         
         let alarmName = "alarm"
         
@@ -155,8 +155,44 @@ class TimerViewController: UIViewController {
 //        }
 //    }
     
+    // 전체 남은 시간용 appMovedToBackground() 메서드
+    @objc func appMovedToBackground() {
+        print("App moved to background!")
+        if isTimerOnForEntire {
+            timeWhenGoBackgroundForEntire = Date()
+            timeWhenGoBackgroundForCurrentSecond = Date()
+            print("Save")
+        }
+    }
+
+    // 전체 남은 시간용 appMoveToForeground() 메서드
+    @objc func appMovedToForeground() {
+        print("App moved to foreground")
+        if let backTime = timeWhenGoBackgroundForEntire {
+            let elapsed = Date().timeIntervalSince(backTime)
+            let duration = Int(elapsed)
+            if timeEntireSecond - duration <= 0 {
+                timeEntireSecond = 0
+                timeCurrentSecond = 0
+                timeWhenGoBackgroundForEntire = nil
+                timeWhenGoBackgroundForCurrentSecond = nil
+                self.setReminder()
+                isTimerOnForEntire = !isTimerOnForEntire
+            }else {
+                timeEntireSecond -= duration
+                timeCurrentSecond -= duration
+                timeWhenGoBackgroundForEntire = nil
+                timeWhenGoBackgroundForCurrentSecond = nil
+                isTimerOnForEntire = !isTimerOnForEntire
+            }
+            print("DURATION: \(duration)")
+        }
+    }
+
     
     @IBAction func timeBtnClicked(_ sender: Any) {
+        
+        self.setReminder()
         
         if isTimerOnForEntire {
             resetButton.isEnabled = true
@@ -200,7 +236,7 @@ class TimerViewController: UIViewController {
                 {
 //                    self.playSound(title: "alarm_sound")
 //                    self.endingAlert()
-                    self.setReminder()
+                    
                     self.currentTimer?.invalidate()
                     self.entireTimer?.invalidate()
                     self.setChapter += 1
