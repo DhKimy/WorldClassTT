@@ -112,7 +112,7 @@ class TimerViewController: UIViewController {
         let content = UNMutableNotificationContent()
         content.title = "리마인더 제목"
         content.body = "이것은 로컬 알림이닷"
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarm"))
+        content.sound = UNNotificationSound.init(named: UNNotificationSoundName(rawValue: "alarm.wav"))
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
         
