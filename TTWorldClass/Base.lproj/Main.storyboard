@@ -896,6 +896,9 @@
                                             </attributedString>
                                             <color key="baseBackgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnReset:" destination="JPg-BC-vAY" eventType="touchUpInside" id="NBf-wY-dEd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ7-jd-akb">
                                         <rect key="frame" x="246" y="0.0" width="64" height="41"/>
@@ -1041,6 +1044,9 @@
                                             </attributedString>
                                             <color key="baseBackgroundColor" red="0.89411764709999997" green="0.090196078430000007" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnPreviousWork:" destination="JPg-BC-vAY" eventType="touchUpInside" id="o4g-HA-6so"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDV-D5-URa">
                                         <rect key="frame" x="270" y="0.0" width="122" height="34"/>
@@ -1056,6 +1062,9 @@
                                             </attributedString>
                                             <color key="baseBackgroundColor" red="0.89411764709999997" green="0.090196078430000007" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnNextWork:" destination="JPg-BC-vAY" eventType="touchUpInside" id="JOs-BR-Sa9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

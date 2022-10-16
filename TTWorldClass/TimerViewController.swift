@@ -92,6 +92,7 @@ class TimerViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         calTimeEntireValue()
         calTimeCurrnetValue()
+        prevNextButtonColorSet()
         
     }
     
@@ -220,6 +221,95 @@ class TimerViewController: UIViewController {
     func sum(numbers: [Int]) -> Int {
         return numbers.reduce(0, +)
     }
+    
+    
+    // 이전 할 일 버튼
+    @IBAction func btnPreviousWork(_ sender: Any) {
+        if isTimerOnForEntire {
+            setChapter -= 1
+            currentTimer?.invalidate()
+            entireTimer?.invalidate()
+            isTimerOnForEntire = false
+            isTimerOnForCurrent = false
+            timeButton.setTitle("pr 시작", for: .normal)
+            viewDidLoad()
+        }else {
+            setChapter -= 1
+            isTimerOnForEntire = false
+            isTimerOnForCurrent = false
+            timeButton.setTitle("pr 시작", for: .normal)
+            viewDidLoad()
+        }
+    }
+    
+    
+    // 다음 할 일 버튼
+    @IBAction func btnNextWork(_ sender: Any) {
+        if isTimerOnForEntire {
+            setChapter += 1
+            currentTimer?.invalidate()
+            entireTimer?.invalidate()
+            isTimerOnForEntire = false
+            isTimerOnForCurrent = false
+            timeButton.setTitle("ne 시작", for: .normal)
+            viewDidLoad()
+        } else {
+            setChapter += 1
+            isTimerOnForEntire = false
+            isTimerOnForCurrent = false
+            timeButton.setTitle("ne 시작", for: .normal)
+            viewDidLoad()
+        }
+        
+    }
+    
+    func prevNextButtonColorSet() {
+        if setChapter == 0 && items.count != 1 {
+            previousButton.isEnabled = false
+            previousButton.alpha = 0.5
+            nextButton.isEnabled = true
+            nextButton.alpha = 1.0
+        }else if items.count == 1 {
+            previousButton.isEnabled = false
+            previousButton.alpha = 0.5
+            nextButton.isEnabled = false
+            nextButton.alpha = 0.5
+        }else if setChapter > 0 && setChapter < (items.count - 1) {
+            previousButton.isEnabled = true
+            previousButton.alpha = 1.0
+            nextButton.isEnabled = true
+            nextButton.alpha = 1.0
+        } else {
+            previousButton.isEnabled = true
+            previousButton.alpha = 1.0
+            nextButton.isEnabled = false
+            nextButton.alpha = 0.5
+        }
+    }
+    
+    // 리셋 버튼
+    @IBAction func btnReset(_ sender: Any) {
+        setChapter = 0
+        resetButton.isEnabled = false
+        resetButton.alpha = 0.5
+        currentTimer?.invalidate()
+        timeCurrentSecond = itemsTime[setChapter] * 60
+        entireTimer?.invalidate()
+        timeEntireSecond = sum(numbers: itemsTime) * 60
+        
+//        timerTaskName = items[0]
+//        remainTaskCount = 0
+        isTimerOnForEntire = false
+        isTimerOnForCurrent = false
+        timeButton.setTitle("리셋 후 시작", for: .normal)
+        viewDidLoad()
+    }
+    
+    
+    
+    
+    
+    
     
     
     
