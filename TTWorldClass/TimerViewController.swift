@@ -3,11 +3,19 @@ import AVFoundation
 
 class TimerViewController: UIViewController {
     
+    @IBOutlet weak var taskNameThisTme: UILabel!
+    @IBOutlet weak var remainTaskCount: UILabel!
+    
     @IBOutlet weak var stackTimerLabel: UILabel!
     @IBOutlet weak var entireTimerLabel: UILabel!
     @IBOutlet weak var currentTimerLabel: UILabel!
     
+    
+    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var timeButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
+    
     
     /*
     // 실제로 지나간 시간 표시에 필요한 필드

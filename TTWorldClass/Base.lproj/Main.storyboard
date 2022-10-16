@@ -1085,41 +1085,14 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hj5-q2-RyG">
-                                <rect key="frame" x="117.66666666666667" y="587.66666666666663" width="194.66666666666663" height="58.333333333333371"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="00:00:00">
-                                        <attributes>
-                                            <font key="NSFont" size="50" name="NotoSansKR-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IX1-RG-czb">
-                                <rect key="frame" x="129" y="545.66666666666663" width="172" height="27"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="실제로 지나간 시간">
-                                        <attributes>
-                                            <font key="NSFont" size="23" name="NotoSansKR-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qDi-Bd-KJz"/>
                         <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="REY-hp-jJa" firstAttribute="centerX" secondItem="9YQ-iR-hIf" secondAttribute="centerX" id="2Ld-hY-5eQ"/>
-                            <constraint firstItem="IX1-RG-czb" firstAttribute="centerX" secondItem="9YQ-iR-hIf" secondAttribute="centerX" id="3dp-pz-ucD"/>
                             <constraint firstItem="G7P-Dp-rPq" firstAttribute="centerX" secondItem="9YQ-iR-hIf" secondAttribute="centerX" id="4Zi-Qf-gpU"/>
                             <constraint firstItem="1qi-Cm-5vB" firstAttribute="top" secondItem="ZrI-XN-vi5" secondAttribute="bottom" constant="30" id="5aj-V0-Dw2"/>
                             <constraint firstItem="qDi-Bd-KJz" firstAttribute="bottom" secondItem="1qi-Cm-5vB" secondAttribute="bottom" constant="30" id="6Z8-pm-cin"/>
-                            <constraint firstItem="Hj5-q2-RyG" firstAttribute="top" secondItem="IX1-RG-czb" secondAttribute="bottom" constant="15" id="8SF-yp-f0p"/>
                             <constraint firstItem="1qi-Cm-5vB" firstAttribute="centerX" secondItem="9YQ-iR-hIf" secondAttribute="centerX" id="Bka-EW-S5j"/>
                             <constraint firstItem="REY-hp-jJa" firstAttribute="centerX" secondItem="9YQ-iR-hIf" secondAttribute="centerX" id="Dig-5y-67R"/>
                             <constraint firstItem="Ygs-aT-mBt" firstAttribute="top" secondItem="qDi-Bd-KJz" secondAttribute="top" constant="30" id="FvN-jU-cki"/>
@@ -1134,17 +1107,19 @@
                             <constraint firstItem="nKr-y5-vF4" firstAttribute="top" secondItem="FXn-BF-qyr" secondAttribute="bottom" constant="37" id="hS5-6P-lQy"/>
                             <constraint firstItem="Lmx-Qt-WPf" firstAttribute="centerX" secondItem="9YQ-iR-hIf" secondAttribute="centerX" id="jfl-Ov-Rgt"/>
                             <constraint firstItem="Lmx-Qt-WPf" firstAttribute="centerX" secondItem="9YQ-iR-hIf" secondAttribute="centerX" id="kD8-3U-HT4"/>
-                            <constraint firstItem="Hj5-q2-RyG" firstAttribute="centerX" secondItem="9YQ-iR-hIf" secondAttribute="centerX" id="mEw-Qa-ZrD"/>
                             <constraint firstItem="FXn-BF-qyr" firstAttribute="top" secondItem="REY-hp-jJa" secondAttribute="bottom" constant="15" id="nOv-0b-6oF"/>
                             <constraint firstItem="nKr-y5-vF4" firstAttribute="centerX" secondItem="9YQ-iR-hIf" secondAttribute="centerX" id="rkh-AU-Zbo"/>
-                            <constraint firstItem="IX1-RG-czb" firstAttribute="top" secondItem="Lmx-Qt-WPf" secondAttribute="bottom" constant="40" id="uyq-uf-x6K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PTN-em-fpE"/>
                     <connections>
                         <outlet property="currentTimerLabel" destination="Lmx-Qt-WPf" id="okw-ep-Sxj"/>
                         <outlet property="entireTimerLabel" destination="FXn-BF-qyr" id="mAm-bY-GmI"/>
-                        <outlet property="stackTimerLabel" destination="Hj5-q2-RyG" id="7ho-s7-yqy"/>
+                        <outlet property="nextButton" destination="SDV-D5-URa" id="mHM-o6-HyC"/>
+                        <outlet property="previousButton" destination="1VR-gF-8xH" id="6Hq-SD-g4R"/>
+                        <outlet property="remainTaskCount" destination="XX1-qM-qYA" id="MQ2-n8-Sa7"/>
+                        <outlet property="resetButton" destination="hyZ-on-xXS" id="MT7-Oc-PR0"/>
+                        <outlet property="taskNameThisTme" destination="NgY-vA-cn6" id="Vz4-hy-SrI"/>
                         <outlet property="timeButton" destination="nJ7-jd-akb" id="518-Ef-RPw"/>
                     </connections>
                 </viewController>
