@@ -19,6 +19,7 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
+    
 
     @IBAction func btnTimerStart(_ sender: Any) {
         if items.count == 0 {

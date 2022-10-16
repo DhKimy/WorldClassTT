@@ -1,7 +1,8 @@
 import UIKit
 import AVFoundation
+import UserNotifications
 
-class TimerViewController: UIViewController, UNUserNotificationCenterDelegate {
+class TimerViewController: UIViewController {
     
     @IBOutlet weak var taskNameThisTime: UILabel!
     @IBOutlet weak var remainTaskCount: UILabel!
@@ -94,9 +95,8 @@ class TimerViewController: UIViewController, UNUserNotificationCenterDelegate {
         calTimeCurrnetValue()
         prevNextButtonColorSet()
         taskNameThisTime.text = items[setChapter]
-        remainTaskCount.text = "\(itemsTime.count - setChapter + 1)개"
-        
-        UNUserNotificationCenter.current().delegate = self
+        remainTaskCount.text = "\(itemsTime.count - setChapter - 1)개"
+        //requestAuthNotification()
         
 //        // 백그라운드로 넘어갈 때 타이머 멈춘 후에 실행하기 위해 필요한 변수
 //        let notificationCenter = NotificationCenter.default
@@ -104,44 +104,56 @@ class TimerViewController: UIViewController, UNUserNotificationCenterDelegate {
 //        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
+    let center = UNUserNotificationCenter.current()
     
-    func permission_Notification() {
-        let notification = UNUserNotificationCenter.current()
-
-        notification.getNotificationSettings { (setting) in
-
-            if setting.authorizationStatus == .authorized {
-                print("Push OK")
-            } else {
-                notification.requestAuthorization(options: [.alert, .sound, . badge]) { (complete, error) in
-               
-                    DispatchQueue.main.async {
-                        if (error != nil) {
-                            print("Error")
-                        }
-
-                        let cancle = UIAlertAction(title: "취소", style: .cancel) { (action) in
-                            exit(0)
-                        }
-
-                        let move = UIAlertAction(title: "이동", style: .default) { (action) in
-                            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-                        }
-
-                        let alert = UIAlertController(title: "요청", message: "동의해주세요", preferredStyle: .alert)
-                        alert.addAction(cancle)
-                        alert.addAction(move)
-                        
-                        self.present(alert, animated: true, completion: nil)
-                    }
-                }
+    func setReminder() {
+        
+        
+        let content = UNMutableNotificationContent()
+        content.title = "리마인더 제목"
+        content.body = "이것은 로컬 알림이닷"
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarm"))
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
+        
+        let alarmName = "alarm"
+        
+        let request = UNNotificationRequest(identifier: alarmName, content: content, trigger: trigger)
+        center.add(request) { (error) in
+            if error != nil {
+                print("에러가 났다")
             }
         }
     }
     
     
     
-    
+//    func requestAuthNotification() {
+//        UNUserNotificationCenter.current().delegate = self
+//        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+//        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { didAllow, error in
+//              print(didAllow)
+//        }
+//            UIApplication.shared.registerForRemoteNotifications()
+//    }
+//
+//    func requestSendNotification() {
+//        let content = UNMutableNotificationContent()
+//        content.title = "알림 제목"
+//        content.body = "알림 내용"
+//
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)
+//
+//        let uuidString = UUID().uuidString
+//        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+//
+//        let notificationCenter = UNUserNotificationCenter.current()
+//        notificationCenter.add(request) { (error) in
+//            if error != nil {
+//                print("Error 발생)")
+//            }
+//        }
+//    }
     
     
     @IBAction func timeBtnClicked(_ sender: Any) {
@@ -161,8 +173,9 @@ class TimerViewController: UIViewController, UNUserNotificationCenterDelegate {
                 self.timeEntireSecond -= 1
                 
                 if self.timeEntireSecond == 0 {
-                    self.playSound(title: "alarm_sound")
-                    self.finalEndingAlert()
+//                    self.playSound(title: "alarm_sound")
+//                    self.finalEndingAlert()
+                    self.setReminder()
                     self.currentTimer?.invalidate()
                     self.entireTimer?.invalidate()
                     self.currentTimer = nil
@@ -185,8 +198,9 @@ class TimerViewController: UIViewController, UNUserNotificationCenterDelegate {
                 
                 if self.timeCurrentSecond <= 0 && self.timeEntireSecond != 0
                 {
-                    self.playSound(title: "alarm_sound")
-                    self.endingAlert()
+//                    self.playSound(title: "alarm_sound")
+//                    self.endingAlert()
+                    self.setReminder()
                     self.currentTimer?.invalidate()
                     self.entireTimer?.invalidate()
                     self.setChapter += 1
@@ -221,7 +235,7 @@ class TimerViewController: UIViewController, UNUserNotificationCenterDelegate {
             currentTimer?.invalidate()
             entireTimer?.invalidate()
             taskNameThisTime.text = items[setChapter]
-            remainTaskCount.text = "\(itemsTime.count - setChapter + 1)개"
+            remainTaskCount.text = "\(itemsTime.count - setChapter - 1)개"
             isTimerOnForEntire = false
             isTimerOnForCurrent = false
             timeButton.setTitle("pr 시작", for: .normal)
@@ -229,7 +243,7 @@ class TimerViewController: UIViewController, UNUserNotificationCenterDelegate {
         }else {
             setChapter -= 1
             taskNameThisTime.text = items[setChapter]
-            remainTaskCount.text = "\(itemsTime.count - setChapter + 1)개"
+            remainTaskCount.text = "\(itemsTime.count - setChapter - 1)개"
             isTimerOnForEntire = false
             isTimerOnForCurrent = false
             timeButton.setTitle("pr 시작", for: .normal)
@@ -245,7 +259,7 @@ class TimerViewController: UIViewController, UNUserNotificationCenterDelegate {
             currentTimer?.invalidate()
             entireTimer?.invalidate()
             taskNameThisTime.text = items[setChapter]
-            remainTaskCount.text = "\(itemsTime.count - setChapter + 1)개"
+            remainTaskCount.text = "\(itemsTime.count - setChapter - 1)개"
             isTimerOnForEntire = false
             isTimerOnForCurrent = false
             timeButton.setTitle("ne 시작", for: .normal)
@@ -253,7 +267,7 @@ class TimerViewController: UIViewController, UNUserNotificationCenterDelegate {
         } else {
             setChapter += 1
             taskNameThisTime.text = items[setChapter]
-            remainTaskCount.text = "\(itemsTime.count - setChapter + 1)개"
+            remainTaskCount.text = "\(itemsTime.count - setChapter - 1)개"
             isTimerOnForEntire = false
             isTimerOnForCurrent = false
             timeButton.setTitle("ne 시작", for: .normal)
@@ -297,7 +311,7 @@ class TimerViewController: UIViewController, UNUserNotificationCenterDelegate {
         timeEntireSecond = sum(numbers: itemsTime) * 60
         
         taskNameThisTime.text = items[setChapter]
-        remainTaskCount.text = "\(itemsTime.count - setChapter + 1)개"
+        remainTaskCount.text = "\(itemsTime.count - setChapter - 1)개"
         isTimerOnForEntire = false
         isTimerOnForCurrent = false
         timeButton.setTitle("리셋 후 시작", for: .normal)
@@ -341,7 +355,6 @@ class TimerViewController: UIViewController, UNUserNotificationCenterDelegate {
         
     }
 }
-
 
 
 /*
