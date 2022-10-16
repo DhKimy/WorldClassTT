@@ -1,7 +1,7 @@
 import UIKit
 import AVFoundation
 
-class TimerViewController: UIViewController {
+class TimerViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var taskNameThisTime: UILabel!
     @IBOutlet weak var remainTaskCount: UILabel!
@@ -16,6 +16,9 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var timeButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
+    var player:AVAudioPlayer!
+    // 하고 있는 일이 몇 번째인지 알려주는 인덱스 변수
+    var setChapter = 0
     
     /*
     // 실제로 지나간 시간 표시에 필요한 필드
@@ -35,11 +38,10 @@ class TimerViewController: UIViewController {
     }
      */
     
-    // 하고 있는 일이 몇 번째인지 알려주는 인덱스 변수
-    var setChapter = 0
     
     
-    // 전체 남은 시간 표시에 필요한 빌드
+    
+    // 전체 남은 시간 표시에 필요한 필드
     var entireTimer: Timer? = nil
     var isTimerOnForEntire = false
     var timeWhenGoBackgroundForEntire: Date?
@@ -69,7 +71,7 @@ class TimerViewController: UIViewController {
     }
     
     
-    // 이번 할 일 남은 시간 표시에 필요한 빌드
+    // 이번 할 일 남은 시간 표시에 필요한 필드
     var currentTimer: Timer? = nil
     var isTimerOnForCurrent = false
     var timeWhenGoBackgroundForCurrentSecond: Date?
@@ -94,11 +96,52 @@ class TimerViewController: UIViewController {
         taskNameThisTime.text = items[setChapter]
         remainTaskCount.text = "\(itemsTime.count - setChapter + 1)개"
         
+        UNUserNotificationCenter.current().delegate = self
+        
 //        // 백그라운드로 넘어갈 때 타이머 멈춘 후에 실행하기 위해 필요한 변수
 //        let notificationCenter = NotificationCenter.default
 //        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
 //        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
+    
+    
+    func permission_Notification() {
+        let notification = UNUserNotificationCenter.current()
+
+        notification.getNotificationSettings { (setting) in
+
+            if setting.authorizationStatus == .authorized {
+                print("Push OK")
+            } else {
+                notification.requestAuthorization(options: [.alert, .sound, . badge]) { (complete, error) in
+               
+                    DispatchQueue.main.async {
+                        if (error != nil) {
+                            print("Error")
+                        }
+
+                        let cancle = UIAlertAction(title: "취소", style: .cancel) { (action) in
+                            exit(0)
+                        }
+
+                        let move = UIAlertAction(title: "이동", style: .default) { (action) in
+                            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                        }
+
+                        let alert = UIAlertController(title: "요청", message: "동의해주세요", preferredStyle: .alert)
+                        alert.addAction(cancle)
+                        alert.addAction(move)
+                        
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    
+    
     
     
     @IBAction func timeBtnClicked(_ sender: Any) {
@@ -118,6 +161,7 @@ class TimerViewController: UIViewController {
                 self.timeEntireSecond -= 1
                 
                 if self.timeEntireSecond == 0 {
+                    self.playSound(title: "alarm_sound")
                     self.finalEndingAlert()
                     self.currentTimer?.invalidate()
                     self.entireTimer?.invalidate()
@@ -141,6 +185,7 @@ class TimerViewController: UIViewController {
                 
                 if self.timeCurrentSecond <= 0 && self.timeEntireSecond != 0
                 {
+                    self.playSound(title: "alarm_sound")
                     self.endingAlert()
                     self.currentTimer?.invalidate()
                     self.entireTimer?.invalidate()
@@ -260,24 +305,21 @@ class TimerViewController: UIViewController {
     }
     
     
-    var player:AVAudioPlayer!
+    
     // 시간 도과 시 울리는 알람에 필요한 메서드
     func playSound(title: String?){
             let url = Bundle.main.url(forResource: "Balynt - Memory", withExtension: "mp3")
             player = try!AVAudioPlayer(contentsOf: url!)
-            player!.play()
+            player.play()
         }
          
-    func stopSound(){
-        player?.stop()
-    }
+
 
     func endingAlert(){
-        self.playSound(title: "Alarm_sound")
         let alert = UIAlertController(title : "완료!", message:"축하합니다. 이번 할 일을 모두 끝냈습니다.", preferredStyle: UIAlertController.Style.alert)
         let okAction = UIAlertAction(title: "알람 소리 끄기", style: .default) {
             (action) in
-            self.stopSound()
+            self.player.stop()
         }
         alert.addAction(okAction)
         present(alert, animated: false, completion: nil)
@@ -290,7 +332,7 @@ class TimerViewController: UIViewController {
         let alert = UIAlertController(title : "완료!", message:"축하합니다. 모든 할 일을 모두 끝냈습니다.", preferredStyle: UIAlertController.Style.alert)
         let okAction = UIAlertAction(title: "알람 소리 끄기", style: .default) {
             (action) in
-            self.stopSound()
+            self.player.stop()
         }
         alert.addAction(okAction)
         present(alert, animated: false, completion: nil)
