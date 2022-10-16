@@ -41,25 +41,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
               
         print("sceneWillEnterForeground 실행")
         
-        if isTimerStarted {
-            guard let start = UserDefaults.standard.object(forKey: "sceneDidEnterBackground") as? Date else {return}
-            let interval = Int(Date().timeIntervalSince(start))
-            NotificationCenter.default.post(name: NSNotification.Name("sceneWillEnterForeground"), object: nil, userInfo: ["time" : interval])
-            print("포어그라운드 if문 내부 실행")
-        }
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-        print("포어그라운드 if문 외부 실행")
+        print("백그라운드 매서드 실행 됨")
         
-        if isTimerStarted {
-            NotificationCenter.default.post(name: NSNotification.Name("sceneDidEnterBackground"), object: nil)
-            UserDefaults.standard.setValue(Date(), forKey: "sceneDidEnterBackground")
-            print("백그라운드 if문 내부 실행")
-        }
+
     }
     
 
