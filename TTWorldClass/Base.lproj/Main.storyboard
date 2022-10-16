@@ -1142,8 +1142,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="PTN-em-fpE"/>
                     <connections>
+                        <outlet property="currentTimerLabel" destination="Lmx-Qt-WPf" id="okw-ep-Sxj"/>
+                        <outlet property="entireTimerLabel" destination="FXn-BF-qyr" id="mAm-bY-GmI"/>
+                        <outlet property="stackTimerLabel" destination="Hj5-q2-RyG" id="7ho-s7-yqy"/>
                         <outlet property="timeButton" destination="nJ7-jd-akb" id="518-Ef-RPw"/>
-                        <outlet property="timerLabel" destination="Hj5-q2-RyG" id="azy-4j-tE0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40W-5C-5q2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

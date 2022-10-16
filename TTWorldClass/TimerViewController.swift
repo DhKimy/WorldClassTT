@@ -2,10 +2,12 @@ import UIKit
 
 class TimerViewController: UIViewController {
     
-    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var stackTimerLabel: UILabel!
     
     
+    @IBOutlet weak var entireTimerLabel: UILabel!
     
+    @IBOutlet weak var currentTimerLabel: UILabel!
     
     @IBOutlet weak var timeButton: UIButton!
     
@@ -22,7 +24,7 @@ class TimerViewController: UIViewController {
             if hours.count == 1 { hours = "0"+hours }
             if minutes.count == 1 { minutes = "0"+minutes }
             if seconds.count == 1 { seconds = "0"+seconds }
-            timerLabel.text = "\(hours):\(minutes):\(seconds)"
+            stackTimerLabel.text = "\(hours):\(minutes):\(seconds)"
         }
     }
     
@@ -38,7 +40,7 @@ class TimerViewController: UIViewController {
             if hours.count == 1 { hours = "0"+hours }
             if minutes.count == 1 { minutes = "0"+minutes }
             if seconds.count == 1 { seconds = "0"+seconds }
-            timerLabel.text = "\(hours):\(minutes):\(seconds)"
+            entireTimerLabel.text = "\(hours):\(minutes):\(seconds)"
         }
     }
     
@@ -54,7 +56,7 @@ class TimerViewController: UIViewController {
             if hours.count == 1 { hours = "0"+hours }
             if minutes.count == 1 { minutes = "0"+minutes }
             if seconds.count == 1 { seconds = "0"+seconds }
-            timerLabel.text = "\(hours):\(minutes):\(seconds)"
+            currentTimerLabel.text = "\(hours):\(minutes):\(seconds)"
         }
     }
     
