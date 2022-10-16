@@ -1128,7 +1128,7 @@
                         <outlet property="previousButton" destination="1VR-gF-8xH" id="6Hq-SD-g4R"/>
                         <outlet property="remainTaskCount" destination="XX1-qM-qYA" id="MQ2-n8-Sa7"/>
                         <outlet property="resetButton" destination="hyZ-on-xXS" id="MT7-Oc-PR0"/>
-                        <outlet property="taskNameThisTme" destination="NgY-vA-cn6" id="Vz4-hy-SrI"/>
+                        <outlet property="taskNameThisTime" destination="NgY-vA-cn6" id="fhQ-AL-Vjg"/>
                         <outlet property="timeButton" destination="nJ7-jd-akb" id="518-Ef-RPw"/>
                     </connections>
                 </viewController>

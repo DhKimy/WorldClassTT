@@ -3,7 +3,7 @@ import AVFoundation
 
 class TimerViewController: UIViewController {
     
-    @IBOutlet weak var taskNameThisTme: UILabel!
+    @IBOutlet weak var taskNameThisTime: UILabel!
     @IBOutlet weak var remainTaskCount: UILabel!
     
     @IBOutlet weak var stackTimerLabel: UILabel!
@@ -87,86 +87,32 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
         calTimeEntireValue()
         calTimeCurrnetValue()
         prevNextButtonColorSet()
+        taskNameThisTime.text = items[setChapter]
+        remainTaskCount.text = "\(itemsTime.count - setChapter + 1)개"
         
+//        // 백그라운드로 넘어갈 때 타이머 멈춘 후에 실행하기 위해 필요한 변수
+//        let notificationCenter = NotificationCenter.default
+//        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+//        notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    
-//    // 전체 남은 시간용 appMovedToBackground() 메서드
-//    @objc func appMovedToBackground() {
-//        print("App moved to background!")
-//        if isTimerOnForStackSecond {
-//            timeWhenGoBackgroundForStackSecond = Date()
-//            print("Save")
-//        }
-//    }
-    
-//    // 전체 남은 시간용 appMoveToForeground() 메서드
-//    @objc func appMovedToForeground() {
-//        print("App moved to foreground")
-//        if let backTime = timeWhenGoBackgroundForStackSecond {
-//            let elapsed = Date().timeIntervalSince(backTime)
-//            let duration = Int(elapsed)
-//            timeStackSecond += duration
-//            timeEntireSecond -= duration
-//            timeCurrentSecond -= duration
-//            timeWhenGoBackgroundForStackSecond = nil
-//            print("DURATION: \(duration)")
-//        }
-//    }
-    
-    
-    @objc func appMovedToBackground() {
-        print("App moved to background!")
-        if isTimerOnForEntire {
-            timeWhenGoBackgroundForEntire = Date()
-            print("Save")
-        }
-    }
-    
-    @objc func appMovedToForeground() {
-        print("App moved to foreground")
-        if let backTime = timeWhenGoBackgroundForEntire {
-            let elapsed = Date().timeIntervalSince(backTime)
-            let duration = Int(elapsed)
-//            if timeEntireSecond - duration <= 0 {
-//                timeEntireSecond = 0
-//                timeCurrentSecond = 0
-//                timeWhenGoBackgroundForEntire = nil
-//                isTimerOnForEntire = !isTimerOnForEntire
-//            }else {
-//                timeEntireSecond -= duration
-//                timeCurrentSecond -= duration
-//                timeWhenGoBackgroundForEntire = nil
-//                isTimerOnForEntire = !isTimerOnForEntire
-//            }
-            print("DURATION: \(duration)")
-        }
-    }
-    
-
     
     @IBAction func timeBtnClicked(_ sender: Any) {
         
         if isTimerOnForEntire {
+            resetButton.isEnabled = true
+            resetButton.alpha = 1.0
             currentTimer?.invalidate()
             entireTimer?.invalidate()
             timeButton.setTitle("START", for: .normal)
             
         } else {
-            
-//            // 전체 흐른 시간용 타이머
-//            self.stackTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { stackTimer in
-//                self.timeStackSecond += 1
-//                print("\(self.timeStackSecond)")
-//
-//            }
-//            RunLoop.current.add(self.stackTimer!, forMode: .common)
+            resetButton.isEnabled = true
+            resetButton.alpha = 1.0
             
             self.entireTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {entireTimer in
                 self.timeEntireSecond -= 1
@@ -229,12 +175,16 @@ class TimerViewController: UIViewController {
             setChapter -= 1
             currentTimer?.invalidate()
             entireTimer?.invalidate()
+            taskNameThisTime.text = items[setChapter]
+            remainTaskCount.text = "\(itemsTime.count - setChapter + 1)개"
             isTimerOnForEntire = false
             isTimerOnForCurrent = false
             timeButton.setTitle("pr 시작", for: .normal)
             viewDidLoad()
         }else {
             setChapter -= 1
+            taskNameThisTime.text = items[setChapter]
+            remainTaskCount.text = "\(itemsTime.count - setChapter + 1)개"
             isTimerOnForEntire = false
             isTimerOnForCurrent = false
             timeButton.setTitle("pr 시작", for: .normal)
@@ -249,12 +199,16 @@ class TimerViewController: UIViewController {
             setChapter += 1
             currentTimer?.invalidate()
             entireTimer?.invalidate()
+            taskNameThisTime.text = items[setChapter]
+            remainTaskCount.text = "\(itemsTime.count - setChapter + 1)개"
             isTimerOnForEntire = false
             isTimerOnForCurrent = false
             timeButton.setTitle("ne 시작", for: .normal)
             viewDidLoad()
         } else {
             setChapter += 1
+            taskNameThisTime.text = items[setChapter]
+            remainTaskCount.text = "\(itemsTime.count - setChapter + 1)개"
             isTimerOnForEntire = false
             isTimerOnForCurrent = false
             timeButton.setTitle("ne 시작", for: .normal)
@@ -297,23 +251,13 @@ class TimerViewController: UIViewController {
         entireTimer?.invalidate()
         timeEntireSecond = sum(numbers: itemsTime) * 60
         
-//        timerTaskName = items[0]
-//        remainTaskCount = 0
+        taskNameThisTime.text = items[setChapter]
+        remainTaskCount.text = "\(itemsTime.count - setChapter + 1)개"
         isTimerOnForEntire = false
         isTimerOnForCurrent = false
         timeButton.setTitle("리셋 후 시작", for: .normal)
         viewDidLoad()
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     var player:AVAudioPlayer!
@@ -355,3 +299,62 @@ class TimerViewController: UIViewController {
         
     }
 }
+
+
+
+/*
+ 
+// 추후 쓸 수도 있는 메서드 모음
+ 
+// 전체 남은 시간용 appMovedToBackground() 메서드
+@objc func appMovedToBackground() {
+    print("App moved to background!")
+    if isTimerOnForStackSecond {
+        timeWhenGoBackgroundForStackSecond = Date()
+        print("Save")
+    }
+}
+
+// 전체 남은 시간용 appMoveToForeground() 메서드
+@objc func appMovedToForeground() {
+    print("App moved to foreground")
+    if let backTime = timeWhenGoBackgroundForStackSecond {
+        let elapsed = Date().timeIntervalSince(backTime)
+        let duration = Int(elapsed)
+        timeStackSecond += duration
+        timeEntireSecond -= duration
+        timeCurrentSecond -= duration
+        timeWhenGoBackgroundForStackSecond = nil
+        print("DURATION: \(duration)")
+    }
+}
+
+
+@objc func appMovedToBackground() {
+    print("App moved to background!")
+    if isTimerOnForEntire {
+        timeWhenGoBackgroundForEntire = Date()
+        print("Save")
+    }
+}
+
+@objc func appMovedToForeground() {
+    print("App moved to foreground")
+    if let backTime = timeWhenGoBackgroundForEntire {
+        let elapsed = Date().timeIntervalSince(backTime)
+        let duration = Int(elapsed)
+        if timeEntireSecond - duration <= 0 {
+            timeEntireSecond = 0
+            timeCurrentSecond = 0
+            timeWhenGoBackgroundForEntire = nil
+            isTimerOnForEntire = !isTimerOnForEntire
+        }else {
+            timeEntireSecond -= duration
+            timeCurrentSecond -= duration
+            timeWhenGoBackgroundForEntire = nil
+            isTimerOnForEntire = !isTimerOnForEntire
+        }
+        print("DURATION: \(duration)")
+    }
+}
+*/
