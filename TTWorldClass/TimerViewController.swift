@@ -20,6 +20,7 @@ class TimerViewController: UIViewController {
     var player:AVAudioPlayer!
     // 하고 있는 일이 몇 번째인지 알려주는 인덱스 변수
     var setChapter = 0
+    let center = UNUserNotificationCenter.current()
     
     /*
     // 실제로 지나간 시간 표시에 필요한 필드
@@ -40,24 +41,10 @@ class TimerViewController: UIViewController {
      */
     
     
-    
-    
     // 전체 남은 시간 표시에 필요한 필드
     var entireTimer: Timer? = nil
     var isTimerOnForEntire = false
     var timeWhenGoBackgroundForEntire: Date?
-    
-    func calTimeEntireValue() {
-        if setChapter == 0{
-            timeEntireSecond = sum(numbers: itemsTime) * 60
-        }else {
-            timeEntireSecond = (sum(numbers: itemsTime) - sum(numbers:  Array(itemsTime.prefix(setChapter)))) * 60
-        }
-    }
-    
-    func calTimeCurrnetValue() {
-        timeCurrentSecond = itemsTime[setChapter] * 60
-    }
     
     var timeEntireSecond = 0 {
         willSet(newValue) {
@@ -104,10 +91,21 @@ class TimerViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    var center = UNUserNotificationCenter.current()
+    func calTimeEntireValue() {
+        if setChapter == 0{
+            timeEntireSecond = sum(numbers: itemsTime) * 60
+        }else {
+            timeEntireSecond = (sum(numbers: itemsTime) - sum(numbers:  Array(itemsTime.prefix(setChapter)))) * 60
+        }
+    }
+    
+    func calTimeCurrnetValue() {
+        timeCurrentSecond = itemsTime[setChapter] * 60
+    }
+    
+    
     
     func setReminder(thisTime: Int) {
-        
         
         let content = UNMutableNotificationContent()
         content.title = "리마인더 제목"
@@ -125,7 +123,6 @@ class TimerViewController: UIViewController {
             }
         }
     }
-    
     
     
 //    func requestAuthNotification() {
@@ -236,7 +233,7 @@ class TimerViewController: UIViewController {
                         self.remainTaskCount.text = "\(itemsTime.count - self.setChapter - 1)개"
                         self.isTimerOnForEntire = !self.isTimerOnForEntire
                     }
-                    
+                    print(self.center)
                     print("\(self.timeCurrentSecond)")
                 }
                 RunLoop.current.add(self.currentTimer!, forMode: .common)
@@ -259,14 +256,18 @@ class TimerViewController: UIViewController {
         if isTimerOnForEntire {
             resetButton.isEnabled = true
             resetButton.alpha = 1.0
+            
             currentTimer?.invalidate()
             entireTimer?.invalidate()
+            center.removeAllPendingNotificationRequests()
+            
             timeButton.setTitle("다시 시작", for: .normal)
             
         } else {
             resetButton.isEnabled = true
             resetButton.alpha = 1.0
             self.setReminder(thisTime: timeCurrentSecond)
+            print(self.center)
             self.entireTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {entireTimer in
                 self.timeEntireSecond -= 1
                 
@@ -275,6 +276,8 @@ class TimerViewController: UIViewController {
 //                    self.finalEndingAlert()
                     self.currentTimer?.invalidate()
                     self.entireTimer?.invalidate()
+                    //self.center.removeAllPendingNotificationRequests()
+                    
                     self.currentTimer = nil
                     self.entireTimer = nil
                     self.setChapter = 0
@@ -302,6 +305,8 @@ class TimerViewController: UIViewController {
                     
                     self.currentTimer?.invalidate()
                     self.entireTimer?.invalidate()
+                    //self.center.removeAllPendingNotificationRequests()
+                    
                     self.setChapter += 1
                     self.calTimeCurrnetValue()
                     self.timeButton.setTitle("New Start", for: .normal)
@@ -309,7 +314,7 @@ class TimerViewController: UIViewController {
                     self.remainTaskCount.text = "\(itemsTime.count - self.setChapter - 1)개"
                     self.isTimerOnForEntire = !self.isTimerOnForEntire
                 }
-                
+                print(self.center)
                 print("\(self.timeCurrentSecond)")
             }
             RunLoop.current.add(self.currentTimer!, forMode: .common)
@@ -331,6 +336,8 @@ class TimerViewController: UIViewController {
             setChapter -= 1
             currentTimer?.invalidate()
             entireTimer?.invalidate()
+            center.removeAllPendingNotificationRequests()
+            
             taskNameThisTime.text = items[setChapter]
             remainTaskCount.text = "\(itemsTime.count - setChapter - 1)개"
             isTimerOnForEntire = false
@@ -352,8 +359,11 @@ class TimerViewController: UIViewController {
     @IBAction func btnNextWork(_ sender: Any) {
         if isTimerOnForEntire {
             setChapter += 1
+            
             currentTimer?.invalidate()
             entireTimer?.invalidate()
+            center.removeAllPendingNotificationRequests()
+            
             taskNameThisTime.text = items[setChapter]
             remainTaskCount.text = "\(itemsTime.count - setChapter - 1)개"
             isTimerOnForEntire = false
@@ -404,6 +414,7 @@ class TimerViewController: UIViewController {
         timeCurrentSecond = itemsTime[setChapter] * 60
         entireTimer?.invalidate()
         timeEntireSecond = sum(numbers: itemsTime) * 60
+        center.removeAllPendingNotificationRequests()
         
         taskNameThisTime.text = items[setChapter]
         remainTaskCount.text = "\(itemsTime.count - setChapter - 1)개"
