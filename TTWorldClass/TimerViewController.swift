@@ -49,8 +49,8 @@ class TimerViewController: UIViewController {
     var timeEntireSecond = 0 {
         willSet(newValue) {
             var hours = String(newValue / 3600)
-            var minutes = String(newValue / 60)
-            var seconds = String(newValue % 60)
+            var minutes = String((newValue - Int(hours)! * 3600) / 60)
+            var seconds = String((newValue - Int(minutes)! * 60) % 60)
             if hours.count == 1 { hours = "0"+hours }
             if minutes.count == 1 { minutes = "0"+minutes }
             if seconds.count == 1 { seconds = "0"+seconds }
@@ -63,11 +63,11 @@ class TimerViewController: UIViewController {
     var currentTimer: Timer? = nil
     var isTimerOnForCurrent = false
     var timeWhenGoBackgroundForCurrentSecond: Date?
-    var timeCurrentSecond = 60 {
+    var timeCurrentSecond = 0 {
         willSet(newValue) {
             var hours = String(newValue / 3600)
-            var minutes = String(newValue / 60)
-            var seconds = String(newValue % 60)
+            var minutes = String((newValue - Int(hours)! * 3600) / 60)
+            var seconds = String((newValue - Int(minutes)! * 60) % 60)
             if hours.count == 1 { hours = "0"+hours }
             if minutes.count == 1 { minutes = "0"+minutes }
             if seconds.count == 1 { seconds = "0"+seconds }
@@ -106,10 +106,11 @@ class TimerViewController: UIViewController {
     
     
     func setReminder(thisTime: Int) {
+        // 이번 할 일이 끝난 상황과 전체 할 일이 끝난 상황 분기 필요
         
         let content = UNMutableNotificationContent()
-        content.title = "리마인더 제목"
-        content.body = "이것은 로컬 알림이닷"
+        content.title = "도전 100분"
+        content.body = "이번 할 일이 끝났습니다."
         content.sound = UNNotificationSound.init(named: UNNotificationSoundName(rawValue: "alarm.wav"))
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(thisTime), repeats: false)
@@ -119,7 +120,7 @@ class TimerViewController: UIViewController {
         let request = UNNotificationRequest(identifier: alarmName, content: content, trigger: trigger)
         center.add(request) { (error) in
             if error != nil {
-                print("에러가 났다")
+                print("에러 발생")
             }
         }
     }
@@ -160,6 +161,7 @@ class TimerViewController: UIViewController {
             self.entireTimer?.invalidate()
             timeWhenGoBackgroundForEntire = Date()
             timeWhenGoBackgroundForCurrentSecond = Date()
+            
             print("Save")
         }
     }
@@ -167,9 +169,11 @@ class TimerViewController: UIViewController {
     // 전체 남은 시간용 appMoveToForeground() 메서드
     @objc func appMovedToForeground() {
         print("App moved to foreground")
+        
         if let backTime = timeWhenGoBackgroundForEntire {
             let elapsed = Date().timeIntervalSince(backTime)
             let duration = Int(elapsed)
+            
             if timeEntireSecond - duration <= 0 {
                 setChapter = 0
                 timeEntireSecond = 0
@@ -180,7 +184,8 @@ class TimerViewController: UIViewController {
                 timeButton.setTitle("다시 시작", for: .normal)
                 taskNameThisTime.text = items[setChapter]
                 remainTaskCount.text = "\(itemsTime.count - setChapter - 1)개"
-            }else if timeEntireSecond != 0 && timeCurrentSecond - duration <= 0{
+                
+            }else if !(timeEntireSecond - duration <= 0) && timeCurrentSecond - duration <= 0{
                 setChapter += 1
                 timeEntireSecond = (sum(numbers: itemsTime) - sum(numbers:  Array(itemsTime.prefix(setChapter)))) * 60
                 timeCurrentSecond = itemsTime[setChapter] * 60
@@ -190,63 +195,78 @@ class TimerViewController: UIViewController {
                 timeButton.setTitle("다시 시작", for: .normal)
                 taskNameThisTime.text = items[setChapter]
                 remainTaskCount.text = "\(itemsTime.count - setChapter - 1)개"
-            } else {
-                self.entireTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {entireTimer in
-                    self.timeEntireSecond -= 1
-                    
-                    if self.timeEntireSecond == 0 {
-    //                    self.playSound(title: "alarm_sound")
-    //                    self.finalEndingAlert()
-                        self.currentTimer?.invalidate()
-                        self.entireTimer?.invalidate()
-                        self.currentTimer = nil
-                        self.entireTimer = nil
-                        self.setChapter = 0
-                        self.calTimeCurrnetValue()
-                        self.calTimeEntireValue()
-                        self.taskNameThisTime.text = items[self.setChapter]
-                        self.remainTaskCount.text = "\(itemsTime.count - self.setChapter - 1)개"
-                        self.timeButton.setTitle("Start", for: .normal)
-                        self.isTimerOnForEntire = !self.isTimerOnForEntire
-                        
-                    }
-                    print("\(self.timeEntireSecond)")
-                }
                 
-                RunLoop.current.add(self.entireTimer!, forMode: .common)
-                
-                
-                self.currentTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {currentTimer in
-                    self.timeCurrentSecond -= 1
-                    
-                    if self.timeCurrentSecond <= 0 && self.timeEntireSecond != 0
-                    {
-    //                    self.playSound(title: "alarm_sound")
-    //                    self.endingAlert()
-                        
-                        self.currentTimer?.invalidate()
-                        self.entireTimer?.invalidate()
-                        self.setChapter += 1
-                        self.calTimeCurrnetValue()
-                        self.timeButton.setTitle("New Start", for: .normal)
-                        self.taskNameThisTime.text = items[self.setChapter]
-                        self.remainTaskCount.text = "\(itemsTime.count - self.setChapter - 1)개"
-                        self.isTimerOnForEntire = !self.isTimerOnForEntire
-                    }
-                    print(self.center)
-                    print("\(self.timeCurrentSecond)")
-                }
-                RunLoop.current.add(self.currentTimer!, forMode: .common)
-                
-                timeButton.setTitle("STOP", for: .normal)
+                // 정지가 안된 상태로 백그라운드로 갔다가 올 때
+            } else if isTimerOnForEntire {
                 
                 timeEntireSecond -= duration
                 timeCurrentSecond -= duration
                 timeWhenGoBackgroundForEntire = nil
                 timeWhenGoBackgroundForCurrentSecond = nil
-                isTimerOnForEntire = !isTimerOnForEntire
+                //                isTimerOnForEntire = !isTimerOnForEntire
+                self.entireTimer = nil
+                self.currentTimer = nil
+                
+                
+                
+                // 정지된 상태로 백그라운드로 갔다가 올 때
+            } else {
+                // 백그라운드로 갔다가 포어그라운드로 왔을 때 하나를 더 만드는 문제 있음
+                entireTimer = nil
+                currentTimer = nil
+                //                self.entireTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {entireTimer in
+                //                    self.timeEntireSecond -= 1
+                //
+                //                    if self.timeEntireSecond <= 0 {
+                //    //                    self.playSound(title: "alarm_sound")
+                //    //                    self.finalEndingAlert()
+                //                        self.currentTimer?.invalidate()
+                //                        self.entireTimer?.invalidate()
+                //                        self.currentTimer = nil
+                //                        self.entireTimer = nil
+                //                        self.setChapter = 0
+                //                        self.calTimeCurrnetValue()
+                //                        self.calTimeEntireValue()
+                //                        self.taskNameThisTime.text = items[self.setChapter]
+                //                        self.remainTaskCount.text = "\(itemsTime.count - self.setChapter - 1)개"
+                //                        self.timeButton.setTitle("Start", for: .normal)
+                //                        self.isTimerOnForEntire = !self.isTimerOnForEntire
+                //
+                //                    }
+                //                    print("\(self.timeEntireSecond)")
+                //                }
+                //
+                //                RunLoop.current.add(self.entireTimer!, forMode: .common)
+                //
+                //
+                //                self.currentTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {currentTimer in
+                //                    self.timeCurrentSecond -= 1
+                //
+                //                    if self.timeCurrentSecond <= 0 && self.timeEntireSecond != 0
+                //                    {
+                //    //                    self.playSound(title: "alarm_sound")
+                //    //                    self.endingAlert()
+                //
+                //                        self.currentTimer?.invalidate()
+                //                        self.entireTimer?.invalidate()
+                //                        self.setChapter += 1
+                //                        self.calTimeCurrnetValue()
+                //                        self.timeButton.setTitle("New Start", for: .normal)
+                //                        self.taskNameThisTime.text = items[self.setChapter]
+                //                        self.remainTaskCount.text = "\(itemsTime.count - self.setChapter - 1)개"
+                //                        self.isTimerOnForEntire = !self.isTimerOnForEntire
+                //                    }
+                //                    print(self.center)
+                //                    print("\(self.timeCurrentSecond)")
+                //                }
+                //                RunLoop.current.add(self.currentTimer!, forMode: .common)
+                //
+                //                timeButton.setTitle("STOP", for: .normal)
+                //
+                //
+                //            }
+                //            print("DURATION: \(duration)")
             }
-            print("DURATION: \(duration)")
         }
     }
 
@@ -264,6 +284,8 @@ class TimerViewController: UIViewController {
             timeButton.setTitle("다시 시작", for: .normal)
             
         } else {
+            // 백, 포그라운드로 왔을 때 문제 되는 부분.
+            
             resetButton.isEnabled = true
             resetButton.alpha = 1.0
             self.setReminder(thisTime: timeCurrentSecond)
@@ -283,6 +305,7 @@ class TimerViewController: UIViewController {
                     self.setChapter = 0
                     self.calTimeCurrnetValue()
                     self.calTimeEntireValue()
+                    self.viewDidLoad()
                     self.taskNameThisTime.text = items[self.setChapter]
                     self.remainTaskCount.text = "\(itemsTime.count - self.setChapter - 1)개"
                     self.timeButton.setTitle("Start", for: .normal)

@@ -78,10 +78,10 @@
 			children = (
 				C9D8B92528F2C0430039D7CC /* AppDelegate.swift */,
 				C9D8B92728F2C0430039D7CC /* SceneDelegate.swift */,
-				C9D8B92928F2C0430039D7CC /* ViewController.swift */,
-				C9439A0228F64B8D0040C798 /* Logo_black.png */,
 				C95CB32328F5551000E2AE6A /* Balynt - Memory.mp3 */,
 				C98B0C6528FC4B0800399B69 /* alarm.wav */,
+				C9439A0228F64B8D0040C798 /* Logo_black.png */,
+				C9D8B92928F2C0430039D7CC /* ViewController.swift */,
 				C9ED7A5228F304480052B653 /* TimerViewController.swift */,
 				C9ED7A5028F2D6340052B653 /* AddViewController.swift */,
 				C9ED7A4728F2D5840052B653 /* DetailViewController.swift */,
