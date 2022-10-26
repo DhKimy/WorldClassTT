@@ -1116,8 +1116,29 @@
                             <constraint firstItem="nKr-y5-vF4" firstAttribute="centerX" secondItem="9YQ-iR-hIf" secondAttribute="centerX" id="rkh-AU-Zbo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PTN-em-fpE"/>
+                    <navigationItem key="navigationItem" id="PTN-em-fpE">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="dVR-Tb-DjS">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" id="GfB-JF-Y1N">
+                                <rect key="frame" x="20" y="6" width="40" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="closeModal:" destination="JPg-BC-vAY" eventType="touchUpInside" id="uWK-KF-5VB"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="closeModal:" destination="JPg-BC-vAY" id="HJ2-iY-ZhF"/>
+                            </connections>
+                        </barButtonItem>
+                        <connections>
+                            <outlet property="leftBarButtonItem" destination="dVR-Tb-DjS" id="kKF-NF-za5"/>
+                        </connections>
+                    </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="dVR-Tb-DjS" id="jJp-wr-E1p"/>
                         <outlet property="currentTimerLabel" destination="Lmx-Qt-WPf" id="okw-ep-Sxj"/>
                         <outlet property="entireTimerLabel" destination="FXn-BF-qyr" id="mAm-bY-GmI"/>
                         <outlet property="nextButton" destination="SDV-D5-URa" id="mHM-o6-HyC"/>

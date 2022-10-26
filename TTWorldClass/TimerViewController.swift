@@ -68,7 +68,8 @@ class TimerViewController: UIViewController {
         prevNextButtonColorSet()
         taskNameThisTime.text = items[setChapter]
         remainTaskCount.text = "\(itemsTime.count - setChapter - 1)개"
-        //requestAuthNotification()
+        
+        self.navigationItem.leftBarButtonItem = backButton
         
         // 백그라운드로 넘어갈 때 타이머 멈춘 후에 실행하기 위해 필요한 변수
         let notificationCenter = NotificationCenter.default
@@ -92,6 +93,30 @@ class TimerViewController: UIViewController {
             currentTime = timeCurrentSecond
         
         
+    }
+    
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    
+    @IBAction func closeModal(_ sender: Any) {
+        let alert = UIAlertController(title:"경고",message: "시작 후 앱의 이전 화면으로 이동하면 알람이 꺼집니다. 그래도 이동하시겠습니까?",preferredStyle: UIAlertController.Style.alert)
+        let cancle = UIAlertAction(title: "돌아갈께요", style: .default, handler: nil)
+        //확인 버튼 만들기
+        let ok = UIAlertAction(title: "나갈래요", style: .destructive, handler: {_ in
+            isTimerOnForEntire = false
+            isTimerOnForCurrent = false
+            self.entireTimer?.invalidate()
+            self.currentTimer?.invalidate()
+            self.entireTimer = nil
+            self.currentTimer = nil
+            self.center.removeAllPendingNotificationRequests()
+            self.navigationController?.popViewController(animated: true)
+        })
+        alert.addAction(cancle)
+        //확인 버튼 경고창에 추가하기
+        alert.addAction(ok)
+        present(alert,animated: true,completion: nil)
+        
+
     }
     
     
