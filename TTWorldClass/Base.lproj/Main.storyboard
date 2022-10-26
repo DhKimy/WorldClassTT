@@ -166,7 +166,7 @@
                             </buttonConfiguration>
                             <connections>
                                 <action selector="btnTimerStart:" destination="Iuy-Zc-O9T" eventType="touchUpInside" id="oab-ca-VeZ"/>
-                                <segue destination="JPg-BC-vAY" kind="show" id="5HF-NM-0gS"/>
+                                <segue destination="JPg-BC-vAY" kind="show" id="FGI-BK-MMQ"/>
                             </connections>
                         </button>
                         <prototypes>
@@ -211,11 +211,7 @@
                         <centerItemGroups>
                             <barButtonItemGroup customizationDisposition="fixed" id="IbD-N4-Gng">
                                 <barButtonItems>
-                                    <barButtonItem title="How To" style="plain" id="Sqe-S5-I1O">
-                                        <connections>
-                                            <segue destination="7cP-VJ-8Tz" kind="show" id="oro-bb-spG"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="How To" style="plain" id="Sqe-S5-I1O"/>
                                 </barButtonItems>
                             </barButtonItemGroup>
                         </centerItemGroups>
@@ -847,7 +843,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람 소리 설정(기능 구현 예정)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKR-UF-4T4">
-                                <rect key="frame" x="42" y="163" width="206" height="21"/>
+                                <rect key="frame" x="42" y="119" width="206" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

@@ -66,13 +66,13 @@ class TableViewController: UITableViewController {
         
         cell.textLabel?.text = items[(indexPath as NSIndexPath).row]
         cell.detailTextLabel?.text = {
-            var tempTime = itemsTime[(indexPath as NSIndexPath).row]
+            let tempTime = itemsTime[(indexPath as NSIndexPath).row]
                     
             if tempTime < 60 {
                 return "\(tempTime):00"
             }else {
-                var hours = tempTime / 60
-                var minutes = tempTime % 60
+                let hours = tempTime / 60
+                let minutes = tempTime % 60
                 if minutes < 10 {
                     return "\(hours):0\(minutes):00"
                 }
