@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var images = ["step1", "step2", "step3"]
+    var images = ["step1", "step2", "step3", "step4", "step5", "step6"]
     @IBOutlet weak var imgView: UIImageView!
     var number: Int = 1
     @IBOutlet weak var pageControl: UIPageControl!
