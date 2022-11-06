@@ -8,9 +8,10 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    @IBOutlet weak var idLabel: UILabel!
     
+    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,8 +24,12 @@ class MainViewController: UIViewController {
         /**
          싱글턴 클래스에 임시 저장해놓았던 데이터 사용
          */
-        self.idLabel.text = UserInformation.shared.name
-        self.passwordLabel.text = UserInformation.shared.age
+        if let sharedData: String = UserInformation.shared.id {
+            self.idLabel.text = sharedData
+        }
+        if let sharedData: String = UserInformation.shared.password {
+            self.passwordLabel.text = sharedData
+        }
     }
     /*
     // MARK: - Navigation

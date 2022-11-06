@@ -20,8 +20,19 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInButton(_ sender: UIButton) {
+        if idField.text == "" || passwordField.text == "" {
+            let alert = UIAlertController(title : "로그인 실패", message: "아이디 또는 비밀번호를 입력하세요.", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "확인", style: .default) {
+                (action) in
+            }
+            alert.addAction(okAction)
+            present(alert, animated: false, completion: nil)
+            return
+        }
+        
         UserInformation.shared.id = idField.text
         UserInformation.shared.password = passwordField.text
+        self.navigationController?.popViewController(animated: true)
     }
     
     /*
