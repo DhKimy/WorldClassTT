@@ -10,7 +10,6 @@
 		C90341E92917A6270083C617 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90341E82917A6270083C617 /* SignUpViewController.swift */; };
 		C90341EB2917B3390083C617 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90341EA2917B3390083C617 /* SignInViewController.swift */; };
 		C9056601292C609D0042DBEA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C9056600292C609D0042DBEA /* README.md */; };
-		C9056603292C653F0042DBEA /* 6.5형 미리보기 in Resources */ = {isa = PBXBuildFile; fileRef = C9056602292C653F0042DBEA /* 6.5형 미리보기 */; };
 		C9439A0328F64B8D0040C798 /* Logo_black.png in Resources */ = {isa = PBXBuildFile; fileRef = C9439A0228F64B8D0040C798 /* Logo_black.png */; };
 		C9439A0628F918A50040C798 /* EmoticonSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9439A0528F918A50040C798 /* EmoticonSelectViewController.swift */; };
 		C9439A0A28F9579F0040C798 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9439A0928F9579F0040C798 /* SettingViewController.swift */; };
@@ -35,7 +34,6 @@
 		C90341E82917A6270083C617 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C90341EA2917B3390083C617 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C9056600292C609D0042DBEA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		C9056602292C653F0042DBEA /* 6.5형 미리보기 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "6.5형 미리보기"; sourceTree = "<group>"; };
 		C9439A0228F64B8D0040C798 /* Logo_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_black.png; sourceTree = "<group>"; };
 		C9439A0528F918A50040C798 /* EmoticonSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonSelectViewController.swift; sourceTree = "<group>"; };
 		C9439A0928F9579F0040C798 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				C9D8B93328F2C0450039D7CC /* Info.plist */,
 				C9F66E352917B5FB008D9C3E /* MainViewController.swift */,
 				C9056600292C609D0042DBEA /* README.md */,
-				C9056602292C653F0042DBEA /* 6.5형 미리보기 */,
 			);
 			path = TTWorldClass;
 			sourceTree = "<group>";
@@ -188,7 +185,6 @@
 				C9D8B92F28F2C0450039D7CC /* Assets.xcassets in Resources */,
 				C95CB32428F5551000E2AE6A /* Balynt - Memory.mp3 in Resources */,
 				C9D8B92D28F2C0430039D7CC /* Main.storyboard in Resources */,
-				C9056603292C653F0042DBEA /* 6.5형 미리보기 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

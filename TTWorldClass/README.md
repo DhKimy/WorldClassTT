@@ -67,7 +67,7 @@ https://apps.apple.com/kr/app/%EB%8F%84%EC%A0%84100%EB%B6%84/id6444036551
 
 ##### 메인페이지
 
-<img width = "50%", src = "https://user-images.githubusercontent.com/98330884/203201345-370d0b1a-8645-46ce-a4f2-cb59fa30f561.png"/>
+<img width = "50%" src = "https://user-images.githubusercontent.com/98330884/203201345-370d0b1a-8645-46ce-a4f2-cb59fa30f561.png"/>
 
 * 튜토리얼, 할 일 설정하기의 분기 페이지 입니다.
 * 튜토리얼로 넘어갈 경우, 다시 이 페이지로 돌아올 수 있습니다.
