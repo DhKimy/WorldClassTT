@@ -10,9 +10,9 @@
 		C90341E92917A6270083C617 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90341E82917A6270083C617 /* SignUpViewController.swift */; };
 		C90341EB2917B3390083C617 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90341EA2917B3390083C617 /* SignInViewController.swift */; };
 		C9056601292C609D0042DBEA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C9056600292C609D0042DBEA /* README.md */; };
+		C91C1276295046A900C129AD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C1275295046A900C129AD /* SettingsViewController.swift */; };
 		C9439A0328F64B8D0040C798 /* Logo_black.png in Resources */ = {isa = PBXBuildFile; fileRef = C9439A0228F64B8D0040C798 /* Logo_black.png */; };
 		C9439A0628F918A50040C798 /* EmoticonSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9439A0528F918A50040C798 /* EmoticonSelectViewController.swift */; };
-		C9439A0A28F9579F0040C798 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9439A0928F9579F0040C798 /* SettingViewController.swift */; };
 		C95CB32428F5551000E2AE6A /* Balynt - Memory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C95CB32328F5551000E2AE6A /* Balynt - Memory.mp3 */; };
 		C98B0C6628FC4B0800399B69 /* alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = C98B0C6528FC4B0800399B69 /* alarm.wav */; };
 		C9CA56E128F3E28A002241B3 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CA56E028F3E28A002241B3 /* DatePickerViewController.swift */; };
@@ -34,9 +34,9 @@
 		C90341E82917A6270083C617 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C90341EA2917B3390083C617 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C9056600292C609D0042DBEA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C91C1275295046A900C129AD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C9439A0228F64B8D0040C798 /* Logo_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_black.png; sourceTree = "<group>"; };
 		C9439A0528F918A50040C798 /* EmoticonSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonSelectViewController.swift; sourceTree = "<group>"; };
-		C9439A0928F9579F0040C798 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C95CB32328F5551000E2AE6A /* Balynt - Memory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Balynt - Memory.mp3"; sourceTree = "<group>"; };
 		C98B0C6528FC4B0800399B69 /* alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm.wav; sourceTree = "<group>"; };
 		C9CA56E028F3E28A002241B3 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				C9ED7A4628F2D5840052B653 /* TableViewController.swift */,
 				C9CA56E028F3E28A002241B3 /* DatePickerViewController.swift */,
 				C9439A0528F918A50040C798 /* EmoticonSelectViewController.swift */,
-				C9439A0928F9579F0040C798 /* SettingViewController.swift */,
+				C91C1275295046A900C129AD /* SettingsViewController.swift */,
 				C90341E82917A6270083C617 /* SignUpViewController.swift */,
 				C90341EA2917B3390083C617 /* SignInViewController.swift */,
 				C9F66E332917B571008D9C3E /* UserInformation.swift */,
@@ -201,8 +201,8 @@
 				C9ED7A5128F2D6340052B653 /* AddViewController.swift in Sources */,
 				C9ED7A5328F304480052B653 /* TimerViewController.swift in Sources */,
 				C9CA56E128F3E28A002241B3 /* DatePickerViewController.swift in Sources */,
-				C9439A0A28F9579F0040C798 /* SettingViewController.swift in Sources */,
 				C9F66E362917B5FB008D9C3E /* MainViewController.swift in Sources */,
+				C91C1276295046A900C129AD /* SettingsViewController.swift in Sources */,
 				C9ED7A4928F2D5840052B653 /* DetailViewController.swift in Sources */,
 				C90341EB2917B3390083C617 /* SignInViewController.swift in Sources */,
 				C9D8B92828F2C0430039D7CC /* SceneDelegate.swift in Sources */,
