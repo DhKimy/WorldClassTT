@@ -8,9 +8,9 @@
 import UIKit
 
 // 앱 시작 시 기본적으로 나타낼 목록
-var items = ["장보기", "책상 정리", "빨래 널기"]
-var itemsImageFile = ["cart", "clock", "pencil"]
-var itemsTime: [Int] = [20, 10, 5]
+var items: [String] = ["장보기"]
+var itemsImageFile: [String] = ["cart"]
+var itemsTime: [Int] = [5]
 var timerLimitActivate: Bool = true
 
 class TableViewController: UITableViewController {

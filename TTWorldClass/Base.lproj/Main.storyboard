@@ -53,7 +53,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3557" y="-541"/>
+            <point key="canvasLocation" x="2972" y="-547"/>
         </scene>
         <!--안녕하세요!-->
         <scene sceneID="aLE-lO-Npf">
@@ -76,31 +76,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="gUg-A3-7eN">
-                                <rect key="frame" x="130" y="414.66666666666669" width="170" height="103.00000000000006"/>
+                                <rect key="frame" x="130" y="448.66666666666669" width="170" height="35"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3W-ai-Ajf">
-                                        <rect key="frame" x="0.0" y="0.0" width="170" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="8cX-gL-333"/>
-                                            <constraint firstAttribute="width" constant="170" id="e8L-6T-ZHU"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="튜토리얼 보기">
-                                                    <attributes>
-                                                        <font key="NSFont" size="18" name="NotoSansKR-Medium"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <color key="baseBackgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="aQt-zX-hh8"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XS2-vT-T5e">
-                                        <rect key="frame" x="0.0" y="68" width="170" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="TW4-o7-dxc"/>
                                             <constraint firstAttribute="width" constant="170" id="k8q-zw-g2l"/>
@@ -129,7 +108,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pac-Cb-5CB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1134" y="189"/>
+            <point key="canvasLocation" x="1098" y="205"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3dH-mF-eVS">
+            <objects>
+                <viewController id="Ptx-E9-4NQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="unm-a2-oMn">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="LvT-jN-vMb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iOx-UF-Q80"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfb-pe-SxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3707" y="-547"/>
         </scene>
         <!--할 일 목록-->
         <scene sceneID="WTg-mZ-h3C">
@@ -213,7 +208,16 @@
                         <centerItemGroups>
                             <barButtonItemGroup customizationDisposition="fixed" id="IbD-N4-Gng">
                                 <barButtonItems>
-                                    <barButtonItem title="How To" style="plain" id="Sqe-S5-I1O"/>
+                                    <barButtonItem title="개인 설정" style="plain" id="Sqe-S5-I1O">
+                                        <connections>
+                                            <segue destination="Ptx-E9-4NQ" kind="show" id="RBR-0v-vqC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="튜토리얼 보기" style="plain" id="LOd-Lg-RHn" userLabel="튜토리얼 보기">
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="KOS-AQ-NlV"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </barButtonItems>
                             </barButtonItemGroup>
                         </centerItemGroups>
@@ -231,7 +235,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJf-hb-ufX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3557" y="205"/>
+            <point key="canvasLocation" x="2053" y="205"/>
         </scene>
         <!--할 일 목록 보기-->
         <scene sceneID="lVC-cm-2T7">
