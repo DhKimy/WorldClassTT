@@ -26,7 +26,6 @@ class AddViewController: UIViewController, MyProtocol{
     
     // 새 목록 추가하기
     @IBAction func btnAddItem(_ sender: UIButton) {
-        
         if tfAddItem.text == "" || tfAddTime.text == "0" || tfAddTime == nil {
             let alert = UIAlertController(title : "생성 불가", message: "제목 또는 시간을 입력하지 않았어요!", preferredStyle: UIAlertController.Style.alert)
             let okAction = UIAlertAction(title: "다시 만들기", style: .default) {
@@ -36,7 +35,7 @@ class AddViewController: UIViewController, MyProtocol{
             present(alert, animated: false, completion: nil)
             
             return
-        }else if sum(numbers: itemsTime) + Int(tfAddTime.text!)! > 100  {
+        } else if timerLimitActivate == true && sum(numbers: itemsTime) + Int(tfAddTime.text!)! > 100  {
             let nowSum = sum(numbers: itemsTime)
             let availSetTime = 100 - sum(numbers: itemsTime)
             

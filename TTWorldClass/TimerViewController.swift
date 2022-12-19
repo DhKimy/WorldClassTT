@@ -124,8 +124,6 @@ class TimerViewController: UIViewController {
         실제 알람 소리, 푸시 알림을 주는 알람(View와 관련 없음)
      */
     func setReminder(thisTime: Int) {
-        // 이번 할 일이 끝난 상황과 전체 할 일이 끝난 상황 분기 필요
-        
         let content = UNMutableNotificationContent()
         content.title = "도전 100분"
         content.body = "이번 할 일이 끝났습니다."
