@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		C90341E92917A6270083C617 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90341E82917A6270083C617 /* SignUpViewController.swift */; };
 		C90341EB2917B3390083C617 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90341EA2917B3390083C617 /* SignInViewController.swift */; };
+		C905106E2951BF68004FE609 /* madBird.wav in Resources */ = {isa = PBXBuildFile; fileRef = C90510682951BF68004FE609 /* madBird.wav */; };
+		C905106F2951BF68004FE609 /* clap.wav in Resources */ = {isa = PBXBuildFile; fileRef = C90510692951BF68004FE609 /* clap.wav */; };
+		C90510702951BF68004FE609 /* gun.wav in Resources */ = {isa = PBXBuildFile; fileRef = C905106A2951BF68004FE609 /* gun.wav */; };
+		C90510712951BF68004FE609 /* ScreamingMan.wav in Resources */ = {isa = PBXBuildFile; fileRef = C905106B2951BF68004FE609 /* ScreamingMan.wav */; };
+		C90510722951BF68004FE609 /* Train.wav in Resources */ = {isa = PBXBuildFile; fileRef = C905106C2951BF68004FE609 /* Train.wav */; };
+		C90510732951BF68004FE609 /* cloudAndClap.wav in Resources */ = {isa = PBXBuildFile; fileRef = C905106D2951BF68004FE609 /* cloudAndClap.wav */; };
 		C9056601292C609D0042DBEA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C9056600292C609D0042DBEA /* README.md */; };
 		C91C1276295046A900C129AD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C1275295046A900C129AD /* SettingsViewController.swift */; };
 		C9439A0328F64B8D0040C798 /* Logo_black.png in Resources */ = {isa = PBXBuildFile; fileRef = C9439A0228F64B8D0040C798 /* Logo_black.png */; };
 		C9439A0628F918A50040C798 /* EmoticonSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9439A0528F918A50040C798 /* EmoticonSelectViewController.swift */; };
-		C95CB32428F5551000E2AE6A /* Balynt - Memory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C95CB32328F5551000E2AE6A /* Balynt - Memory.mp3 */; };
-		C98B0C6628FC4B0800399B69 /* alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = C98B0C6528FC4B0800399B69 /* alarm.wav */; };
+		C95CB32428F5551000E2AE6A /* Song.wav in Resources */ = {isa = PBXBuildFile; fileRef = C95CB32328F5551000E2AE6A /* Song.wav */; };
+		C98B0C6628FC4B0800399B69 /* siren.wav in Resources */ = {isa = PBXBuildFile; fileRef = C98B0C6528FC4B0800399B69 /* siren.wav */; };
 		C9CA56E128F3E28A002241B3 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CA56E028F3E28A002241B3 /* DatePickerViewController.swift */; };
 		C9D8B92628F2C0430039D7CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D8B92528F2C0430039D7CC /* AppDelegate.swift */; };
 		C9D8B92828F2C0430039D7CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D8B92728F2C0430039D7CC /* SceneDelegate.swift */; };
@@ -33,12 +39,18 @@
 /* Begin PBXFileReference section */
 		C90341E82917A6270083C617 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C90341EA2917B3390083C617 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		C90510682951BF68004FE609 /* madBird.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = madBird.wav; sourceTree = "<group>"; };
+		C90510692951BF68004FE609 /* clap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clap.wav; sourceTree = "<group>"; };
+		C905106A2951BF68004FE609 /* gun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gun.wav; sourceTree = "<group>"; };
+		C905106B2951BF68004FE609 /* ScreamingMan.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ScreamingMan.wav; sourceTree = "<group>"; };
+		C905106C2951BF68004FE609 /* Train.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Train.wav; sourceTree = "<group>"; };
+		C905106D2951BF68004FE609 /* cloudAndClap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cloudAndClap.wav; sourceTree = "<group>"; };
 		C9056600292C609D0042DBEA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C91C1275295046A900C129AD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C9439A0228F64B8D0040C798 /* Logo_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_black.png; sourceTree = "<group>"; };
 		C9439A0528F918A50040C798 /* EmoticonSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonSelectViewController.swift; sourceTree = "<group>"; };
-		C95CB32328F5551000E2AE6A /* Balynt - Memory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Balynt - Memory.mp3"; sourceTree = "<group>"; };
-		C98B0C6528FC4B0800399B69 /* alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm.wav; sourceTree = "<group>"; };
+		C95CB32328F5551000E2AE6A /* Song.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Song.wav; sourceTree = "<group>"; };
+		C98B0C6528FC4B0800399B69 /* siren.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = siren.wav; sourceTree = "<group>"; };
 		C9CA56E028F3E28A002241B3 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		C9D8B92228F2C0430039D7CC /* TTWorldClass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTWorldClass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D8B92528F2C0430039D7CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,8 +107,6 @@
 			children = (
 				C9D8B92528F2C0430039D7CC /* AppDelegate.swift */,
 				C9D8B92728F2C0430039D7CC /* SceneDelegate.swift */,
-				C95CB32328F5551000E2AE6A /* Balynt - Memory.mp3 */,
-				C98B0C6528FC4B0800399B69 /* alarm.wav */,
 				C9439A0228F64B8D0040C798 /* Logo_black.png */,
 				C9D8B92928F2C0430039D7CC /* ViewController.swift */,
 				C9ED7A5228F304480052B653 /* TimerViewController.swift */,
@@ -116,6 +126,14 @@
 				C9D8B93328F2C0450039D7CC /* Info.plist */,
 				C9F66E352917B5FB008D9C3E /* MainViewController.swift */,
 				C9056600292C609D0042DBEA /* README.md */,
+				C90510692951BF68004FE609 /* clap.wav */,
+				C905106D2951BF68004FE609 /* cloudAndClap.wav */,
+				C905106A2951BF68004FE609 /* gun.wav */,
+				C90510682951BF68004FE609 /* madBird.wav */,
+				C905106B2951BF68004FE609 /* ScreamingMan.wav */,
+				C905106C2951BF68004FE609 /* Train.wav */,
+				C95CB32328F5551000E2AE6A /* Song.wav */,
+				C98B0C6528FC4B0800399B69 /* siren.wav */,
 			);
 			path = TTWorldClass;
 			sourceTree = "<group>";
@@ -180,10 +198,16 @@
 			files = (
 				C9439A0328F64B8D0040C798 /* Logo_black.png in Resources */,
 				C9D8B93228F2C0450039D7CC /* LaunchScreen.storyboard in Resources */,
-				C98B0C6628FC4B0800399B69 /* alarm.wav in Resources */,
+				C90510712951BF68004FE609 /* ScreamingMan.wav in Resources */,
+				C90510722951BF68004FE609 /* Train.wav in Resources */,
+				C905106E2951BF68004FE609 /* madBird.wav in Resources */,
+				C90510702951BF68004FE609 /* gun.wav in Resources */,
+				C98B0C6628FC4B0800399B69 /* siren.wav in Resources */,
 				C9056601292C609D0042DBEA /* README.md in Resources */,
 				C9D8B92F28F2C0450039D7CC /* Assets.xcassets in Resources */,
-				C95CB32428F5551000E2AE6A /* Balynt - Memory.mp3 in Resources */,
+				C90510732951BF68004FE609 /* cloudAndClap.wav in Resources */,
+				C905106F2951BF68004FE609 /* clap.wav in Resources */,
+				C95CB32428F5551000E2AE6A /* Song.wav in Resources */,
 				C9D8B92D28F2C0430039D7CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

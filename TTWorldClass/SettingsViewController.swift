@@ -7,11 +7,13 @@
 
 import UIKit
 
+var songTitle: String = "gun.wav"
+
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var settingTableView: UITableView!
     
-    var settingItems: [String] = ["100분 제한"]
+    var settingItems: [String] = ["100분 제한", "알람 소리"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,11 +56,6 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
-    
-    
-    
-    
-    
     
     @objc func switchDidChange(_ sender: UISwitch) {
         timerLimitActivate = !timerLimitActivate

@@ -10,7 +10,7 @@ import UIKit
 // 앱 시작 시 기본적으로 나타낼 목록
 var items: [String] = ["장보기"]
 var itemsImageFile: [String] = ["cart"]
-var itemsTime: [Int] = [5]
+var itemsTime: [Int] = [1]
 var timerLimitActivate: Bool = true
 
 class TableViewController: UITableViewController {
