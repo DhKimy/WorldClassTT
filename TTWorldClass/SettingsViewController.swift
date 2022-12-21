@@ -57,10 +57,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func configure() {
         models.append(Section(title: "알람 설정", options: [
-            .switchCell(model: SettingsSwitchOption(title: "100분 제한", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemRed, handler: {
+            .switchCell(model: SettingsSwitchOption(title: "100분 제한", icon: UIImage(systemName: "lock"), iconBackgroundColor: .systemRed, handler: {
                 print("100분 제한 클릭")
             }, isOn: true)),
-            .staticCell(model: SettingsOption(title: "알람음", icon: UIImage(systemName: "sound"), iconBackgroundColor: .systemBlue){
+            .staticCell(model: SettingsOption(title: "알람음", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
                 
             }),
             

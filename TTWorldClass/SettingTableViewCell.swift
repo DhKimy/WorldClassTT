@@ -35,9 +35,10 @@ class SettingTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(label)
-        contentView.addSubview(iconImageView)
         contentView.addSubview(iconContainer)
+        iconContainer.addSubview(iconImageView)
         
+        accessoryView?.addSubview(label)
         contentView.clipsToBounds = true
         accessoryType = .disclosureIndicator
     }
@@ -53,7 +54,6 @@ class SettingTableViewCell: UITableViewCell {
         
         let imageSize = size / 1.5
         iconImageView.frame = CGRect(x: (size-imageSize)/2, y: (size-imageSize)/2, width: imageSize, height: imageSize)
-        iconImageView.center = iconContainer.center
         
         label.frame = CGRect(
             x: 25 + iconContainer.frame.size.width,
