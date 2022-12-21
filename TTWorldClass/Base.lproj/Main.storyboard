@@ -55,61 +55,6 @@
             </objects>
             <point key="canvasLocation" x="2972" y="-547"/>
         </scene>
-        <!--안녕하세요!-->
-        <scene sceneID="aLE-lO-Npf">
-            <objects>
-                <viewController id="ISo-7P-3Vg" customClass="MainViewController" customModule="TTWorldClass" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bJ6-3L-num">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvp-gO-XrJ">
-                                <rect key="frame" x="93.666666666666686" y="133" width="243" height="20"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="도전 100분에 오신 것을 환영합니다!">
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="NotoSansKR-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="gUg-A3-7eN">
-                                <rect key="frame" x="130" y="448.66666666666669" width="170" height="35"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XS2-vT-T5e">
-                                        <rect key="frame" x="0.0" y="0.0" width="170" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="TW4-o7-dxc"/>
-                                            <constraint firstAttribute="width" constant="170" id="k8q-zw-g2l"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="할 일 설정하러 가기">
-                                            <color key="baseBackgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <segue destination="Iuy-Zc-O9T" kind="show" id="UXP-80-XgK"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="qmx-az-tac"/>
-                        <color key="backgroundColor" red="1" green="0.96078431372549022" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="gUg-A3-7eN" firstAttribute="centerY" secondItem="bJ6-3L-num" secondAttribute="centerY" id="7Sb-Fh-8SO"/>
-                            <constraint firstItem="Qvp-gO-XrJ" firstAttribute="top" secondItem="qmx-az-tac" secondAttribute="top" constant="30" id="80X-j5-g1v"/>
-                            <constraint firstItem="gUg-A3-7eN" firstAttribute="centerX" secondItem="bJ6-3L-num" secondAttribute="centerX" id="Gt0-oL-M4B"/>
-                            <constraint firstItem="Qvp-gO-XrJ" firstAttribute="centerX" secondItem="bJ6-3L-num" secondAttribute="centerX" id="Ogg-sA-wHO"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="안녕하세요!" id="AKd-aT-ue6"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pac-Cb-5CB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1098" y="205"/>
-        </scene>
         <!--Settings View Controller-->
         <scene sceneID="3dH-mF-eVS">
             <objects>
@@ -711,6 +656,7 @@
         <!--Navigation Controller-->
         <scene sceneID="uWr-pD-KTs">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVD-qY-oqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Gs-12-nMi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="bYT-56-pAq"/>
@@ -720,12 +666,11 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ISo-7P-3Vg" kind="relationship" relationship="rootViewController" id="yCI-jF-t7W"/>
+                        <segue destination="Iuy-Zc-O9T" kind="relationship" relationship="rootViewController" id="udz-4H-aa6"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VVD-qY-oqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1208" y="189"/>
+            <point key="canvasLocation" x="815" y="205"/>
         </scene>
         <!--Emoticon Select View Controller-->
         <scene sceneID="11g-AC-ufn">

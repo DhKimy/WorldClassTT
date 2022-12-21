@@ -22,6 +22,7 @@
 		C95CB32428F5551000E2AE6A /* Song.wav in Resources */ = {isa = PBXBuildFile; fileRef = C95CB32328F5551000E2AE6A /* Song.wav */; };
 		C98B0C6628FC4B0800399B69 /* siren.wav in Resources */ = {isa = PBXBuildFile; fileRef = C98B0C6528FC4B0800399B69 /* siren.wav */; };
 		C9B10CF5295335BD0044D30C /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B10CF4295335BD0044D30C /* SettingTableViewCell.swift */; };
+		C9B10CF7295355AD0044D30C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B10CF6295355AD0044D30C /* SwitchTableViewCell.swift */; };
 		C9CA56E128F3E28A002241B3 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CA56E028F3E28A002241B3 /* DatePickerViewController.swift */; };
 		C9D8B92628F2C0430039D7CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D8B92528F2C0430039D7CC /* AppDelegate.swift */; };
 		C9D8B92828F2C0430039D7CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D8B92728F2C0430039D7CC /* SceneDelegate.swift */; };
@@ -53,6 +54,7 @@
 		C95CB32328F5551000E2AE6A /* Song.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Song.wav; sourceTree = "<group>"; };
 		C98B0C6528FC4B0800399B69 /* siren.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = siren.wav; sourceTree = "<group>"; };
 		C9B10CF4295335BD0044D30C /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		C9B10CF6295355AD0044D30C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		C9CA56E028F3E28A002241B3 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		C9D8B92228F2C0430039D7CC /* TTWorldClass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTWorldClass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D8B92528F2C0430039D7CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				C9439A0528F918A50040C798 /* EmoticonSelectViewController.swift */,
 				C91C1275295046A900C129AD /* SettingsViewController.swift */,
 				C9B10CF4295335BD0044D30C /* SettingTableViewCell.swift */,
+				C9B10CF6295355AD0044D30C /* SwitchTableViewCell.swift */,
 				C90341E82917A6270083C617 /* SignUpViewController.swift */,
 				C90341EA2917B3390083C617 /* SignInViewController.swift */,
 				C9F66E332917B571008D9C3E /* UserInformation.swift */,
@@ -231,6 +234,7 @@
 				C9B10CF5295335BD0044D30C /* SettingTableViewCell.swift in Sources */,
 				C9F66E362917B5FB008D9C3E /* MainViewController.swift in Sources */,
 				C91C1276295046A900C129AD /* SettingsViewController.swift in Sources */,
+				C9B10CF7295355AD0044D30C /* SwitchTableViewCell.swift in Sources */,
 				C9ED7A4928F2D5840052B653 /* DetailViewController.swift in Sources */,
 				C90341EB2917B3390083C617 /* SignInViewController.swift in Sources */,
 				C9D8B92828F2C0430039D7CC /* SceneDelegate.swift in Sources */,
