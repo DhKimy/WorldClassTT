@@ -9,23 +9,81 @@ import UIKit
 
 var songTitle: String = "gun.wav"
 
-class SettingsViewController: UIViewController {
+struct Section {
+    let title: String
+    let options: [SettingsOption]
+}
 
-    @IBOutlet weak var settingTableView: UITableView!
+struct SettingsOption {
+    let title: String
+    let icon: UIImage?
+    let iconBackgroundColor: UIColor
+    let handler: (() -> Void)
+}
+
+class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+   
+    private let tableView: UITableView = {
+        let table = UITableView(frame: .zero, style: .grouped)
+        table.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
+        return table
+    }()
     
-    var settingItems: [String] = ["100분 제한", "알람 소리"]
+    var models = [Section]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.settingTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.settingTableView.delegate = self
-        self.settingTableView.dataSource = self
-        
-        // Do any additional setup after loading the view.
+        self.configure()
+        title = "Settings"
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.frame = view.bounds
     }
     
-
+    func configure() {
+        models.append(Section(title: "알람 설정", options: [
+            SettingsOption(title: "100분 제한", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemRed){
+                print("100분 제한 클릭")
+            },
+            SettingsOption(title: "알람음", icon: UIImage(systemName: "sound"), iconBackgroundColor: .systemBlue){
+                
+            }
+        ]))
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let model = models[section]
+        return model.title
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return models.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return models[section].options.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = models[indexPath.section].options[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: SettingTableViewCell.identifier,
+            for: indexPath
+        ) as? SettingTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(with: model)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let model = models[indexPath.section].options[indexPath.row]
+        model.handler()
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -38,27 +96,41 @@ class SettingsViewController: UIViewController {
 
 }
 
-extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.settingItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        
-        cell.textLabel?.textColor = .black
-        cell.textLabel?.text = settingItems[(indexPath as NSIndexPath).row]
-        let switchView = UISwitch(frame: .zero)
-        switchView.setOn(timerLimitActivate, animated: true)
-        switchView.tag = indexPath.row
-        switchView.addTarget(self, action: #selector(self.switchDidChange(_:)), for: .valueChanged)
-        cell.accessoryView = switchView
-        
-        return cell
-    }
-    
-    @objc func switchDidChange(_ sender: UISwitch) {
-        timerLimitActivate = !timerLimitActivate
-    }
-    
-}
+//extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+//
+//        if #available(iOS 14.0, *) {
+//            var content = cell.defaultContentConfiguration()
+//            content.text = settingItems[(indexPath as NSIndexPath).row]
+//            cell.contentConfiguration = content
+//        } else {
+//            cell.textLabel?.text = settingItems[(indexPath as NSIndexPath).row]
+//        }
+//
+//
+//        if (indexPath as NSIndexPath).row == 0 {
+//            let switchView = UISwitch(frame: .zero)
+//            switchView.setOn(timerLimitActivate, animated: true)
+//            switchView.tag = indexPath.row
+//            switchView.addTarget(self, action: #selector(self.switchDidChange(_:)), for: .valueChanged)
+//            cell.accessoryView = switchView
+//            cell.selectionStyle = .none
+//            return cell
+//        }
+//
+//        return cell
+//    }
+//
+//    @objc func switchDidChange(_ sender: UISwitch) {
+//        timerLimitActivate = !timerLimitActivate
+//    }
+//
+//}
+//
+//class ringtoneSettingCell: UITableViewCell {
+//
+//
+//
+//}

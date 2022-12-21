@@ -110,63 +110,21 @@
             </objects>
             <point key="canvasLocation" x="1098" y="205"/>
         </scene>
-        <!--개인 설정-->
+        <!--Settings View Controller-->
         <scene sceneID="3dH-mF-eVS">
             <objects>
                 <viewController id="Ptx-E9-4NQ" customClass="SettingsViewController" customModule="TTWorldClass" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="unm-a2-oMn">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hIb-cs-mur">
-                                <rect key="frame" x="0.0" y="103" width="430" height="829"/>
-                                <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Bnz-6b-JeY" detailTextLabel="ovQ-za-8p4" style="IBUITableViewCellStyleValue1" id="xAL-Vl-s7y">
-                                        <rect key="frame" x="0.0" y="53" width="430" height="45.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xAL-Vl-s7y" id="wf2-IZ-oPH">
-                                            <rect key="frame" x="0.0" y="0.0" width="430" height="45.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bnz-6b-JeY">
-                                                    <rect key="frame" x="19.999999999999996" y="12" width="36.666666666666664" height="23"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ovQ-za-8p4">
-                                                    <rect key="frame" x="361.66666666666669" y="12" width="48.333333333333336" height="23"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" red="1" green="0.54117647059999996" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LvT-jN-vMb"/>
                         <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="hIb-cs-mur" firstAttribute="leading" secondItem="LvT-jN-vMb" secondAttribute="leading" id="BND-TT-gIh"/>
-                            <constraint firstItem="LvT-jN-vMb" firstAttribute="trailing" secondItem="hIb-cs-mur" secondAttribute="trailing" id="iXE-Tk-ABt"/>
-                            <constraint firstAttribute="bottom" secondItem="hIb-cs-mur" secondAttribute="bottom" id="uou-zQ-KVn"/>
-                            <constraint firstItem="hIb-cs-mur" firstAttribute="top" secondItem="LvT-jN-vMb" secondAttribute="top" id="xXD-dB-T1g"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="개인 설정" id="iOx-UF-Q80"/>
-                    <connections>
-                        <outlet property="settingTableView" destination="hIb-cs-mur" id="701-9d-f63"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="iOx-UF-Q80"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfb-pe-SxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3706.046511627907" y="-547.2103004291846"/>
+            <point key="canvasLocation" x="4604.6511627906975" y="-547.2103004291846"/>
         </scene>
         <!--할 일 목록-->
         <scene sceneID="WTg-mZ-h3C">
@@ -253,7 +211,7 @@
                                 <barButtonItems>
                                     <barButtonItem title="개인 설정" style="plain" id="Sqe-S5-I1O">
                                         <connections>
-                                            <segue destination="Ptx-E9-4NQ" kind="show" id="RBR-0v-vqC"/>
+                                            <segue destination="Tau-kn-8km" kind="show" id="RBR-0v-vqC"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="튜토리얼 보기" style="plain" id="LOd-Lg-RHn" userLabel="튜토리얼 보기">
@@ -1433,7 +1391,7 @@
                                 </subviews>
                             </stackView>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exC-ip-tbK">
-                                <rect key="frame" x="60" y="267" width="305" height="124"/>
+                                <rect key="frame" x="57" y="267" width="306" height="124"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="-186678434.19214594">
                                     <!--1995-02-01 08:52:45 +0000-->
@@ -1455,6 +1413,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aY9-Wv-wha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="963" y="1070"/>
+        </scene>
+        <!--개인 설정-->
+        <scene sceneID="rbE-cu-alB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tau-kn-8km" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="개인 설정" leftItemsSupplementBackButton="YES" id="lTd-Yz-p2Z"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0jF-im-Lmb">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qNw-l4-hud">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Ptx-E9-4NQ" kind="relationship" relationship="rootViewController" id="4NL-dF-NRa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DOc-gz-ZFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3706.046511627907" y="-547.2103004291846"/>
         </scene>
     </scenes>
     <resources>
