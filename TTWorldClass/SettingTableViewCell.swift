@@ -32,9 +32,16 @@ class SettingTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let subLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(label)
+        contentView.addSubview(subLabel)
         contentView.addSubview(iconContainer)
         iconContainer.addSubview(iconImageView)
         
@@ -61,17 +68,27 @@ class SettingTableViewCell: UITableViewCell {
             width: contentView.frame.size.width - 15 - iconContainer.frame.size.width - 10,
             height: contentView.frame.size.height
         )
-    }
+        
+        subLabel.frame = CGRect(
+            x: contentView.center.x + (contentView.center.x / 2),
+            y: 0,
+            width: contentView.frame.size.width - 15 - iconContainer.frame.size.width - 10,
+            height: contentView.frame.size.height
+        )
+        subLabel.textColor = .lightGray
+        }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         iconImageView.image = nil
         label.text = nil
+        subLabel.text = nil
         iconContainer.backgroundColor = nil
     }
     
     public func configure(with model: SettingsOption) {
         label.text = model.title
+        subLabel.text = model.subtitle
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
     }

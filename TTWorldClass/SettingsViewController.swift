@@ -29,6 +29,7 @@ struct SettingsSwitchOption {
 
 struct SettingsOption {
     let title: String
+    let subtitle: String
     let icon: UIImage?
     let iconBackgroundColor: UIColor
     let handler: (() -> Void)
@@ -60,7 +61,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             .switchCell(model: SettingsSwitchOption(title: "100분 제한", icon: UIImage(systemName: "lock"), iconBackgroundColor: .systemRed, handler: {
                 print("100분 제한 클릭")
             }, isOn: true)),
-            .staticCell(model: SettingsOption(title: "알람음", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
+            .staticCell(model: SettingsOption(title: "알람음", subtitle: songTitle, icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
                 
             }),
             
