@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C90341E92917A6270083C617 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90341E82917A6270083C617 /* SignUpViewController.swift */; };
-		C90341EB2917B3390083C617 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90341EA2917B3390083C617 /* SignInViewController.swift */; };
 		C905106E2951BF68004FE609 /* madBird.wav in Resources */ = {isa = PBXBuildFile; fileRef = C90510682951BF68004FE609 /* madBird.wav */; };
 		C905106F2951BF68004FE609 /* clap.wav in Resources */ = {isa = PBXBuildFile; fileRef = C90510692951BF68004FE609 /* clap.wav */; };
 		C90510702951BF68004FE609 /* gun.wav in Resources */ = {isa = PBXBuildFile; fileRef = C905106A2951BF68004FE609 /* gun.wav */; };
@@ -34,13 +32,10 @@
 		C9ED7A4928F2D5840052B653 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED7A4728F2D5840052B653 /* DetailViewController.swift */; };
 		C9ED7A5128F2D6340052B653 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED7A5028F2D6340052B653 /* AddViewController.swift */; };
 		C9ED7A5328F304480052B653 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED7A5228F304480052B653 /* TimerViewController.swift */; };
-		C9F66E342917B571008D9C3E /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F66E332917B571008D9C3E /* UserInformation.swift */; };
 		C9F66E362917B5FB008D9C3E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F66E352917B5FB008D9C3E /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C90341E82917A6270083C617 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		C90341EA2917B3390083C617 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C90510682951BF68004FE609 /* madBird.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = madBird.wav; sourceTree = "<group>"; };
 		C90510692951BF68004FE609 /* clap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clap.wav; sourceTree = "<group>"; };
 		C905106A2951BF68004FE609 /* gun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gun.wav; sourceTree = "<group>"; };
@@ -68,7 +63,6 @@
 		C9ED7A4728F2D5840052B653 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C9ED7A5028F2D6340052B653 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		C9ED7A5228F304480052B653 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
-		C9F66E332917B571008D9C3E /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		C9F66E352917B5FB008D9C3E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,9 +116,6 @@
 				C91C1275295046A900C129AD /* SettingsViewController.swift */,
 				C9B10CF4295335BD0044D30C /* SettingTableViewCell.swift */,
 				C9B10CF6295355AD0044D30C /* SwitchTableViewCell.swift */,
-				C90341E82917A6270083C617 /* SignUpViewController.swift */,
-				C90341EA2917B3390083C617 /* SignInViewController.swift */,
-				C9F66E332917B571008D9C3E /* UserInformation.swift */,
 				C90341EC2917B3610083C617 /* sign */,
 				C9D8B92B28F2C0430039D7CC /* Main.storyboard */,
 				C9D8B92E28F2C0450039D7CC /* Assets.xcassets */,
@@ -225,7 +216,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90341E92917A6270083C617 /* SignUpViewController.swift in Sources */,
 				C9D8B92A28F2C0430039D7CC /* ViewController.swift in Sources */,
 				C9D8B92628F2C0430039D7CC /* AppDelegate.swift in Sources */,
 				C9ED7A5128F2D6340052B653 /* AddViewController.swift in Sources */,
@@ -236,9 +226,7 @@
 				C91C1276295046A900C129AD /* SettingsViewController.swift in Sources */,
 				C9B10CF7295355AD0044D30C /* SwitchTableViewCell.swift in Sources */,
 				C9ED7A4928F2D5840052B653 /* DetailViewController.swift in Sources */,
-				C90341EB2917B3390083C617 /* SignInViewController.swift in Sources */,
 				C9D8B92828F2C0430039D7CC /* SceneDelegate.swift in Sources */,
-				C9F66E342917B571008D9C3E /* UserInformation.swift in Sources */,
 				C9ED7A4828F2D5840052B653 /* TableViewController.swift in Sources */,
 				C9439A0628F918A50040C798 /* EmoticonSelectViewController.swift in Sources */,
 			);
