@@ -1,54 +1,29 @@
 //
-//  SettingsViewController.swift
+//  RingtoneSelectView.swift
 //  TTWorldClass
 //
-//  Created by 김동현 on 2022/12/19.
+//  Created by 김동현 on 2022/12/27.
 //
 
 import UIKit
+import AVFoundation
 
-var songTitle: String = "총 난사"
-
-struct Section {
-    let title: String
-    let options: [SettingsOptionType]
-}
-
-enum SettingsOptionType {
-    case staticCell(model: SettingsOption)
-    case switchCell(model: SettingsSwitchOption)
-}
-
-struct SettingsSwitchOption {
-    let title: String
-    let icon: UIImage?
-    let iconBackgroundColor: UIColor
-    let handler: (() -> Void)
-    var isOn: Bool
-}
-
-struct SettingsOption {
-    let title: String
-    let subtitle: String
-    let icon: UIImage?
-    let iconBackgroundColor: UIColor
-    let handler: (() -> Void)
-}
-
-class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RingtoneSelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
-        table.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.identifier)
         return table
     }()
     
     var models = [Section]()
+    private var player: AVAudioPlayer?
+    
+    let musics = ["clap.wav", "cloudAndClap.wav","gun.wav","madBird.wav", "ScreamingMan.wav", "Train.wav", "Song.wav","siren.wav"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.Settingconfigure()
+        self.configure()
         title = "Settings"
         view.addSubview(tableView)
         tableView.delegate = self
@@ -56,21 +31,63 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.frame = view.bounds
     }
     
-    func Settingconfigure() {
-        models.append(Section(title: "알람 설정", options: [
-            .switchCell(model: SettingsSwitchOption(title: "100분 제한", icon: UIImage(systemName: "lock"), iconBackgroundColor: .systemRed, handler: {
-                
-            }, isOn: timerLimitActivate)),
-            .staticCell(model: SettingsOption(title: "알람음", subtitle: songTitle, icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
-                self.ringtoneAction()
+    override func viewDidDisappear(_ animated: Bool) {
+        player?.stop()
+    }
+    
+    func configure() {
+        models.append(Section(title: "알람음", options: [
+            .staticCell(model: SettingsOption(title: "박수 소리", subtitle: songTitle == title ? "ㅇ" : "" , icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
+                self.playSound("clap")
+                songTitle = "박수 소리"
+            }),
+            .staticCell(model: SettingsOption(title: "박수와 함성소리", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
+                self.playSound("cloudAndClap")
+                songTitle = "박수와 함성소리"
+                self.viewDidLoad()
+            }),
+            .staticCell(model: SettingsOption(title: "총 난사", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
+                self.playSound("gun")
+                songTitle = "총 난사"
+            }),
+            .staticCell(model: SettingsOption(title: "미쳐버린 새", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
+                self.playSound("madBird")
+                songTitle = "미쳐버린 새"
+            }),
+            .staticCell(model: SettingsOption(title: "소리지르는 남자", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
+                self.playSound("ScreamingMan")
+                songTitle = "소리지르는 남자"
+            }),
+            .staticCell(model: SettingsOption(title: "기차", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
+                self.playSound("Train")
+                songTitle = "기차"
+            }),
+            .staticCell(model: SettingsOption(title: "이름모를 노래", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
+                self.playSound("Song")
+                songTitle = "이름모를 노래"
+            }),
+            .staticCell(model: SettingsOption(title: "사이렌", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
+                self.playSound("siren")
+                songTitle = "사이렌"
             }),
             
         ]))
     }
     
-    func ringtoneAction() {
-        if let secondView = self.storyboard?.instantiateViewController(identifier: "RingtoneSelector") as? RingtoneSelectViewController {
-            present(secondView, animated: true, completion: nil)
+    func playSound(_ ringName: String) {
+        player?.stop()
+        let soundName = ringName
+        // forResource: 파일 이름(확장자 제외) , withExtension: 확장자(mp3, wav 등) 입력
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "wav") else {
+            return
+        }
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            player?.numberOfLoops = 0
+            player?.play()
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
@@ -99,7 +116,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             ) as? SettingTableViewCell else {
                 return UITableViewCell()
             }
-            cell.configure(with: model)
+            cell.configure(with: model.self)
+            if model.title == songTitle {
+                cell.accessoryType = .checkmark
+            } else {
+                cell.accessoryType = .none
+            }
             return cell
         case .switchCell(let model):
             guard let cell = tableView.dequeueReusableCell(

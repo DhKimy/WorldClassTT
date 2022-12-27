@@ -1081,6 +1081,21 @@
             </objects>
             <point key="canvasLocation" x="3706.046511627907" y="-547.2103004291846"/>
         </scene>
+        <!--Ringtone Select View Controller-->
+        <scene sceneID="6st-E9-cEK">
+            <objects>
+                <viewController storyboardIdentifier="RingtoneSelector" id="u5U-P4-lhV" customClass="RingtoneSelectViewController" customModule="TTWorldClass" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zLl-IE-t86">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="liG-w6-Qg3"/>
+                        <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aag-dc-vZz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5440" y="-547"/>
+        </scene>
     </scenes>
     <resources>
         <image name="step1" width="696" height="1506"/>

@@ -35,7 +35,7 @@ class SwitchTableViewCell: UITableViewCell {
     private let mySwitch: UISwitch = {
         let mySwitch = UISwitch()
         mySwitch.onTintColor = .systemOrange
-        mySwitch.addTarget(SwitchTableViewCell.self, action: #selector(switchChanged), for: .valueChanged)
+        mySwitch.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
         return mySwitch
     }()
     
@@ -93,7 +93,7 @@ class SwitchTableViewCell: UITableViewCell {
         
     }
     
-    @objc func switchChanged(_ sender: UISwitch!) {
+    @objc func switchChanged() {
         timerLimitActivate = !timerLimitActivate
     }
 }

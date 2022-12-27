@@ -20,16 +20,7 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        /**
-         싱글턴 클래스에 임시 저장해놓았던 데이터 사용
-         */
-        if let sharedData: String = UserInformation.shared.id {
-            self.idLabel.text = sharedData
-        }
-        if let sharedData: String = UserInformation.shared.password {
-            self.passwordLabel.text = sharedData
-        }
+
     }
     /*
     // MARK: - Navigation

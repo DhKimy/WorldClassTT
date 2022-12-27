@@ -15,6 +15,7 @@
 		C90510732951BF68004FE609 /* cloudAndClap.wav in Resources */ = {isa = PBXBuildFile; fileRef = C905106D2951BF68004FE609 /* cloudAndClap.wav */; };
 		C9056601292C609D0042DBEA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C9056600292C609D0042DBEA /* README.md */; };
 		C91C1276295046A900C129AD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C1275295046A900C129AD /* SettingsViewController.swift */; };
+		C932D521295B0B920017634B /* RingtoneSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932D520295B0B920017634B /* RingtoneSelectViewController.swift */; };
 		C9439A0328F64B8D0040C798 /* Logo_black.png in Resources */ = {isa = PBXBuildFile; fileRef = C9439A0228F64B8D0040C798 /* Logo_black.png */; };
 		C9439A0628F918A50040C798 /* EmoticonSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9439A0528F918A50040C798 /* EmoticonSelectViewController.swift */; };
 		C95CB32428F5551000E2AE6A /* Song.wav in Resources */ = {isa = PBXBuildFile; fileRef = C95CB32328F5551000E2AE6A /* Song.wav */; };
@@ -44,6 +45,7 @@
 		C905106D2951BF68004FE609 /* cloudAndClap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cloudAndClap.wav; sourceTree = "<group>"; };
 		C9056600292C609D0042DBEA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C91C1275295046A900C129AD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C932D520295B0B920017634B /* RingtoneSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingtoneSelectViewController.swift; sourceTree = "<group>"; };
 		C9439A0228F64B8D0040C798 /* Logo_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_black.png; sourceTree = "<group>"; };
 		C9439A0528F918A50040C798 /* EmoticonSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonSelectViewController.swift; sourceTree = "<group>"; };
 		C95CB32328F5551000E2AE6A /* Song.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Song.wav; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				C9CA56E028F3E28A002241B3 /* DatePickerViewController.swift */,
 				C9439A0528F918A50040C798 /* EmoticonSelectViewController.swift */,
 				C91C1275295046A900C129AD /* SettingsViewController.swift */,
+				C932D520295B0B920017634B /* RingtoneSelectViewController.swift */,
 				C9B10CF4295335BD0044D30C /* SettingTableViewCell.swift */,
 				C9B10CF6295355AD0044D30C /* SwitchTableViewCell.swift */,
 				C90341EC2917B3610083C617 /* sign */,
@@ -228,6 +231,7 @@
 				C9ED7A4928F2D5840052B653 /* DetailViewController.swift in Sources */,
 				C9D8B92828F2C0430039D7CC /* SceneDelegate.swift in Sources */,
 				C9ED7A4828F2D5840052B653 /* TableViewController.swift in Sources */,
+				C932D521295B0B920017634B /* RingtoneSelectViewController.swift in Sources */,
 				C9439A0628F918A50040C798 /* EmoticonSelectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
