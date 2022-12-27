@@ -35,6 +35,7 @@ class SwitchTableViewCell: UITableViewCell {
     private let mySwitch: UISwitch = {
         let mySwitch = UISwitch()
         mySwitch.onTintColor = .systemOrange
+        mySwitch.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
         return mySwitch
     }()
     
@@ -44,7 +45,6 @@ class SwitchTableViewCell: UITableViewCell {
         contentView.addSubview(mySwitch)
         contentView.addSubview(iconContainer)
         iconContainer.addSubview(iconImageView)
-        
         contentView.clipsToBounds = true
         accessoryType = .none
     }
@@ -82,14 +82,18 @@ class SwitchTableViewCell: UITableViewCell {
         iconImageView.image = nil
         label.text = nil
         iconContainer.backgroundColor = nil
-        mySwitch.isOn = true
+        mySwitch.isOn = timerLimitActivate
     }
     
     public func configure(with model: SettingsSwitchOption) {
         label.text = model.title
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
-        mySwitch.isOn = model.isOn
+        mySwitch.isOn = timerLimitActivate
         
+    }
+    
+    @objc func switchChanged(_ sender: UISwitch!) {
+        timerLimitActivate = !timerLimitActivate
     }
 }
