@@ -45,9 +45,7 @@ class SettingTableViewCell: UITableViewCell {
         contentView.addSubview(iconContainer)
         iconContainer.addSubview(iconImageView)
         
-        accessoryView?.addSubview(label)
         contentView.clipsToBounds = true
-        accessoryType = .disclosureIndicator
     }
 
     required init?(coder: NSCoder) {

@@ -116,12 +116,11 @@ class RingtoneSelectViewController: UIViewController, UITableViewDelegate, UITab
             ) as? SettingTableViewCell else {
                 return UITableViewCell()
             }
-            cell.configure(with: model.self)
             if model.title == songTitle {
                 cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
+                temp = indexPath
             }
+            cell.configure(with: model.self)
             return cell
         case .switchCell(let model):
             guard let cell = tableView.dequeueReusableCell(
@@ -137,6 +136,8 @@ class RingtoneSelectViewController: UIViewController, UITableViewDelegate, UITab
         
     }
     
+    var temp: IndexPath?
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let type = models[indexPath.section].options[indexPath.row]
@@ -144,59 +145,37 @@ class RingtoneSelectViewController: UIViewController, UITableViewDelegate, UITab
         switch type.self {
         case .staticCell(let model):
             model.handler()
+            tableView.deselectRow(at: indexPath, animated: true)
+            tableView.cellForRow(at: temp ?? indexPath)?.accessoryType = .none
+            temp = indexPath
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+            print("셀이 탭되었습니다.")
         case .switchCell(let model):
             model.handler()
         }
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    func timeSetDelegate(dataSent: String) {
+//        self.tfAddTime.text = dataSent
+//        print("데이터 세팅함. 데이터 : \(dataSent)")
+//    }
+//
+//    func emoSetDelegate(emoImage: UIImage?, emoTitle: String){
+//        self.tfAddEmo.image = emoImage
+//        self.emoTitle = emoTitle
+//    }
+//
+//    override func prepare(for segue:UIStoryboardSegue, sender: Any?) {
+//        print("prepare 메서드 내부")
+//        if segue.identifier == "timeSet" {
+//            guard let viewController: DatePickerViewController = segue.destination as? DatePickerViewController else {return}
+//            viewController.delegate = self
+//        }else if segue.identifier == "emoticonSet" {
+//            guard let viewController: EmoticonSelectViewController = segue.destination as? EmoticonSelectViewController else {return}
+//            viewController.delegate = self
+//        }
+//    }
 
 }
 
-//extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-//
-//        if #available(iOS 14.0, *) {
-//            var content = cell.defaultContentConfiguration()
-//            content.text = settingItems[(indexPath as NSIndexPath).row]
-//            cell.contentConfiguration = content
-//        } else {
-//            cell.textLabel?.text = settingItems[(indexPath as NSIndexPath).row]
-//        }
-//
-//
-//        if (indexPath as NSIndexPath).row == 0 {
-//            let switchView = UISwitch(frame: .zero)
-//            switchView.setOn(timerLimitActivate, animated: true)
-//            switchView.tag = indexPath.row
-//            switchView.addTarget(self, action: #selector(self.switchDidChange(_:)), for: .valueChanged)
-//            cell.accessoryView = switchView
-//            cell.selectionStyle = .none
-//            return cell
-//        }
-//
-//        return cell
-//    }
-//
-//    @objc func switchDidChange(_ sender: UISwitch) {
-//        timerLimitActivate = !timerLimitActivate
-//    }
-//
-//}
-//
-//class ringtoneSettingCell: UITableViewCell {
-//
-//
-//
-//}
+
