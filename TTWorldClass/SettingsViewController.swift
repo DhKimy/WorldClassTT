@@ -29,13 +29,13 @@ struct SettingsSwitchOption {
 
 struct SettingsOption {
     let title: String
-    let subtitle: String
+    var subtitle: String
     let icon: UIImage?
     let iconBackgroundColor: UIColor
     let handler: (() -> Void)
 }
 
-class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SongSendProtocol {
    
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -54,6 +54,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = view.bounds
+        print(models[songSelectIndex?.section ?? 0].options[songSelectIndex?.row ?? 1])
     }
     
     func Settingconfigure() {
@@ -69,10 +70,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func ringtoneAction() {
-        if let secondView = self.storyboard?.instantiateViewController(identifier: "RingtoneSelector") as? RingtoneSelectViewController {
-            present(secondView, animated: true, completion: nil)
+        if self.storyboard?.instantiateViewController(identifier: "RingtoneSelector") is RingtoneSelectViewController {
+            performSegue(withIdentifier: "RingtoneSelector", sender: nil)
         }
     }
+    
+    func dataSend(data: String) {
+        print("dataSend 메서드")
+        viewDidLoad()
+    }
+
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -98,6 +105,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 for: indexPath
             ) as? SettingTableViewCell else {
                 return UITableViewCell()
+            }
+            if model.title == "알람음" {
+                songSelectIndex = indexPath
             }
             cell.configure(with: model)
             return cell
@@ -126,6 +136,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             model.handler()
         }
     }
+    
+    var songSelectIndex: IndexPath?
+    
+    
+    
+    
     
     
     /*

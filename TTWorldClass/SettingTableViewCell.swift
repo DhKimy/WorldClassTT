@@ -37,7 +37,7 @@ class SettingTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         return label
     }()
-    
+        
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(label)
@@ -90,4 +90,6 @@ class SettingTableViewCell: UITableViewCell {
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
     }
+    
+    
 }

@@ -8,6 +8,10 @@
 import UIKit
 import AVFoundation
 
+protocol SongSendProtocol {
+    func dataSend(data: String)
+}
+
 class RingtoneSelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     private let tableView: UITableView = {
@@ -18,6 +22,7 @@ class RingtoneSelectViewController: UIViewController, UITableViewDelegate, UITab
     
     var models = [Section]()
     private var player: AVAudioPlayer?
+    var delegate: SongSendProtocol?
     
     let musics = ["clap.wav", "cloudAndClap.wav","gun.wav","madBird.wav", "ScreamingMan.wav", "Train.wav", "Song.wav","siren.wav"]
     
@@ -154,15 +159,21 @@ class RingtoneSelectViewController: UIViewController, UITableViewDelegate, UITab
             model.handler()
         }
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepare")
+        if segue.destination is SettingsViewController {
+            let vc = segue.destination as? SettingsViewController
+            vc?.viewDidLoad()
+            print("vc?.viewDidLoad() 실행")
+        }
+    }
+    
+    
     
 //    func timeSetDelegate(dataSent: String) {
 //        self.tfAddTime.text = dataSent
 //        print("데이터 세팅함. 데이터 : \(dataSent)")
-//    }
-//
-//    func emoSetDelegate(emoImage: UIImage?, emoTitle: String){
-//        self.tfAddEmo.image = emoImage
-//        self.emoTitle = emoTitle
 //    }
 //
 //    override func prepare(for segue:UIStoryboardSegue, sender: Any?) {
