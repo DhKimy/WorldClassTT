@@ -41,6 +41,7 @@ class RingtoneSelectViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func configure() {
+        let songTitle = UserDefaults.standard.string(forKey: "songTitle")
         models.append(Section(title: "알람음", options: [
             .staticCell(model: SettingsOption(title: "박수 소리", subtitle: songTitle == title ? "ㅇ" : "" , icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
                 self.playSound("clap")
@@ -120,7 +121,7 @@ class RingtoneSelectViewController: UIViewController, UITableViewDelegate, UITab
             ) as? SettingTableViewCell else {
                 return UITableViewCell()
             }
-            if model.title == songTitle {
+            if model.title == UserDefaults.standard.string(forKey: "songTitle") {
                 cell.accessoryType = .checkmark
                 temp = indexPath
             }
@@ -158,6 +159,7 @@ class RingtoneSelectViewController: UIViewController, UITableViewDelegate, UITab
             model.handler()
         }
     }
+    
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        print("prepare")

@@ -7,7 +7,7 @@
 
 import UIKit
 
-var songTitle: String = UserDefaults.standard.string(forKey: "songTitle") ?? "총 난사"
+
 
 struct Section {
     let title: String
@@ -37,11 +37,12 @@ struct SettingsOption {
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SongSendProtocol {
     
+    var songTitle: String = UserDefaults.standard.string(forKey: "songTitle") ?? "총 난사"
+    
     func dataSend(data: String) {
         
     }
     
-   
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
@@ -141,59 +142,4 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     var songSelectIndex: IndexPath?
-    
-    
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
-
-//extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-//
-//        if #available(iOS 14.0, *) {
-//            var content = cell.defaultContentConfiguration()
-//            content.text = settingItems[(indexPath as NSIndexPath).row]
-//            cell.contentConfiguration = content
-//        } else {
-//            cell.textLabel?.text = settingItems[(indexPath as NSIndexPath).row]
-//        }
-//
-//
-//        if (indexPath as NSIndexPath).row == 0 {
-//            let switchView = UISwitch(frame: .zero)
-//            switchView.setOn(timerLimitActivate, animated: true)
-//            switchView.tag = indexPath.row
-//            switchView.addTarget(self, action: #selector(self.switchDidChange(_:)), for: .valueChanged)
-//            cell.accessoryView = switchView
-//            cell.selectionStyle = .none
-//            return cell
-//        }
-//
-//        return cell
-//    }
-//
-//    @objc func switchDidChange(_ sender: UISwitch) {
-//        timerLimitActivate = !timerLimitActivate
-//    }
-//
-//}
-//
-//class ringtoneSettingCell: UITableViewCell {
-//
-//
-//
-//}
