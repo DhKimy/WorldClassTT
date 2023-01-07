@@ -70,7 +70,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         models.append(Section(title: "알람 설정", options: [
             .switchCell(model: SettingsSwitchOption(title: "100분 제한", icon: UIImage(systemName: "lock"), iconBackgroundColor: .systemRed, handler: {
                 
-            }, isOn: timerLimitActivate)),
+            }, isOn: UserDefaults.standard.bool(forKey: "timerLimitActivate") )),
             .staticCell(model: SettingsOption(title: "알람음", subtitle: songTitle, icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
                 self.ringtoneAction()
                 

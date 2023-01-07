@@ -82,18 +82,18 @@ class SwitchTableViewCell: UITableViewCell {
         iconImageView.image = nil
         label.text = nil
         iconContainer.backgroundColor = nil
-        mySwitch.isOn = timerLimitActivate
+        mySwitch.isOn = UserDefaults.standard.bool(forKey: "timerLimitActivate")
     }
     
     public func configure(with model: SettingsSwitchOption) {
         label.text = model.title
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundColor
-        mySwitch.isOn = timerLimitActivate
+        mySwitch.isOn = UserDefaults.standard.bool(forKey: "timerLimitActivate")
         
     }
     
     @objc func switchChanged() {
-        timerLimitActivate = !timerLimitActivate
+        UserDefaults.standard.setValue(!(UserDefaults.standard.bool(forKey: "timerLimitActivate")), forKey: "timerLimitActivate")
     }
 }

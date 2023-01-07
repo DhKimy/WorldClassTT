@@ -11,7 +11,6 @@ import UIKit
 var items: [String] = ["장보기"]
 var itemsImageFile: [String] = ["cart"]
 var itemsTime: [Int] = [1]
-var timerLimitActivate: Bool = true
 
 class TableViewController: UITableViewController {
     

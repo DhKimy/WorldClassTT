@@ -35,7 +35,7 @@ class AddViewController: UIViewController, MyProtocol{
             present(alert, animated: false, completion: nil)
             
             return
-        } else if timerLimitActivate == true && sum(numbers: itemsTime) + Int(tfAddTime.text!)! > 100  {
+        } else if UserDefaults.standard.bool(forKey: "timerLimitActivate") && sum(numbers: itemsTime) + Int(tfAddTime.text!)! > 100  {
             let nowSum = sum(numbers: itemsTime)
             let availSetTime = 100 - sum(numbers: itemsTime)
             
