@@ -7,7 +7,7 @@
 
 import UIKit
 
-var songTitle: String = "총 난사"
+var songTitle: String = UserDefaults.standard.string(forKey: "songTitle") ?? "총 난사"
 
 struct Section {
     let title: String
@@ -36,6 +36,11 @@ struct SettingsOption {
 }
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SongSendProtocol {
+    
+    func dataSend(data: String) {
+        
+    }
+    
    
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -54,7 +59,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = view.bounds
-        print(models[songSelectIndex?.section ?? 0].options[songSelectIndex?.row ?? 1])
+    }
+    
+    public func backToSettingView() {
+        self.viewDidLoad()
     }
     
     func Settingconfigure() {
@@ -64,6 +72,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             }, isOn: timerLimitActivate)),
             .staticCell(model: SettingsOption(title: "알람음", subtitle: songTitle, icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
                 self.ringtoneAction()
+                
             }),
             
         ]))
@@ -74,13 +83,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             performSegue(withIdentifier: "RingtoneSelector", sender: nil)
         }
     }
-    
-    func dataSend(data: String) {
-        print("dataSend 메서드")
-        viewDidLoad()
-    }
-
-    
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let model = models[section]
@@ -118,6 +120,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             ) as? SwitchTableViewCell else {
                 return UITableViewCell()
             }
+            
             cell.configure(with: model)
             cell.selectionStyle = .none
             return cell

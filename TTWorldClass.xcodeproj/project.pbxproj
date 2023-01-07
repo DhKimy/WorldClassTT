@@ -107,7 +107,6 @@
 			children = (
 				C9D8B92528F2C0430039D7CC /* AppDelegate.swift */,
 				C9D8B92728F2C0430039D7CC /* SceneDelegate.swift */,
-				C9439A0228F64B8D0040C798 /* Logo_black.png */,
 				C9D8B92928F2C0430039D7CC /* ViewController.swift */,
 				C9ED7A5228F304480052B653 /* TimerViewController.swift */,
 				C9ED7A5028F2D6340052B653 /* AddViewController.swift */,
@@ -126,6 +125,7 @@
 				C9D8B93328F2C0450039D7CC /* Info.plist */,
 				C9F66E352917B5FB008D9C3E /* MainViewController.swift */,
 				C9056600292C609D0042DBEA /* README.md */,
+				C9439A0228F64B8D0040C798 /* Logo_black.png */,
 				C90510692951BF68004FE609 /* clap.wav */,
 				C905106D2951BF68004FE609 /* cloudAndClap.wav */,
 				C905106A2951BF68004FE609 /* gun.wav */,

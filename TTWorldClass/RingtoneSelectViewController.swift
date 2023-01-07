@@ -44,36 +44,35 @@ class RingtoneSelectViewController: UIViewController, UITableViewDelegate, UITab
         models.append(Section(title: "알람음", options: [
             .staticCell(model: SettingsOption(title: "박수 소리", subtitle: songTitle == title ? "ㅇ" : "" , icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
                 self.playSound("clap")
-                songTitle = "박수 소리"
+                UserDefaults.standard.setValue("박수 소리", forKey: "songTitle")
             }),
             .staticCell(model: SettingsOption(title: "박수와 함성소리", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
                 self.playSound("cloudAndClap")
-                songTitle = "박수와 함성소리"
-                self.viewDidLoad()
+                UserDefaults.standard.setValue("박수와 함성소리", forKey: "songTitle")
             }),
             .staticCell(model: SettingsOption(title: "총 난사", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
                 self.playSound("gun")
-                songTitle = "총 난사"
+                UserDefaults.standard.setValue("총 난사", forKey: "songTitle")
             }),
             .staticCell(model: SettingsOption(title: "미쳐버린 새", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
                 self.playSound("madBird")
-                songTitle = "미쳐버린 새"
+                UserDefaults.standard.setValue("미쳐버린 새", forKey: "songTitle")
             }),
             .staticCell(model: SettingsOption(title: "소리지르는 남자", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
                 self.playSound("ScreamingMan")
-                songTitle = "소리지르는 남자"
+                UserDefaults.standard.setValue("소리지르는 남자", forKey: "songTitle")
             }),
             .staticCell(model: SettingsOption(title: "기차", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
                 self.playSound("Train")
-                songTitle = "기차"
+                UserDefaults.standard.setValue("기차", forKey: "songTitle")
             }),
             .staticCell(model: SettingsOption(title: "이름모를 노래", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
                 self.playSound("Song")
-                songTitle = "이름모를 노래"
+                UserDefaults.standard.setValue("이름모를 노래", forKey: "songTitle")
             }),
             .staticCell(model: SettingsOption(title: "사이렌", subtitle: "", icon: UIImage(systemName: "music.note"), iconBackgroundColor: .lightGray){
                 self.playSound("siren")
-                songTitle = "사이렌"
+                UserDefaults.standard.setValue("사이렌", forKey: "songTitle")
             }),
             
         ]))
@@ -160,14 +159,14 @@ class RingtoneSelectViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("prepare")
-        if segue.destination is SettingsViewController {
-            let vc = segue.destination as? SettingsViewController
-            vc?.viewDidLoad()
-            print("vc?.viewDidLoad() 실행")
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        print("prepare")
+//        if segue.destination is SettingsViewController {
+//            let vc = segue.destination as? SettingsViewController
+//            vc?.viewDidLoad()
+//            print("vc?.viewDidLoad() 실행")
+//        }
+//    }
     
     
     
